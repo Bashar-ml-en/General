@@ -103,13 +103,22 @@ export default function Activities() {
       badgeColor: '#264430',
     },
     {
-      id: 'klibf-stage',
-      src: '/klibf-2026/klibf-stage-ceremony.jpg',
-      title: 'KLIBF 2026 Main Stage Presentation & Dignitary Gathering',
-      subtitle: 'World Trade Centre Kuala Lumpur (WTCKL)',
-      caption: 'Official stage ceremony with international publishing delegations, cultural representatives, and dignitaries during the 10-day international expo.',
-      badge: 'Main Stage Ceremony',
+      id: 'klibf-cultural',
+      src: '/klibf-2026/klibf-cultural-delegation.jpg',
+      title: 'International Cultural & Publishing Delegation',
+      subtitle: 'Heritage Pavilion & Traditional Attire Exhibition',
+      caption: 'Alhassan Ibrahim engaging with international cultural delegates in traditional attire at the heritage pavilion during the Kuala Lumpur International Book Fair.',
+      badge: 'Cultural Delegation Liaison',
       badgeColor: '#705c30',
+    },
+    {
+      id: 'klibf-symposium',
+      src: '/klibf-2026/klibf-translation-symposium.jpg',
+      title: 'International Translation & Publishing Standards Symposium',
+      subtitle: 'Literature, Publishing & Translation Commission (LPTC)',
+      caption: 'Keynote plenary session on "The Role of International Organizations in Developing Professional Standards for Translation" hosted by the Literature, Publishing and Translation Commission.',
+      badge: 'Translation & Publishing Symposium',
+      badgeColor: '#16271c',
     },
   ];
 
@@ -1102,7 +1111,7 @@ export default function Activities() {
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <Layers size={16} color="#4a7c59" />
                 <h4 style={{ fontSize: '13.5px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '0.06em', color: '#264430', margin: 0 }}>
-                  Book Fair Photography & Field Representation (2 Photos)
+                  Book Fair Photography & Field Representation (3 Photos)
                 </h4>
               </div>
               <span style={{ fontSize: '12px', color: '#705c30', fontStyle: 'italic' }}>
