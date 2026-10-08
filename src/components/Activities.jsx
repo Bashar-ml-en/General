@@ -4,17 +4,14 @@ import {
   Compass,
   BookOpen,
   Calendar,
-  Camera,
-  HeartHandshake,
   Building2,
   CheckCircle,
   MapPin,
   ExternalLink,
+  Users2,
+  Briefcase,
+  Ticket,
 } from 'lucide-react';
-
-import mediaCameraImg from '../../o5.jpeg';
-import reliefImg from '../../o2.jpeg';
-import corporateVisitImg from '../../o3.jpeg';
 
 export default function Activities() {
   const exhibitions = [
@@ -48,24 +45,27 @@ export default function Activities() {
     },
   ];
 
-  const galleryItems = [
+  const credentials = [
     {
-      img: mediaCameraImg,
-      caption: 'Digital Media & Outreach Coverage',
-      sub: 'DSLR visual storytelling & NGO event documentation',
-      role: 'Media Coordinator',
+      badge: 'Trade Expo Credential',
+      title: 'KLIBF 2026 Representative',
+      organization: 'Mashreq International for Books',
+      desc: 'Accredited sales liaison managing Arabic and academic literature circulation across international academic delegations.',
+      color: '#0b1f3a',
     },
     {
-      img: reliefImg,
-      caption: 'Community Food Aid & Relief Operations',
-      sub: 'Red Crescent emergency meal preparation & distribution',
-      role: 'Outreach Volunteer',
+      badge: 'Committee Appointment',
+      title: 'UiTM Travel Exhibition Organizing Lead',
+      organization: 'UiTM Consortium',
+      desc: 'Appointed committee member overseeing commercial floor plans, international vendor setup, and public relations.',
+      color: '#785a00',
     },
     {
-      img: corporateVisitImg,
-      caption: 'Corporate & Economic Sector Engagement',
-      sub: 'Maybank commercial banking & innovation engagement',
-      role: 'Economics Scholar',
+      badge: 'Community Engagement',
+      title: 'Refugee Capacity-Building Workshops',
+      organization: 'Nagashi Relief & Development NGO',
+      desc: 'Lead facilitator for community English-language modules and higher education scholarship pathways.',
+      color: '#2a7f83',
     },
   ];
 
@@ -82,7 +82,7 @@ export default function Activities() {
             Professional Activities & <span className="serif-italic">International Exhibitions</span>
           </h2>
           <p className="section-subtitle">
-            Active engagement across international exhibitions, trade fairs, multi-vendor coordination, and humanitarian field documentation.
+            Active engagement across international exhibitions, trade fairs, multi-vendor coordination, and humanitarian field initiatives.
           </p>
         </div>
 
@@ -149,67 +149,50 @@ export default function Activities() {
           ))}
         </div>
 
-        {/* Photographic Field & Activity Gallery */}
+        {/* Institutional Credentials Grid */}
         <div style={{ marginTop: '32px' }}>
           <h3 style={{ fontSize: '1.35rem', fontWeight: '600', color: '#0b1f3a', marginBottom: '8px' }}>
-            Field Documentation & Community Engagements
+            Accreditations & Community Engagement Roles
           </h3>
           <p style={{ fontSize: '13.5px', color: '#75777e', marginBottom: '22px' }}>
-            Moments capturing media production, NGO humanitarian logistics, and industry networking:
+            Verified positions across major exhibitions and NGO programs:
           </p>
 
           <div
             style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-              gap: '24px',
+              gap: '20px',
             }}
           >
-            {galleryItems.map((item, idx) => (
+            {credentials.map((c, idx) => (
               <motion.div
-                key={item.caption}
+                key={c.title}
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: idx * 0.1 }}
                 className="editorial-card"
                 style={{
-                  padding: '12px',
+                  padding: '24px',
                   backgroundColor: '#ffffff',
                 }}
               >
-                <div
-                  style={{
-                    borderRadius: '12px',
-                    overflow: 'hidden',
-                    backgroundColor: '#f1eee5',
-                    aspectRatio: '3 / 4',
-                    maxHeight: '340px',
-                    marginBottom: '12px',
-                  }}
-                >
-                  <img
-                    src={item.img}
-                    alt={item.caption}
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                      objectFit: 'cover',
-                      display: 'block',
-                    }}
-                  />
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
+                  <Ticket size={16} color={c.color} />
+                  <span style={{ fontSize: '11px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '0.06em', color: c.color }}>
+                    {c.badge}
+                  </span>
                 </div>
-                <div style={{ padding: '4px 6px' }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px' }}>
-                    <span className="badge-taxonomy" style={{ fontSize: '10px' }}>{item.role}</span>
-                  </div>
-                  <h4 style={{ fontSize: '14px', fontWeight: '600', color: '#0b1f3a', marginBottom: '2px' }}>
-                    {item.caption}
-                  </h4>
-                  <p style={{ fontSize: '12px', color: '#75777e' }}>
-                    {item.sub}
-                  </p>
+                <h4 style={{ fontSize: '1.15rem', fontWeight: '600', color: '#0b1f3a', marginBottom: '4px' }}>
+                  {c.title}
+                </h4>
+                <div style={{ fontSize: '12px', color: '#785a00', fontWeight: '500', marginBottom: '10px' }}>
+                  {c.organization}
                 </div>
+                <p style={{ fontSize: '13px', color: '#44474d', lineHeight: 1.55 }}>
+                  {c.desc}
+                </p>
               </motion.div>
             ))}
           </div>

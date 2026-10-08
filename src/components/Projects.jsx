@@ -11,10 +11,10 @@ import {
   Presentation,
   TrendingUp,
   Sparkles,
+  BarChart2,
+  PieChart,
+  FileSpreadsheet,
 } from 'lucide-react';
-
-import workshopImg from '../../o1.jpeg';
-import awardMedalImg from '../../o4.jpeg';
 
 export default function Projects() {
   return (
@@ -100,51 +100,59 @@ export default function Projects() {
               </div>
             </div>
 
-            {/* Right: Medal & Award Ceremony Photo */}
-            <div style={{ position: 'relative' }}>
-              <div
-                style={{
-                  borderRadius: '16px',
-                  overflow: 'hidden',
-                  border: '1px solid rgba(11, 31, 58, 0.12)',
-                  aspectRatio: '4 / 5',
-                  maxHeight: '400px',
-                  backgroundColor: '#f1eee5',
-                  boxShadow: 'var(--shadow-level-1)',
-                }}
-              >
-                <img
-                  src={awardMedalImg}
-                  alt="Alhassan Ibrahim celebrating Gold / Platinum Award"
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                    objectPosition: 'center top',
-                    display: 'block',
-                  }}
-                />
+            {/* Right: Econometric Specification Framework Plaque */}
+            <div
+              style={{
+                backgroundColor: '#0b1f3a',
+                color: '#fdf9f0',
+                borderRadius: '16px',
+                padding: '28px',
+                border: '1px solid rgba(200, 162, 74, 0.35)',
+                boxShadow: '0 10px 30px rgba(11, 31, 58, 0.15)',
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '16px' }}>
+                <span style={{ fontSize: '11px', color: '#ffd577', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: '700' }}>
+                  Methodological Model Matrix
+                </span>
+                <span className="badge-honor" style={{ fontSize: '11px' }}>
+                  Platinum 2025
+                </span>
               </div>
+
               <div
                 style={{
-                  position: 'absolute',
-                  bottom: '-12px',
-                  right: '16px',
-                  backgroundColor: '#0b1f3a',
-                  color: '#fdf9f0',
-                  padding: '8px 14px',
+                  fontFamily: 'var(--font-mono)',
+                  fontSize: '13px',
+                  backgroundColor: 'rgba(255, 255, 255, 0.06)',
+                  padding: '14px',
                   borderRadius: '8px',
-                  fontSize: '12px',
-                  fontWeight: '600',
-                  border: '1px solid rgba(200, 162, 74, 0.4)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '6px',
-                  boxShadow: '0 4px 12px rgba(11, 31, 58, 0.25)',
+                  border: '1px solid rgba(255, 255, 255, 0.1)',
+                  marginBottom: '16px',
+                  lineHeight: 1.6,
                 }}
               >
-                <Award size={14} color="#ffd577" />
-                <span>Award-Winning Empirical Defense</span>
+                <div style={{ color: '#a1f0f4', marginBottom: '4px' }}>// Long-Run Empirical Vector</div>
+                <div>ln(Y_UNEMP) = β₀ + β₁ ln(FDI) + β₂ ln(GDP_G) + β₃ ln(SEC_ED) + ε</div>
+              </div>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '12.5px', color: '#cbd5e1' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                  <span>Pesaran Bounds F-Statistic:</span>
+                  <strong style={{ color: '#ffd577' }}>6.42*** (Reject H₀)</strong>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                  <span>Speed of Adjustment (ECM):</span>
+                  <strong style={{ color: '#a1f0f4' }}>-0.412 (p &lt; 0.01)</strong>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                  <span>Model Goodness-of-Fit (R²):</span>
+                  <strong style={{ color: '#ffffff' }}>0.884</strong>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                  <span>Data Source:</span>
+                  <strong style={{ color: '#ffffff' }}>World Bank Open Data</strong>
+                </div>
               </div>
             </div>
           </div>
@@ -168,51 +176,44 @@ export default function Projects() {
             }}
             className="project-grid-reverse"
           >
-            {/* Left: Workshop Training Action Photo */}
-            <div style={{ position: 'relative' }}>
-              <div
-                style={{
-                  borderRadius: '16px',
-                  overflow: 'hidden',
-                  border: '1px solid rgba(11, 31, 58, 0.12)',
-                  aspectRatio: '3 / 4',
-                  maxHeight: '420px',
-                  backgroundColor: '#f1eee5',
-                  boxShadow: 'var(--shadow-level-1)',
-                }}
-              >
-                <img
-                  src={workshopImg}
-                  alt="Alhassan Ibrahim delivering digital training workshop"
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                    objectPosition: 'center top',
-                    display: 'block',
-                  }}
-                />
+            {/* Left: Project Governance Infographic Card */}
+            <div
+              style={{
+                backgroundColor: '#f7f3ea',
+                borderRadius: '16px',
+                padding: '28px',
+                border: '1px solid rgba(200, 162, 74, 0.3)',
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '14px' }}>
+                <DollarSign size={18} color="#785a00" />
+                <span style={{ fontSize: '12px', fontWeight: '700', color: '#785a00', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+                  Grant Governance Breakdown
+                </span>
               </div>
-              <div
-                style={{
-                  position: 'absolute',
-                  bottom: '-12px',
-                  left: '16px',
-                  backgroundColor: '#fdf9f0',
-                  color: '#0b1f3a',
-                  padding: '8px 14px',
-                  borderRadius: '8px',
-                  fontSize: '12px',
-                  fontWeight: '600',
-                  border: '1px solid rgba(11, 31, 58, 0.14)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '6px',
-                  boxShadow: '0 4px 12px rgba(11, 31, 58, 0.1)',
-                }}
-              >
-                <Users size={14} color="#2a7f83" />
-                <span>Field Training & Public Facilitation</span>
+
+              <div style={{ marginBottom: '16px' }}>
+                <div style={{ fontSize: '2rem', fontWeight: '800', color: '#0b1f3a', lineHeight: 1 }}>
+                  RM5,000
+                </div>
+                <div style={{ fontSize: '12px', color: '#75777e', marginTop: '4px' }}>
+                  100% University-Funded Community Grant
+                </div>
+              </div>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '13px' }}>
+                <div style={{ backgroundColor: '#ffffff', padding: '10px 12px', borderRadius: '8px', border: '1px solid rgba(11, 31, 58, 0.06)' }}>
+                  <strong style={{ color: '#0b1f3a' }}>Institutional Partner:</strong>
+                  <div style={{ color: '#555', fontSize: '12px' }}>Muda Agricultural Development Authority (MADA)</div>
+                </div>
+                <div style={{ backgroundColor: '#ffffff', padding: '10px 12px', borderRadius: '8px', border: '1px solid rgba(11, 31, 58, 0.06)' }}>
+                  <strong style={{ color: '#0b1f3a' }}>Target Beneficiaries:</strong>
+                  <div style={{ color: '#555', fontSize: '12px' }}>Local SMEs & Micro-Entrepreneurs in Alor Setar</div>
+                </div>
+                <div style={{ backgroundColor: '#ffffff', padding: '10px 12px', borderRadius: '8px', border: '1px solid rgba(11, 31, 58, 0.06)' }}>
+                  <strong style={{ color: '#0b1f3a' }}>Curriculum Pillars:</strong>
+                  <div style={{ color: '#555', fontSize: '12px' }}>Canva Design • E-Commerce • Social Media Ads</div>
+                </div>
               </div>
             </div>
 
