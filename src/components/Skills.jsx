@@ -1,112 +1,158 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { UserCheck, Shield, FileSpreadsheet, Video, MessageSquare, Calculator, Layers, Cpu, Award } from 'lucide-react';
+import {
+  BarChart3,
+  Globe,
+  Monitor,
+  Users,
+  CheckCircle2,
+  TrendingUp,
+  Cpu,
+  Layers,
+  Sparkles,
+} from 'lucide-react';
 
 export default function Skills() {
-  const skillCategories = [
-    {
-      category: 'Core HR & Recruitment Operations',
-      icon: <UserCheck size={22} style={{ color: '#f59e0b' }} />,
-      items: [
-        { name: 'Candidate Screening & Interviewing', level: 'Advanced' },
-        { name: 'HR Administration & Documentation', level: 'Advanced' },
-        { name: 'Data Entry & Records Management', level: 'Proficient' },
-        { name: 'Performance Management Frameworks', level: 'Academic + Applied' },
-        { name: 'Occupational Safety & Health (OSH)', level: 'Academic' },
-        { name: 'Compensation & Benefits Fundamentals', level: 'Academic' },
-      ],
-    },
-    {
-      category: 'Project & Stakeholder Management',
-      icon: <Layers size={22} style={{ color: '#3b82f6' }} />,
-      items: [
-        { name: 'Event & Leadership Program Coordination', level: 'Expert' },
-        { name: 'Stakeholder & Community Engagement', level: 'Expert' },
-        { name: 'Cross-Functional Team Communication', level: 'Advanced' },
-        { name: 'Impact Story Writing & Branding', level: 'Advanced' },
-        { name: 'Public Speaking & Workshop Facilitation', level: 'Award-Winning' },
-      ],
-    },
-    {
-      category: 'Technical Tools & Software',
-      icon: <Cpu size={22} style={{ color: '#10b981' }} />,
-      items: [
-        { name: 'Microsoft Office (Excel, Word, PPT)', level: 'Advanced' },
-        { name: 'Google Workspace Suite', level: 'Advanced' },
-        { name: 'Video Editing & Content Creation', level: 'Proficient' },
-        { name: 'Financial Record Keeping & Budget Control', level: 'Proficient' },
-        { name: 'Website Content Drafting & CMS Support', level: 'Intermediate' },
-      ],
-    },
+  const [activeTab, setActiveTab] = useState('data');
+
+  const categories = [
+    { id: 'data', label: 'Data & Econometrics', icon: <BarChart3 size={15} /> },
+    { id: 'marketing', label: 'Digital Marketing & SEO', icon: <Globe size={15} /> },
+    { id: 'tools', label: 'Productivity & Research', icon: <Monitor size={15} /> },
+    { id: 'leadership', label: 'Outreach & Leadership', icon: <Users size={15} /> },
   ];
 
+  const skillGroups = {
+    data: [
+      { name: 'ARDL Modeling', level: 'Expert', desc: 'Autoregressive Distributed Lag cointegration bounds testing and error correction (ECM).' },
+      { name: 'SPSS Analysis', level: 'Advanced', desc: 'Cross-sectional hypothesis testing, multivariate regression, and descriptive synthesis.' },
+      { name: 'Stata', level: 'Proficient', desc: 'Time series estimation, unit root diagnostics (ADF, PP), and statistical forecasting.' },
+      { name: 'Advanced Excel', level: 'Advanced', desc: 'Pivot Tables, VLOOKUP/XLOOKUP, econometric forecasting models, and financial scenarios.' },
+      { name: 'World Bank Open Data', level: 'Expert', desc: 'Extracting, cleaning, and standardizing macro indicators across developing nations.' },
+      { name: 'Applied Econometrics', level: 'Advanced', desc: 'Macroeconomic modeling, labor market elasticity, capital flow absorption.' },
+    ],
+    marketing: [
+      { name: 'WordPress CMS', level: 'Advanced', desc: 'Publishing, on-site SEO optimization, taxonomy structuring, and engagement formatting.' },
+      { name: 'Search Engine Optimization (SEO)', level: 'Advanced', desc: 'Keyword research, meta structuring, search intent optimization, readability scoring.' },
+      { name: 'Social Media Marketing', level: 'Proficient', desc: 'End-to-end campaign planning, multi-platform publishing, and audience engagement.' },
+      { name: 'Canva Design', level: 'Advanced', desc: 'High-impact infographics, social campaign visuals, workshop slide decks.' },
+      { name: 'CapCut Video Editing', level: 'Proficient', desc: 'Short-form visual editing, subtitle styling, pacing, and digital storytelling.' },
+    ],
+    tools: [
+      { name: 'Microsoft Excel', level: 'Advanced', desc: 'Complex quantitative sheets, regression add-in, scenario managers, data visualization.' },
+      { name: 'Microsoft PowerPoint', level: 'Advanced', desc: 'Academic seminar defense decks, executive briefings, institutional presentations.' },
+      { name: 'Microsoft Word', level: 'Advanced', desc: 'Scholarly monograph compilation, citation referencing, policy proposals.' },
+      { name: 'Google Workspace', level: 'Advanced', desc: 'Docs, Sheets, Slides, and Google Forms for empirical survey intake.' },
+    ],
+    leadership: [
+      { name: 'Community Outreach', level: 'Expert', desc: 'Connecting with non-profit beneficiaries, refugees, and aspiring scholars.' },
+      { name: 'Event Coordination', level: 'Advanced', desc: 'Exhibition booth logistics, vendor contracts, attendee flow at KLIBF and UiTM.' },
+      { name: 'Public Speaking', level: 'Advanced', desc: 'Award-winning academic presentations, seminar defense, and training delivery.' },
+      { name: 'Stakeholder Relations', level: 'Proficient', desc: 'Collaborating with government entities (MADA), university faculties, and NGOs.' },
+      { name: 'Grant Budget Management', level: 'Proficient', desc: 'Administering university-funded grants (RM5,000) with complete accountability.' },
+    ],
+  };
+
   return (
-    <section id="skills" className="section-padding" style={{ position: 'relative' }}>
+    <section id="skills" className="section-padding" style={{ backgroundColor: 'var(--canvas-bg)' }}>
       <div className="container">
-        {/* Title */}
-        <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto 60px auto' }}>
-          <span className="badge-gold" style={{ marginBottom: '12px' }}>Competency Matrix</span>
-          <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.8rem)', fontWeight: '800', letterSpacing: '-0.02em' }}>
-            Technical HR Skills & <span className="gradient-text">Tool Proficiencies</span>
+        {/* Section Header */}
+        <div style={{ maxWidth: '780px', marginBottom: '44px' }}>
+          <div className="section-eyebrow">
+            <Cpu size={14} color="#c8a24a" />
+            <span>Comprehensive Technical & Methodological Competencies</span>
+          </div>
+          <h2 className="section-title">
+            Core Skills & <span className="serif-italic">Analytical Toolkit</span>
           </h2>
-          <p style={{ color: '#94a3b8', fontSize: '1.05rem', marginTop: '12px' }}>
-            Comprehensive toolkit spanning HR administration, candidate evaluation, digital tools, and leadership skills.
+          <p className="section-subtitle">
+            A balanced synthesis of econometric research, digital growth strategy, productivity software, and stakeholder leadership.
           </p>
         </div>
 
-        {/* 3 Columns */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '28px' }}>
-          {skillCategories.map((cat, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="glass-card"
-              style={{ padding: '28px' }}
+        {/* Tab Controls */}
+        <div
+          style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: '8px',
+            marginBottom: '32px',
+          }}
+        >
+          {categories.map((cat) => (
+            <button
+              key={cat.id}
+              onClick={() => setActiveTab(cat.id)}
+              className={activeTab === cat.id ? 'btn-primary' : 'btn-secondary'}
+              style={{
+                fontSize: '13px',
+                padding: '10px 18px',
+                borderRadius: '6px',
+              }}
             >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '24px' }}>
-                <div style={{ background: 'rgba(255, 255, 255, 0.06)', padding: '10px', borderRadius: '12px' }}>
-                  {cat.icon}
-                </div>
-                <h3 style={{ fontSize: '1.15rem', fontWeight: '700', color: '#fff' }}>{cat.category}</h3>
-              </div>
-
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                {cat.items.map((item, i) => (
-                  <div
-                    key={i}
-                    style={{
-                      background: 'rgba(255, 255, 255, 0.03)',
-                      border: '1px solid rgba(255, 255, 255, 0.06)',
-                      borderRadius: '10px',
-                      padding: '12px 16px',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'space-between',
-                      transition: 'all 0.2s ease',
-                    }}
-                  >
-                    <span style={{ color: '#f8fafc', fontSize: '0.9rem', fontWeight: '500' }}>{item.name}</span>
-                    <span
-                      style={{
-                        fontSize: '0.75rem',
-                        fontWeight: '700',
-                        color: '#f59e0b',
-                        background: 'rgba(245, 158, 11, 0.12)',
-                        padding: '2px 8px',
-                        borderRadius: '6px',
-                      }}
-                    >
-                      {item.level}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
+              {cat.icon}
+              <span>{cat.label}</span>
+            </button>
           ))}
         </div>
+
+        {/* Skills Grid for active tab */}
+        <motion.div
+          key={activeTab}
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+            gap: '20px',
+          }}
+        >
+          {skillGroups[activeTab].map((skill, idx) => (
+            <div
+              key={skill.name}
+              className="editorial-card"
+              style={{
+                padding: '24px',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+              }}
+            >
+              <div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
+                  <h3 style={{ fontSize: '1.2rem', fontWeight: '600', color: '#0b1f3a' }}>
+                    {skill.name}
+                  </h3>
+                  <span
+                    className={skill.level === 'Expert' ? 'badge-honor' : 'badge-teal'}
+                    style={{ fontSize: '11px', padding: '2px 8px' }}
+                  >
+                    {skill.level}
+                  </span>
+                </div>
+
+                <p style={{ fontSize: '13px', color: '#44474d', lineHeight: 1.55 }}>
+                  {skill.desc}
+                </p>
+              </div>
+
+              {/* Progress Indicator Accent */}
+              <div style={{ marginTop: '16px' }}>
+                <div style={{ height: '4px', width: '100%', backgroundColor: '#f1eee5', borderRadius: '2px', overflow: 'hidden' }}>
+                  <div
+                    style={{
+                      height: '100%',
+                      width: skill.level === 'Expert' ? '95%' : skill.level === 'Advanced' ? '85%' : '75%',
+                      backgroundColor: skill.level === 'Expert' ? '#c8a24a' : '#2a7f83',
+                      borderRadius: '2px',
+                    }}
+                  />
+                </div>
+              </div>
+            </div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );

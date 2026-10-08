@@ -1,151 +1,247 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { BookOpen, Globe, Award, ShieldCheck, HeartHandshake, FileCheck, Layers } from 'lucide-react';
+import {
+  GraduationCap,
+  Award,
+  BookOpen,
+  Languages,
+  CheckCircle2,
+  TrendingUp,
+  Globe2,
+  ShieldCheck,
+  BrainCircuit,
+  FileCheck2,
+} from 'lucide-react';
 
 export default function About() {
   const coursework = [
-    'Human Resource Planning (HRP)',
-    'Human Resource Development (HRD)',
-    'Operational Management',
-    'Compensation Management',
-    'Occupational Safety & Health (OSH)',
-    'Performance Management System',
+    { title: 'Econometrics', desc: 'Regression diagnostics, time-series forecasting, ARDL bounds testing & cointegration.' },
+    { title: 'Microeconomics', desc: 'Market structures, consumer utility optimization, game theory, and pricing elasticity.' },
+    { title: 'Macroeconomics', desc: 'Monetary policy transmission, fiscal frameworks, inflation targeting, and labor equilibrium.' },
+    { title: 'Development Economics', desc: 'Structural transformation, poverty reduction metrics, institutional capital, and FDI absorption.' },
+    { title: 'Islamic Economics & Finance', desc: 'Ethical risk-sharing, Sukuk structures, Shariah governance, and social finance.' },
+    { title: 'Principles of Marketing', desc: 'Consumer segmentation, positioning strategies, digital conversion funnels, and brand equity.' },
+    { title: 'Entrepreneurship & Innovation', desc: 'Venture feasibility, business model canvas, grant allocation, and social enterprise design.' },
   ];
 
   const languages = [
-    { name: 'Arabic', level: 'Native / Bilingual', percent: 100, flag: '🇸🇩' },
-    { name: 'Tigre', level: 'Native', percent: 100, flag: '🌍' },
-    { name: 'English', level: 'Advanced / Professional', percent: 90, flag: '🇬🇧' },
-    { name: 'Malay', level: 'Elementary (A1-A2)', percent: 35, flag: '🇲🇾' },
-  ];
-
-  const corePillars = [
-    {
-      icon: <FileCheck size={24} style={{ color: '#f59e0b' }} />,
-      title: 'Recruitment & Screening',
-      desc: 'Screening candidate profiles, conducting structured intake interviews, and assessing organizational fit.',
-    },
-    {
-      icon: <Layers size={24} style={{ color: '#3b82f6' }} />,
-      title: 'HR Administration & Records',
-      desc: 'Managing accurate documentation, employee records, compliance, and deadline-driven reporting.',
-    },
-    {
-      icon: <HeartHandshake size={24} style={{ color: '#10b981' }} />,
-      title: 'Stakeholder & Community Relations',
-      desc: 'Building relationships across multicultural campus organizations, foundations, and corporate partners.',
-    },
-    {
-      icon: <ShieldCheck size={24} style={{ color: '#ec4899' }} />,
-      title: 'Financial & Program Control',
-      desc: 'Managing organization budgets ($1k–$1.5k), tracking expenses, preventing overruns, and publishing impact reports.',
-    },
+    { name: 'Arabic', status: 'Native Speaker', desc: 'Mother tongue; articulate verbal eloquence & formal business correspondence.', code: 'AR', fluency: '100%' },
+    { name: 'English', status: 'Fluent / Full Professional', desc: 'Primary language of academic research, econometrics defense, and public workshops.', code: 'EN', fluency: '95%' },
   ];
 
   return (
-    <section id="about" className="section-padding" style={{ position: 'relative' }}>
+    <section id="about" className="section-padding" style={{ backgroundColor: 'var(--canvas-bg)' }}>
       <div className="container">
         {/* Section Title */}
-        <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto 60px auto' }}>
-          <span className="badge-gold" style={{ marginBottom: '12px' }}>Professional Profile</span>
-          <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.8rem)', fontWeight: '800', letterSpacing: '-0.02em' }}>
-            Bridging Talent Strategy with <span className="gradient-text">Operational Precision</span>
+        <div style={{ maxWidth: '780px', marginBottom: '52px' }}>
+          <div className="section-eyebrow">
+            <GraduationCap size={14} color="#c8a24a" />
+            <span>Academic Foundations & Linguistic Fluency</span>
+          </div>
+          <h2 className="section-title">
+            Education, Academic Rigor & <span className="serif-italic">Strategic Vision</span>
           </h2>
-          <p style={{ color: '#94a3b8', fontSize: '1.05rem', marginTop: '12px' }}>
-            A comprehensive look at my academic foundation, language abilities, and core HR pillars.
+          <p className="section-subtitle">
+            Grounded in rigorous macroeconomic theory, empirical econometrics, and cross-cultural communication to solve modern economic and organizational challenges.
           </p>
         </div>
 
-        {/* 2-Column Grid */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '32px' }}>
-          {/* Card 1: Academic & Coursework */}
-          <div className="glass-card" style={{ padding: '32px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px' }}>
-              <div style={{ background: 'rgba(245, 158, 11, 0.15)', color: '#f59e0b', padding: '12px', borderRadius: '12px' }}>
-                <BookOpen size={24} />
+        {/* 2-Column Grid: Education Card & Philosophy */}
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr',
+            gap: '32px',
+            marginBottom: '36px',
+          }}
+          className="about-grid"
+        >
+          {/* Card 1: Degree & Institution */}
+          <div className="editorial-card" style={{ padding: '32px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '20px' }}>
+              <div
+                style={{
+                  backgroundColor: '#0b1f3a',
+                  color: '#c8a24a',
+                  width: '44px',
+                  height: '44px',
+                  borderRadius: '10px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  flexShrink: 0,
+                  border: '1px solid rgba(200, 162, 74, 0.4)',
+                }}
+              >
+                <GraduationCap size={24} />
               </div>
               <div>
-                <h3 style={{ fontSize: '1.25rem', fontWeight: '700', color: '#fff' }}>Education & Academic Rigor</h3>
-                <p style={{ color: '#94a3b8', fontSize: '0.85rem' }}>Albukhary International University (2023 - 2026)</p>
+                <span className="badge-tag-warm" style={{ fontSize: '11px', marginBottom: '4px' }}>
+                  Conferred Degree
+                </span>
+                <h3 style={{ fontSize: '1.35rem', fontWeight: '600', color: '#0b1f3a' }}>
+                  Bachelor of Economics (Hons.)
+                </h3>
+                <p style={{ fontSize: '13px', color: '#75777e' }}>
+                  Albukhary International University (AIU) • Graduated Apr 2026
+                </p>
               </div>
             </div>
 
-            <p style={{ color: '#cbd5e1', fontSize: '0.95rem', lineHeight: 1.6, marginBottom: '20px' }}>
-              Specialized in <strong>Bachelor of Business Administration (HRM-Hons)</strong>. Grounded in theoretical frameworks and practical applications of recruitment, talent retention, workplace safety, and performance evaluations.
+            <p style={{ fontSize: '14px', color: '#44474d', lineHeight: 1.65, marginBottom: '22px' }}>
+              Completed a comprehensive four-year curriculum centered on quantitative macroeconomic modeling, econometric analysis, and public policy evaluation. Awarded top institutional accolades for research presentation and social business innovation.
             </p>
 
-            <h4 style={{ color: '#f8fafc', fontSize: '0.92rem', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '12px' }}>
-              Key HRM Coursework:
-            </h4>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-              {coursework.map((course, idx) => (
-                <span
-                  key={idx}
-                  style={{
-                    background: 'rgba(255, 255, 255, 0.05)',
-                    border: '1px solid rgba(255, 255, 255, 0.1)',
-                    color: '#e2e8f0',
-                    fontSize: '0.82rem',
-                    padding: '6px 12px',
-                    borderRadius: '8px',
-                  }}
-                >
-                  {course}
-                </span>
-              ))}
+            {/* Academic Accolades Box */}
+            <div
+              style={{
+                backgroundColor: '#f7f3ea',
+                borderRadius: '12px',
+                padding: '16px 20px',
+                border: '1px solid rgba(200, 162, 74, 0.3)',
+              }}
+            >
+              <div
+                style={{
+                  fontSize: '11.5px',
+                  fontWeight: '700',
+                  color: '#785a00',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.06em',
+                  marginBottom: '10px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                }}
+              >
+                <Award size={14} /> Institutional Distinctions:
+              </div>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: '#0b1f3a' }}>
+                  <span style={{ color: '#c8a24a', fontWeight: '700' }}>🥇 Platinum Award:</span>
+                  <span>Best Research Paper, AIU Seminar Day (2025)</span>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: '#0b1f3a' }}>
+                  <span style={{ color: '#785a00', fontWeight: '700' }}>🥈 Gold Award:</span>
+                  <span>Social Business Group Project</span>
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Card 2: Multilingual Proficiency */}
-          <div className="glass-card" style={{ padding: '32px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px' }}>
-              <div style={{ background: 'rgba(59, 130, 246, 0.15)', color: '#60a5fa', padding: '12px', borderRadius: '12px' }}>
-                <Globe size={24} />
+          {/* Card 2: Linguistic Competence */}
+          <div className="editorial-card" style={{ padding: '32px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '20px' }}>
+              <div
+                style={{
+                  backgroundColor: 'rgba(42, 127, 131, 0.12)',
+                  color: '#2a7f83',
+                  width: '44px',
+                  height: '44px',
+                  borderRadius: '10px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  flexShrink: 0,
+                  border: '1px solid rgba(42, 127, 131, 0.3)',
+                }}
+              >
+                <Languages size={24} />
               </div>
               <div>
-                <h3 style={{ fontSize: '1.25rem', fontWeight: '700', color: '#fff' }}>Multilingual Capabilities</h3>
-                <p style={{ color: '#94a3b8', fontSize: '0.85rem' }}>Effective Cross-Cultural Communication</p>
+                <span className="badge-teal" style={{ fontSize: '11px', marginBottom: '4px' }}>
+                  International Engagement
+                </span>
+                <h3 style={{ fontSize: '1.35rem', fontWeight: '600', color: '#0b1f3a' }}>
+                  Linguistic Versatility
+                </h3>
+                <p style={{ fontSize: '13px', color: '#75777e' }}>
+                  Multi-Stakeholder Cross-Cultural Communication
+                </p>
               </div>
             </div>
 
-            <p style={{ color: '#cbd5e1', fontSize: '0.95rem', lineHeight: 1.6, marginBottom: '24px' }}>
-              Fluent across multiple languages, enabling smooth candidate screening, international employee onboarding, and diverse community engagement.
+            <p style={{ fontSize: '14px', color: '#44474d', lineHeight: 1.65, marginBottom: '22px' }}>
+              Equipped to engage executive boards, international academic faculties, and grassroots community beneficiaries seamlessly across Arabic and English.
             </p>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-              {languages.map((lang, idx) => (
-                <div key={idx}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '6px', fontSize: '0.9rem' }}>
-                    <span style={{ fontWeight: '600', color: '#fff' }}>{lang.flag} {lang.name}</span>
-                    <span style={{ color: '#94a3b8' }}>{lang.level}</span>
+            {/* Languages breakdown */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+              {languages.map((l) => (
+                <div
+                  key={l.name}
+                  style={{
+                    backgroundColor: '#ffffff',
+                    border: '1px solid rgba(11, 31, 58, 0.08)',
+                    borderRadius: '10px',
+                    padding: '14px 18px',
+                  }}
+                >
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <span style={{ fontWeight: '700', color: '#0b1f3a', fontSize: '14px' }}>{l.name}</span>
+                      <span className="badge-tag-warm" style={{ fontSize: '11px', padding: '1px 6px' }}>{l.status}</span>
+                    </div>
+                    <span className="tnum" style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', fontWeight: '600', color: '#2a7f83' }}>
+                      {l.fluency}
+                    </span>
                   </div>
-                  <div style={{ width: '100%', height: '8px', background: 'rgba(255, 255, 255, 0.08)', borderRadius: '9999px', overflow: 'hidden' }}>
-                    <div
-                      style={{
-                        width: `${lang.percent}%`,
-                        height: '100%',
-                        background: 'linear-gradient(90deg, #3b82f6 0%, #f59e0b 100%)',
-                        borderRadius: '9999px',
-                      }}
-                    />
-                  </div>
+                  <p style={{ fontSize: '12.5px', color: '#555', lineHeight: 1.5 }}>
+                    {l.desc}
+                  </p>
                 </div>
               ))}
             </div>
           </div>
         </div>
 
-        {/* 4 Pillars Grid */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '20px', marginTop: '40px' }}>
-          {corePillars.map((p, idx) => (
-            <div key={idx} className="glass-card" style={{ padding: '24px' }}>
-              <div style={{ marginBottom: '14px' }}>{p.icon}</div>
-              <h4 style={{ color: '#fff', fontSize: '1.05rem', fontWeight: '700', marginBottom: '8px' }}>{p.title}</h4>
-              <p style={{ color: '#94a3b8', fontSize: '0.88rem', lineHeight: 1.5 }}>{p.desc}</p>
-            </div>
-          ))}
+        {/* Relevant Academic Coursework Matrix */}
+        <div className="editorial-card" style={{ padding: '32px' }}>
+          <h3 style={{ fontSize: '1.35rem', fontWeight: '600', color: '#0b1f3a', marginBottom: '6px' }}>
+            Relevant Undergraduate Coursework & Competencies
+          </h3>
+          <p style={{ fontSize: '13.5px', color: '#75777e', marginBottom: '22px' }}>
+            Core curriculum modules completed at Albukhary International University:
+          </p>
+
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+              gap: '16px',
+            }}
+          >
+            {coursework.map((c) => (
+              <div
+                key={c.title}
+                style={{
+                  backgroundColor: '#fdf9f0',
+                  border: '1px solid rgba(11, 31, 58, 0.08)',
+                  borderRadius: '10px',
+                  padding: '16px',
+                }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
+                  <BookOpen size={15} color="#c8a24a" />
+                  <h4 style={{ fontSize: '14px', fontWeight: '600', color: '#0b1f3a' }}>{c.title}</h4>
+                </div>
+                <p style={{ fontSize: '12.5px', color: '#44474d', lineHeight: 1.5 }}>
+                  {c.desc}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 900px) {
+          .about-grid {
+            grid-template-columns: 1fr !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }

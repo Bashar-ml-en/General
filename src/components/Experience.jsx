@@ -1,236 +1,215 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, MapPin, CheckCircle } from 'lucide-react';
-
-import tunRazakImg from '../../o5.jpeg';
-import maybankImg from '../../o3.jpeg';
-import redCrescentImg from '../../o2.jpeg';
-import sudaneseCertImg from '../../o7.jpeg';
-import nagashiCertImg from '../../o8.jpeg';
+import {
+  Briefcase,
+  Calendar,
+  Building,
+  CheckCircle2,
+  Users2,
+  Compass,
+  ArrowRight,
+  Sparkles,
+} from 'lucide-react';
 
 export default function Experience() {
-  const [activeTab, setActiveTab] = useState('all');
-
   const experiences = [
     {
-      id: 'tun-razak',
-      role: 'Campaign Support Intern & Program Facilitator',
-      organization: 'Tun Razak Foundation',
-      location: 'Malaysia',
-      period: 'Nov 2025 – April 2026',
-      category: 'internship',
-      image: tunRazakImg,
-      imageCaption: 'Omer managing visual documentation and event photography with professional DSLR setup.',
-      badge: 'HR & Program Facilitation',
+      role: 'Media & Outreach Coordinator',
+      company: 'Nagashi Relief and Development Berhad (NGO)',
+      period: 'Mar 2025 – Apr 2026',
+      badge: 'NGO & Community Development',
+      badgeColor: '#0b1f3a',
+      location: 'Kuala Lumpur / Kedah, Malaysia',
+      desc: 'Directed comprehensive media strategy and community development initiatives, serving as primary liaison between institutional leadership, prospective scholars, and vulnerable demographic groups.',
       bullets: [
-        'Served as Program Facilitator for a intensive two-week leadership program for 70+ students, ensuring smooth daily operations, workshop facilitation, and student engagement.',
-        'Conducted structured qualitative interviews with 17 key program stakeholders: 11 student participants, 3 alumni, and 3 parents of students.',
-        'Converted student participant interviews into 11 professionally written success stories for the Foundation’s official website, supporting organizational branding and impact reporting.',
-        'Drafted website content and liaised with external development agencies throughout the website creation process.',
-        'Managed event photography and visual documentation for Foundation programs to support internal and external communications.',
+        'Managed Nagashi Media’s digital outreach and content strategy, growing organizational visibility across social platforms through data-driven storytelling.',
+        'Advised prospective international and local students on the Albukhary International University (AIU) full scholarship admissions process and academic transitions.',
+        'Facilitated English-language instruction and capacity-building workshops for refugees, directly enhancing community engagement and educational upward mobility.',
+        'Organized multimedia coverage and post-event analysis to quantify audience engagement across campaigns.',
       ],
-      metrics: '70+ Students Facilitated | 17 Stakeholder Interviews (11 Students, 3 Alumni, 3 Parents) | 11 Published Success Stories',
+      skills: ['Digital Content Strategy', 'Scholarship Advising', 'Refugee Workshop Facilitation', 'Public Communications'],
     },
     {
-      id: 'maybank',
-      role: 'Campus Ambassador 2025',
-      organization: 'Maybank',
-      location: 'Malaysia',
-      period: 'Mar 2025 – Dec 2025',
-      category: 'corporate',
-      image: maybankImg,
-      imageCaption: 'Omer representing Maybank at university campus ambassador initiatives.',
-      badge: 'Corporate Ambassadorship',
+      role: 'Digital Marketing Intern',
+      company: 'TAKO',
+      period: 'Nov 2025 – Feb 2026',
+      badge: 'Private Sector & SEO',
+      badgeColor: '#2a7f83',
+      location: 'Kuala Lumpur, Malaysia',
+      desc: 'Executed performance-focused content marketing and on-page search engine optimization within a fast-paced agency setting, elevating organic search rankings and audience retention.',
       bullets: [
-        'Represented Maybank at university events to promote brand awareness, financial literacy, and career pathway opportunities.',
-        'Supported campaign execution, interactive student workshops, and outreach programs to boost campus engagement.',
-        'Acted as a liaison between student bodies and Maybank corporate representatives for campus activations.',
+        'Wrote and managed SEO-optimized blog content on WordPress, improving on-site organic search engagement, keyword densities, and readability scores.',
+        'Supported end-to-end digital marketing campaigns, translating high-level marketing briefs from initial content planning to final multi-channel publication.',
+        'Analyzed web traffic indicators and user navigation heatmaps to refine content structure and user conversion points.',
       ],
-      metrics: 'Campus Outreach | Financial Literacy Workshops | Brand Activation',
+      skills: ['WordPress CMS', 'On-Page SEO', 'Content Marketing', 'Copywriting & Readability'],
     },
     {
-      id: 'red-crescent',
-      role: 'Official Member - Volunteer',
-      organization: 'Red Crescent Malaysia',
+      role: 'Scholarship & Outreach Volunteer',
+      company: 'Ijma Foundation for Humanitarian Action',
+      period: 'Jul 2025 – Jan 2026',
+      badge: 'Humanitarian Outreach',
+      badgeColor: '#785a00',
       location: 'Malaysia',
-      period: 'Mar 2024 – Dec 2025',
-      category: 'volunteer',
-      image: redCrescentImg,
-      imageCaption: 'Omer actively serving food and essential aid during flood relief operations.',
-      badge: 'Humanitarian & Crisis Support',
+      desc: 'Provided dedicated mentorship and structured guidance for aspiring undergraduate candidates pursuing transformative tertiary education scholarships.',
       bullets: [
-        'Assisted in emergency flood relief operations by coordinating ground response activities and aid distribution.',
-        'Distributed food, essential supplies, and humanitarian assistance directly to 200+ flood-affected families.',
-        'Supported elderly beneficiaries during relief operations, ensuring safety, comfort, and access to medical/food assistance.',
-        'Collaborated with emergency response volunteers in a fast-paced, high-pressure community environment.',
+        'Guided prospective applicants through the competitive AIU scholarship application lifecycle, from initial inquiry through dossier preparation and final submission.',
+        'Supported digital outreach campaigns to broaden awareness of higher education scholarship opportunities among underrepresented student populations.',
+        'Collaborated with admissions committees to answer procedural queries and ensure documentation integrity.',
       ],
-      metrics: '200+ Families Aided | Emergency Flood Relief | Elderly Beneficiary Support',
-    },
-    {
-      id: 'nagashi-club',
-      role: 'Deputy Treasurer',
-      organization: 'Nagashi Club',
-      location: 'Malaysia',
-      period: 'Feb 2023 – Oct 2023',
-      category: 'finance',
-      image: nagashiCertImg,
-      imageCaption: 'Official Certificate of Appreciation for Deputy Head of Treasure Affairs (Nagashi Club).',
-      badge: 'Organizational Finance & Admin',
-      bullets: [
-        'Managed an annual budget of $1,000–$1,500 for a 150+ member student organization, tracking expenses and fund allocation across club activities.',
-        'Maintained accurate financial records and prepared periodic reports to ensure transparency and accountability to club leadership.',
-        'Partnered with committee heads to allocate funds efficiently across events, minimizing budget overruns.',
-      ],
-      metrics: '$1.5k Budget | 150+ Members | Financial Compliance',
-    },
-    {
-      id: 'sudanese-community',
-      role: 'Head of Finance / Treasurer',
-      organization: 'Sudanese Students Community',
-      location: 'Malaysia',
-      period: 'Mar 2023 – Oct 2023',
-      category: 'finance',
-      image: sudaneseCertImg,
-      imageCaption: 'Certificate of Appreciation awarded for outstanding service as Treasurer of Sudanese Students Community.',
-      badge: 'Community Budget Direction',
-      bullets: [
-        'Oversaw an annual budget of $1,000–$1,500 for a 100+ member community, managing all income, expenses, and fund distribution.',
-        'Directed budget planning for cultural and academic events, balancing spend across multiple initiatives throughout the year.',
-        'Prepared transparent financial statements and reports, ensuring compliant financial management.',
-      ],
-      metrics: '100+ Community Members | Event Budget Allocation | Financial Governance',
+      skills: ['Mentorship', 'Application Review', 'Humanitarian Outreach', 'Stakeholder Engagement'],
     },
   ];
 
-  const filteredExp = activeTab === 'all'
-    ? experiences
-    : experiences.filter((e) => e.category === activeTab);
-
   return (
-    <section id="experience" className="section-padding" style={{ position: 'relative' }}>
+    <section
+      id="experience"
+      className="section-padding"
+      style={{
+        backgroundColor: '#ffffff',
+        borderTop: '1px solid var(--border-hairline)',
+        borderBottom: '1px solid var(--border-hairline)',
+      }}
+    >
       <div className="container">
-        {/* Title */}
-        <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto 40px auto' }}>
-          <span className="badge-blue" style={{ marginBottom: '12px' }}>Career & Leadership Journey</span>
-          <h2 style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)', fontWeight: '800', letterSpacing: '-0.02em' }}>
-            Professional Experience & <span className="gradient-text">Verified Impact</span>
+        {/* Section Header */}
+        <div style={{ maxWidth: '780px', marginBottom: '52px' }}>
+          <div className="section-eyebrow">
+            <Briefcase size={14} color="#c8a24a" />
+            <span>Professional Career History</span>
+          </div>
+          <h2 className="section-title">
+            Professional Experience & <span className="serif-italic">Operational Track Record</span>
           </h2>
-          <p style={{ color: '#94a3b8', fontSize: '1rem', marginTop: '10px' }}>
-            A track record of program facilitation, corporate representation, and verified finance leadership.
+          <p className="section-subtitle">
+            Demonstrated versatility across non-profit humanitarian coordination, digital marketing strategy, and international scholarship advocacy.
           </p>
         </div>
 
-        {/* Filter Buttons */}
-        <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '10px', marginBottom: '40px' }}>
-          {[
-            { id: 'all', label: 'All Roles' },
-            { id: 'internship', label: 'Internship & HR' },
-            { id: 'corporate', label: 'Corporate Ambassadorship' },
-            { id: 'volunteer', label: 'Humanitarian Volunteer' },
-            { id: 'finance', label: 'Finance & Administration' },
-          ].map((btn) => (
-            <button
-              key={btn.id}
-              onClick={() => setActiveTab(btn.id)}
-              style={{
-                background: activeTab === btn.id ? 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)' : 'rgba(255, 255, 255, 0.05)',
-                color: activeTab === btn.id ? '#000' : '#cbd5e1',
-                border: '1px solid',
-                borderColor: activeTab === btn.id ? '#f59e0b' : 'rgba(255, 255, 255, 0.1)',
-                fontWeight: '700',
-                padding: '8px 20px',
-                borderRadius: '9999px',
-                cursor: 'pointer',
-                fontSize: '0.88rem',
-                transition: 'all 0.2s ease',
-              }}
-            >
-              {btn.label}
-            </button>
-          ))}
-        </div>
-
-        {/* Timeline Stack */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
-          {filteredExp.map((exp, idx) => (
+        {/* Policy Timeline Container */}
+        <div className="policy-timeline" style={{ maxWidth: '980px', margin: '0 auto' }}>
+          {experiences.map((exp, idx) => (
             <motion.div
-              key={exp.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              key={exp.role + exp.company}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="glass-card"
-              style={{ padding: '28px' }}
+              className="policy-node"
             >
+              {/* Gold Node Bullet */}
+              <div className="policy-dot" />
+
+              {/* Experience Card */}
               <div
+                className="editorial-card"
                 style={{
-                  display: 'grid',
-                  gridTemplateColumns: exp.image ? '1fr 340px' : '1fr',
-                  gap: '28px',
-                  alignItems: 'start',
+                  padding: '28px 32px',
+                  backgroundColor: '#fdf9f0',
+                  border: '1px solid rgba(11, 31, 58, 0.1)',
                 }}
-                className="exp-card-grid"
               >
-                {/* Text Content */}
-                <div>
-                  <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
-                    <span className="badge-gold">{exp.badge}</span>
-                    <span style={{ color: '#94a3b8', fontSize: '0.82rem', display: 'flex', alignItems: 'center', gap: '4px' }}>
-                      <Calendar size={14} /> {exp.period}
+                {/* Header Row */}
+                <div
+                  style={{
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    gap: '12px',
+                    marginBottom: '12px',
+                  }}
+                >
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
+                    <span
+                      style={{
+                        backgroundColor: exp.badgeColor,
+                        color: '#fdf9f0',
+                        fontSize: '11px',
+                        fontWeight: '600',
+                        padding: '3px 9px',
+                        borderRadius: '4px',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.04em',
+                      }}
+                    >
+                      {exp.badge}
                     </span>
-                    <span style={{ color: '#94a3b8', fontSize: '0.82rem', display: 'flex', alignItems: 'center', gap: '4px' }}>
-                      <MapPin size={14} /> {exp.location}
-                    </span>
+                    <span style={{ fontSize: '12.5px', color: '#75777e' }}>{exp.location}</span>
                   </div>
 
-                  <h3 style={{ fontSize: '1.35rem', fontWeight: '800', color: '#fff', marginBottom: '4px' }}>
-                    {exp.role}
-                  </h3>
-                  <div style={{ color: '#f59e0b', fontSize: '1rem', fontWeight: '600', marginBottom: '14px' }}>
-                    {exp.organization}
-                  </div>
-
-                  {/* Bullet points */}
-                  <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '18px' }}>
-                    {exp.bullets.map((bullet, i) => (
-                      <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', color: '#cbd5e1', fontSize: '0.92rem', lineHeight: 1.55 }}>
-                        <CheckCircle size={16} style={{ color: '#10b981', marginTop: '3px', flexShrink: 0 }} />
-                        <span>{bullet}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  {/* Metrics Footer */}
                   <div
+                    className="tnum"
                     style={{
-                      background: 'rgba(255, 255, 255, 0.03)',
-                      border: '1px dashed rgba(255, 255, 255, 0.12)',
-                      borderRadius: '12px',
-                      padding: '10px 14px',
-                      color: '#f59e0b',
-                      fontSize: '0.84rem',
-                      fontWeight: '700',
+                      fontFamily: 'var(--font-mono)',
+                      fontSize: '12.5px',
+                      fontWeight: '600',
+                      color: '#0b1f3a',
+                      backgroundColor: 'rgba(11, 31, 58, 0.05)',
+                      padding: '4px 10px',
+                      borderRadius: '4px',
                     }}
                   >
-                    ⚡ Impact Highlight: {exp.metrics}
+                    <Calendar size={12} style={{ display: 'inline', marginRight: '5px' }} />
+                    {exp.period}
                   </div>
                 </div>
 
-                {/* Mapped Image Column (if present) */}
-                {exp.image && (
-                  <div style={{ position: 'relative' }}>
-                    <div style={{ borderRadius: '14px', overflow: 'hidden', border: '1px solid rgba(255, 255, 255, 0.15)', height: '230px' }}>
-                      <img
-                        src={exp.image}
-                        alt={exp.organization}
-                        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                {/* Job Title & Company */}
+                <h3 style={{ fontSize: '1.4rem', fontWeight: '600', color: '#0b1f3a', marginBottom: '4px' }}>
+                  {exp.role}
+                </h3>
+                <div
+                  style={{
+                    fontFamily: 'var(--font-serif)',
+                    fontSize: '15px',
+                    color: '#785a00',
+                    fontStyle: 'italic',
+                    marginBottom: '14px',
+                  }}
+                >
+                  {exp.company}
+                </div>
+
+                <p style={{ fontSize: '14px', color: '#44474d', lineHeight: 1.6, marginBottom: '18px' }}>
+                  {exp.desc}
+                </p>
+
+                {/* Bullet Points */}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '20px' }}>
+                  {exp.bullets.map((b, bIdx) => (
+                    <div
+                      key={bIdx}
+                      style={{
+                        display: 'flex',
+                        alignItems: 'flex-start',
+                        gap: '10px',
+                        fontSize: '13.5px',
+                        color: '#2e3230',
+                      }}
+                    >
+                      <CheckCircle2
+                        size={15}
+                        color="#2a7f83"
+                        style={{ flexShrink: 0, marginTop: '3px' }}
                       />
+                      <span>{b}</span>
                     </div>
-                    <p style={{ color: '#94a3b8', fontSize: '0.78rem', marginTop: '6px', textAlign: 'center', fontStyle: 'italic' }}>
-                      {exp.imageCaption}
-                    </p>
-                  </div>
-                )}
+                  ))}
+                </div>
+
+                {/* Skills tags */}
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+                  {exp.skills.map((s) => (
+                    <span
+                      key={s}
+                      className="badge-taxonomy"
+                      style={{ backgroundColor: '#ffffff', fontSize: '11px' }}
+                    >
+                      {s}
+                    </span>
+                  ))}
+                </div>
               </div>
             </motion.div>
           ))}
