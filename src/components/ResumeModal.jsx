@@ -123,7 +123,7 @@ References available upon request.`;
             </div>
             <div>
               <h3 style={{ fontSize: '15px', fontWeight: '600', color: '#ffffff' }}>
-                Curriculum Vitae • Alhassan Ibrahim Ali Hassan
+                Official Resume • Alhassan Ibrahim Ali Hassan
               </h3>
               <p style={{ fontSize: '11px', color: '#d5dcd2' }}>
                 Bachelor of Economics (Hons.) • Applied Econometrics & Data Analysis
@@ -136,10 +136,10 @@ References available upon request.`;
               onClick={handleCopy}
               className="btn-ghost-dark"
               style={{ padding: '6px 12px', fontSize: '12px' }}
-              title="Copy plain text CV to clipboard"
+              title="Copy plain text resume to clipboard"
             >
               {copied ? <Check size={14} color="#f8e0a8" /> : <Copy size={14} />}
-              <span>{copied ? 'Copied' : 'Copy Text'}</span>
+              <span>{copied ? 'Copied' : 'Copy Resume'}</span>
             </button>
 
             <button
@@ -149,7 +149,7 @@ References available upon request.`;
               title="Print or Save as PDF"
             >
               <Printer size={14} />
-              <span>Print / PDF</span>
+              <span>Print / Save PDF</span>
             </button>
 
             <button
@@ -166,7 +166,7 @@ References available upon request.`;
                 alignItems: 'center',
                 justifyContent: 'center',
               }}
-              aria-label="Close CV Modal"
+              aria-label="Close Resume Modal"
             >
               <X size={18} />
             </button>

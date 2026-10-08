@@ -111,10 +111,10 @@ export default function Footer({ onOpenResume }) {
                 marginBottom: '14px',
               }}
             >
-              Curriculum Vitae
+              Resume & Credentials
             </h4>
             <p style={{ fontSize: '12.5px', color: '#d5dcd2', lineHeight: 1.55, marginBottom: '14px' }}>
-              Access the complete academic and professional CV with verified citations.
+              Access the complete academic and professional resume with verified project citations.
             </p>
             <button
               onClick={onOpenResume}
@@ -122,7 +122,7 @@ export default function Footer({ onOpenResume }) {
               style={{ padding: '8px 16px', fontSize: '12px', width: '100%' }}
             >
               <FileText size={14} />
-              <span>Open Official CV</span>
+              <span>View Official Resume</span>
             </button>
             <div style={{ marginTop: '14px' }}>
               <a

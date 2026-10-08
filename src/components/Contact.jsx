@@ -262,9 +262,43 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label style={{ display: 'block', fontSize: '12.5px', fontWeight: '600', color: '#264430', marginBottom: '5px' }}>
+                  <label style={{ display: 'block', fontSize: '12.5px', fontWeight: '600', color: '#264430', marginBottom: '8px' }}>
                     Subject / Area of Interest
                   </label>
+
+                  {/* Quick Clickable Topic Chips */}
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '10px' }}>
+                    {[
+                      { key: 'Applied Econometrics & Research', label: 'ARDL & Econometrics' },
+                      { key: 'Economics Graduate Role / Hiring', label: 'Graduate Role' },
+                      { key: 'SME Digital Skills & Training', label: 'SME Digitalization' },
+                      { key: 'NGO & Community Outreach', label: 'NGO Outreach' },
+                      { key: 'Other Inquiries', label: 'Other Inquiries' },
+                    ].map((t) => {
+                      const isSelected = formData.topic === t.key;
+                      return (
+                        <button
+                          key={t.key}
+                          type="button"
+                          onClick={() => setFormData({ ...formData, topic: t.key })}
+                          style={{
+                            background: isSelected ? '#264430' : '#ffffff',
+                            color: isSelected ? '#faf6f0' : '#264430',
+                            border: isSelected ? '1px solid #264430' : '1px solid rgba(74, 124, 89, 0.25)',
+                            borderRadius: '6px',
+                            padding: '4px 10px',
+                            fontSize: '11.5px',
+                            fontWeight: isSelected ? '700' : '500',
+                            cursor: 'pointer',
+                            transition: 'all 0.15s ease',
+                          }}
+                        >
+                          {t.label}
+                        </button>
+                      );
+                    })}
+                  </div>
+
                   <select
                     className="input-field"
                     value={formData.topic}

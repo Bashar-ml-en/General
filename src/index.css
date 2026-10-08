@@ -104,12 +104,17 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 86px;
   font-family: var(--font-sans);
   background-color: var(--canvas-bg);
   color: var(--text-primary);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+section[id], div[id] {
+  scroll-margin-top: 86px;
 }
 
 body {

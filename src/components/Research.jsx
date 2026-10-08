@@ -226,9 +226,67 @@ export default function Research() {
               </span>
             </div>
 
-            <p style={{ fontSize: '12.5px', color: '#4a4e4a', marginBottom: '22px' }}>
-              Adjust the structural policy sliders below to simulate the predicted impact of FDI inflows, education expansion, and economic growth on Thailand's youth unemployment trajectory:
+            <p style={{ fontSize: '12.5px', color: '#4a4e4a', marginBottom: '16px' }}>
+              Adjust the structural policy sliders below or tap a benchmark scenario to simulate the predicted impact of FDI inflows, education expansion, and economic growth on Thailand's youth unemployment trajectory:
             </p>
+
+            {/* Quick Macro Scenarios */}
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', alignItems: 'center', marginBottom: '22px' }}>
+              <span style={{ fontSize: '11px', fontWeight: '700', color: '#705c30', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                Quick Scenarios:
+              </span>
+              <button
+                type="button"
+                onClick={() => { setFdiInflow(3.8); setGdpGrowth(3.5); setEducationEnrollment(82); }}
+                style={{
+                  background: fdiInflow === 3.8 && gdpGrowth === 3.5 && educationEnrollment === 82 ? '#264430' : '#ffffff',
+                  color: fdiInflow === 3.8 && gdpGrowth === 3.5 && educationEnrollment === 82 ? '#ffffff' : '#264430',
+                  border: '1px solid rgba(74, 124, 89, 0.25)',
+                  borderRadius: '6px',
+                  padding: '4px 10px',
+                  fontSize: '11.5px',
+                  fontWeight: '600',
+                  cursor: 'pointer',
+                  transition: 'all 0.15s ease',
+                }}
+              >
+                Baseline 2024
+              </button>
+              <button
+                type="button"
+                onClick={() => { setFdiInflow(6.5); setGdpGrowth(5.0); setEducationEnrollment(90); }}
+                style={{
+                  background: fdiInflow === 6.5 && gdpGrowth === 5.0 && educationEnrollment === 90 ? '#264430' : '#ffffff',
+                  color: fdiInflow === 6.5 && gdpGrowth === 5.0 && educationEnrollment === 90 ? '#ffffff' : '#264430',
+                  border: '1px solid rgba(74, 124, 89, 0.25)',
+                  borderRadius: '6px',
+                  padding: '4px 10px',
+                  fontSize: '11.5px',
+                  fontWeight: '600',
+                  cursor: 'pointer',
+                  transition: 'all 0.15s ease',
+                }}
+              >
+                High Capital Inflow (+6.5%)
+              </button>
+              <button
+                type="button"
+                onClick={() => { setFdiInflow(1.2); setGdpGrowth(1.0); setEducationEnrollment(72); }}
+                style={{
+                  background: fdiInflow === 1.2 && gdpGrowth === 1.0 && educationEnrollment === 72 ? '#264430' : '#ffffff',
+                  color: fdiInflow === 1.2 && gdpGrowth === 1.0 && educationEnrollment === 72 ? '#ffffff' : '#264430',
+                  border: '1px solid rgba(74, 124, 89, 0.25)',
+                  borderRadius: '6px',
+                  padding: '4px 10px',
+                  fontSize: '11.5px',
+                  fontWeight: '600',
+                  cursor: 'pointer',
+                  transition: 'all 0.15s ease',
+                }}
+              >
+                External Shock (Stagnation)
+              </button>
+            </div>
 
             {/* Slider 1: FDI Inflow */}
             <div style={{ marginBottom: '18px' }}>

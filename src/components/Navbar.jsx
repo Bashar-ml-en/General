@@ -4,24 +4,50 @@ import { Menu, X, FileText, ChevronRight } from 'lucide-react';
 export default function Navbar({ onOpenResume }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('hero');
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
+
+      // ScrollSpy: detect which section is currently active
+      const sectionIds = ['contact', 'skills', 'activities', 'about', 'experience', 'projects', 'research', 'hero'];
+      const scrollPos = window.scrollY + 140;
+
+      for (const id of sectionIds) {
+        const el = document.getElementById(id);
+        if (el && el.offsetTop <= scrollPos) {
+          setActiveSection(id);
+          break;
+        }
+      }
     };
-    window.addEventListener('scroll', handleScroll);
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = [
+  // Primary curated desktop links
+  const desktopNavLinks = [
+    { label: 'Overview', href: '#hero', id: 'hero' },
+    { label: 'Research', href: '#research', id: 'research' },
+    { label: 'Projects', href: '#projects', id: 'projects' },
+    { label: 'Experience', href: '#experience', id: 'experience' },
+    { label: 'Academics', href: '#about', id: 'about' },
+    { label: 'Contact', href: '#contact', id: 'contact' },
+  ];
+
+  // Comprehensive drawer links for mobile
+  const allNavLinks = [
     { label: 'Overview', href: '#hero' },
-    { label: 'Research & ARDL', href: '#research' },
-    { label: 'Key Projects', href: '#projects' },
-    { label: 'Experience', href: '#experience' },
-    { label: 'Profile & Academics', href: '#about' },
-    { label: 'Exhibitions', href: '#activities' },
-    { label: 'Skills', href: '#skills' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Research & ARDL Thesis', href: '#research' },
+    { label: 'Key Projects & SME Training', href: '#projects' },
+    { label: 'Professional Experience', href: '#experience' },
+    { label: 'Academics & Coursework', href: '#about' },
+    { label: 'Exhibitions & Trade Fairs', href: '#activities' },
+    { label: 'Skills & Toolkit', href: '#skills' },
+    { label: 'Contact Alhassan', href: '#contact' },
   ];
 
   return (
@@ -32,14 +58,24 @@ export default function Navbar({ onOpenResume }) {
         left: 0,
         right: 0,
         zIndex: 900,
-        backgroundColor: isScrolled ? 'rgba(250, 246, 240, 0.95)' : 'rgba(250, 246, 240, 0.88)',
-        backdropFilter: 'blur(16px)',
-        WebkitBackdropFilter: 'blur(16px)',
-        borderBottom: isScrolled ? '1px solid rgba(74, 124, 89, 0.14)' : '1px solid rgba(74, 124, 89, 0.07)',
+        backgroundColor: isScrolled ? 'rgba(250, 246, 240, 0.96)' : 'rgba(250, 246, 240, 0.9)',
+        backdropFilter: 'blur(20px)',
+        WebkitBackdropFilter: 'blur(20px)',
+        borderBottom: isScrolled ? '1px solid rgba(74, 124, 89, 0.16)' : '1px solid rgba(74, 124, 89, 0.08)',
+        boxShadow: isScrolled ? '0 4px 20px rgba(38, 68, 48, 0.05)' : 'none',
         transition: 'all 0.25s ease',
       }}
     >
-      <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '72px' }}>
+      <div
+        className="container"
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          height: '72px',
+          gap: '16px',
+        }}
+      >
         {/* Brand / Logo */}
         <a
           href="#hero"
@@ -49,64 +85,72 @@ export default function Navbar({ onOpenResume }) {
             gap: '12px',
             textDecoration: 'none',
             color: 'inherit',
+            flexShrink: 0,
           }}
         >
-          {/* Monogram Box */}
+          {/* Monogram Crest */}
           <div
             style={{
-              width: '38px',
-              height: '38px',
+              width: '40px',
+              height: '40px',
               backgroundColor: '#264430',
-              borderRadius: '8px',
+              borderRadius: '10px',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               color: '#faf6f0',
               fontFamily: 'var(--font-serif)',
               fontSize: '17px',
-              fontWeight: '600',
-              letterSpacing: '0.05em',
-              border: '1px solid rgba(196, 166, 106, 0.45)',
-              boxShadow: '0 2px 8px rgba(38, 68, 48, 0.18)',
+              fontWeight: '700',
+              letterSpacing: '0.04em',
+              border: '1.5px solid rgba(196, 166, 106, 0.55)',
+              boxShadow: '0 3px 10px rgba(38, 68, 48, 0.2)',
+              flexShrink: 0,
             }}
           >
             AI
           </div>
+
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <span
                 style={{
                   fontFamily: 'var(--font-serif)',
-                  fontSize: '17px',
-                  fontWeight: '600',
+                  fontSize: '17.5px',
+                  fontWeight: '700',
                   color: '#264430',
-                  letterSpacing: '-0.01em',
+                  letterSpacing: '-0.015em',
+                  whiteSpace: 'nowrap',
                 }}
               >
                 Alhassan Ibrahim
               </span>
               <span
                 style={{
-                  background: 'rgba(196, 166, 106, 0.18)',
+                  background: 'rgba(196, 166, 106, 0.2)',
                   color: '#705c30',
-                  fontSize: '10px',
+                  fontSize: '10.5px',
                   fontWeight: '700',
                   padding: '2px 7px',
-                  borderRadius: '4px',
+                  borderRadius: '5px',
                   textTransform: 'uppercase',
                   letterSpacing: '0.04em',
+                  whiteSpace: 'nowrap',
                 }}
               >
                 Econ '26
               </span>
             </div>
             <p
+              className="brand-subtitle"
               style={{
                 fontFamily: 'var(--font-sans)',
                 fontSize: '11px',
                 color: '#74796e',
-                letterSpacing: '0.02em',
+                letterSpacing: '0.03em',
                 textTransform: 'uppercase',
+                margin: 0,
+                whiteSpace: 'nowrap',
               }}
             >
               Applied Economics & Data Analysis
@@ -119,38 +163,65 @@ export default function Navbar({ onOpenResume }) {
           style={{
             display: 'none',
             alignItems: 'center',
-            gap: '22px',
+            gap: '6px',
+            backgroundColor: 'rgba(240, 236, 228, 0.65)',
+            padding: '4px 6px',
+            borderRadius: '12px',
+            border: '1px solid rgba(74, 124, 89, 0.12)',
           }}
           className="desktop-nav"
         >
-          {navLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              style={{
-                color: '#4a4e4a',
-                textDecoration: 'none',
-                fontSize: '13.5px',
-                fontWeight: '600',
-                transition: 'color 0.15s ease',
-              }}
-              onMouseEnter={(e) => (e.target.style.color = '#4a7c59')}
-              onMouseLeave={(e) => (e.target.style.color = '#4a4e4a')}
-            >
-              {link.label}
-            </a>
-          ))}
+          {desktopNavLinks.map((link) => {
+            const isActive = activeSection === link.id;
+            return (
+              <a
+                key={link.label}
+                href={link.href}
+                style={{
+                  color: isActive ? '#264430' : '#4a4e4a',
+                  backgroundColor: isActive ? '#ffffff' : 'transparent',
+                  boxShadow: isActive ? '0 1px 4px rgba(38, 68, 48, 0.08)' : 'none',
+                  textDecoration: 'none',
+                  fontSize: '13.5px',
+                  fontWeight: isActive ? '700' : '600',
+                  padding: '6px 14px',
+                  borderRadius: '8px',
+                  transition: 'all 0.18s cubic-bezier(0.4, 0, 0.2, 1)',
+                  whiteSpace: 'nowrap',
+                }}
+                onMouseEnter={(e) => {
+                  if (!isActive) {
+                    e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.6)';
+                    e.currentTarget.style.color = '#264430';
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (!isActive) {
+                    e.currentTarget.style.backgroundColor = 'transparent';
+                    e.currentTarget.style.color = '#4a4e4a';
+                  }
+                }}
+              >
+                {link.label}
+              </a>
+            );
+          })}
         </nav>
 
         {/* Right Actions */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexShrink: 0 }}>
           <button
             onClick={onOpenResume}
             className="btn-primary"
-            style={{ padding: '8px 16px', fontSize: '13px' }}
+            style={{
+              padding: '9px 18px',
+              fontSize: '13px',
+              borderRadius: '9px',
+              whiteSpace: 'nowrap',
+            }}
           >
             <FileText size={14} style={{ color: '#f8e0a8' }} />
-            <span>Curriculum Vitae</span>
+            <span>Resume</span>
           </button>
 
           {/* Mobile Menu Trigger */}
@@ -159,7 +230,7 @@ export default function Navbar({ onOpenResume }) {
             style={{
               background: 'transparent',
               border: '1px solid rgba(74, 124, 89, 0.25)',
-              borderRadius: '6px',
+              borderRadius: '8px',
               padding: '8px',
               color: '#264430',
               cursor: 'pointer',
@@ -180,14 +251,14 @@ export default function Navbar({ onOpenResume }) {
         <div
           style={{
             backgroundColor: '#faf6f0',
-            borderBottom: '1px solid rgba(74, 124, 89, 0.15)',
-            padding: '16px 24px 24px 24px',
-            boxShadow: '0 12px 30px rgba(38, 68, 48, 0.08)',
+            borderBottom: '1px solid rgba(74, 124, 89, 0.16)',
+            padding: '20px 24px 28px 24px',
+            boxShadow: '0 16px 36px rgba(38, 68, 48, 0.12)',
           }}
           className="mobile-drawer"
         >
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-            {navLinks.map((link) => (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+            {allNavLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
@@ -195,9 +266,9 @@ export default function Navbar({ onOpenResume }) {
                 style={{
                   color: '#2e3230',
                   textDecoration: 'none',
-                  fontSize: '15px',
-                  fontWeight: '500',
-                  padding: '8px 0',
+                  fontSize: '14.5px',
+                  fontWeight: '600',
+                  padding: '9px 4px',
                   borderBottom: '1px solid rgba(74, 124, 89, 0.08)',
                   display: 'flex',
                   alignItems: 'center',
@@ -208,17 +279,17 @@ export default function Navbar({ onOpenResume }) {
                 <ChevronRight size={16} color="#74796e" />
               </a>
             ))}
-            <div style={{ marginTop: '12px', display: 'flex', gap: '10px' }}>
+            <div style={{ marginTop: '16px' }}>
               <button
                 onClick={() => {
                   setMobileMenuOpen(false);
                   onOpenResume();
                 }}
                 className="btn-primary"
-                style={{ width: '100%', padding: '10px' }}
+                style={{ width: '100%', padding: '11px', borderRadius: '10px' }}
               >
                 <FileText size={15} style={{ color: '#f8e0a8' }} />
-                <span>View Full CV</span>
+                <span>View Official Resume</span>
               </button>
             </div>
           </div>
@@ -231,6 +302,9 @@ export default function Navbar({ onOpenResume }) {
           .desktop-nav { display: flex !important; }
           .mobile-menu-btn { display: none !important; }
           .mobile-drawer { display: none !important; }
+        }
+        @media (max-width: 1140px) {
+          .brand-subtitle { display: none !important; }
         }
       `}</style>
     </header>

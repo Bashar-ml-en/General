@@ -151,7 +151,7 @@ export default function Hero({ onOpenResume }) {
 
               <button onClick={onOpenResume} className="btn-secondary">
                 <FileText size={15} />
-                <span>View Full CV & Citations</span>
+                <span>View Official Resume</span>
               </button>
 
               <a href="#contact" className="btn-secondary" style={{ borderStyle: 'dashed' }}>
