@@ -56,14 +56,19 @@ Digital Training Program for SMEs | Final Year Community Project — Alor Setar 
 • Managed a RM5,000 university-funded project budget and collaborated with the Muda Agricultural Development Authority (MADA) on coordination and delivery.
 
 PROFESSIONAL ACTIVITIES & EXHIBITIONS
+Accredited Delegate & Participant | National Innovation and Commercialisation Expo 2026 (NICE 2026) — MOSTI & MRANTI | 2026
+• Attended Malaysia's premier technology commercialization expo convened by the Ministry of Science, Technology and Innovation (MOSTI) and MRANTI under "Mission to Market. Malaysia to the World."
+• Participated in venture capital and investment panels including "What Investors Really Look For" (Gobi Partners, Rakuten Capital Singapore, Bintang Capital Partners).
+• Networked with institutional investors, technology founders, and government innovation agencies to evaluate market readiness and commercialization pipelines.
+
 Sales & Brand Representative | Mashreq International for Books — Kuala Lumpur International Book Fair (KLIBF) 2026
 • Represented the company at KLIBF, promoting a diverse catalog of Arabic, Islamic, and educational publications.
 • Engaged visitors to introduce products, communicate promotions, and enhance brand awareness.
 
-Event Organizing Committee Member | UiTM–Umrah Plus International Travel Market Exhibition 2026
-• Coordinated booth allocations and vendor requirements for an international travel market exhibition.
-• Managed public relations and visitor inquiries, promoting Islamic tourism and "Umrah Plus" travel trends.
-• Supported digital promotion and on-site media coordination to maximize event turnout.
+Event Organizing Committee Member | UiTM–Umrah Plus International Travel Market Exhibition 2026 — InterContinental KL
+• Coordinated booth allocations, technical specs, and commercial floor logistics for 30+ international travel agencies.
+• Managed dignitary receiving lines and supported bilateral diplomatic round-tables between Malaysia and the Tourism Committee of the Republic of Uzbekistan (UZSAA).
+• Handled public relations and visitor inquiries, promoting Islamic tourism, Umrah Plus travel routes, and cultural exchange.
 
 EDUCATION & CERTIFICATIONS
 Bachelor of Economics (Hons.) | Albukhary International University | Graduated Apr 2026
@@ -352,6 +357,21 @@ References available upon request.`;
               Professional Activities & Exhibitions
             </h2>
 
+            {/* NICE 2026 */}
+            <div style={{ marginBottom: '14px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
+                <strong style={{ fontSize: '13.5px', color: '#264430' }}>
+                  Accredited Delegate & Participant | National Innovation and Commercialisation Expo (NICE 2026) — MOSTI & MRANTI
+                </strong>
+                <span style={{ fontSize: '12px', color: '#555' }}>2026</span>
+              </div>
+              <ul style={{ paddingLeft: '18px', marginTop: '4px', fontSize: '12.5px', color: '#333', lineHeight: 1.55 }}>
+                <li>Attended Malaysia's flagship commercialization showcase organized by MOSTI and MRANTI under "Mission to Market. Malaysia to the World."</li>
+                <li>Participated in keynote venture capital panels including "What Investors Really Look For" (Gobi Partners, Rakuten Capital, Bintang Capital).</li>
+                <li>Examined tech-transfer frameworks, intellectual property valuation, and startup scaling mechanisms.</li>
+              </ul>
+            </div>
+
             <div style={{ marginBottom: '12px' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
                 <strong style={{ fontSize: '13.5px', color: '#264430' }}>
@@ -368,14 +388,14 @@ References available upon request.`;
             <div>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
                 <strong style={{ fontSize: '13.5px', color: '#264430' }}>
-                  Event Organizing Committee Member | UiTM–Umrah Plus International Travel Market Exhibition
+                  Event Organizing Committee Member | UiTM–Umrah Plus International Travel Market Exhibition — InterContinental KL
                 </strong>
                 <span style={{ fontSize: '12px', color: '#555' }}>2026</span>
               </div>
               <ul style={{ paddingLeft: '18px', marginTop: '4px', fontSize: '12.5px', color: '#333', lineHeight: 1.55 }}>
-                <li>Coordinated booth allocations and vendor requirements for an international travel market exhibition.</li>
-                <li>Managed public relations and visitor inquiries, promoting Islamic tourism and "Umrah Plus" travel trends.</li>
-                <li>Supported digital promotion and on-site media coordination to maximize event turnout.</li>
+                <li>Coordinated booth allocations, technical specs, and commercial floor logistics for 30+ international travel agencies.</li>
+                <li>Managed dignitary receiving lines and supported bilateral diplomatic round-tables between Malaysia and the Tourism Committee of the Republic of Uzbekistan (UZSAA).</li>
+                <li>Handled public relations and visitor inquiries, promoting Islamic tourism, Umrah Plus travel routes, and cultural exchange.</li>
               </ul>
             </div>
           </div>

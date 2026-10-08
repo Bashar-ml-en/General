@@ -34,6 +34,7 @@ export default function Navbar({ onOpenResume }) {
     { label: 'Research', href: '#research', id: 'research' },
     { label: 'Projects', href: '#projects', id: 'projects' },
     { label: 'Experience', href: '#experience', id: 'experience' },
+    { label: 'Expos', href: '#activities', id: 'activities' },
     { label: 'Academics', href: '#about', id: 'about' },
     { label: 'Contact', href: '#contact', id: 'contact' },
   ];
@@ -44,8 +45,8 @@ export default function Navbar({ onOpenResume }) {
     { label: 'Research & ARDL Thesis', href: '#research' },
     { label: 'Key Projects & SME Training', href: '#projects' },
     { label: 'Professional Experience', href: '#experience' },
+    { label: 'Exhibitions & Diplomatic Expos', href: '#activities' },
     { label: 'Academics & Coursework', href: '#about' },
-    { label: 'Exhibitions & Trade Fairs', href: '#activities' },
     { label: 'Skills & Toolkit', href: '#skills' },
     { label: 'Contact Alhassan', href: '#contact' },
   ];

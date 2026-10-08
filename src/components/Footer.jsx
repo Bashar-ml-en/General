@@ -93,7 +93,7 @@ export default function Footer({ onOpenResume }) {
               <a href="#projects" style={{ color: '#d5dcd2', textDecoration: 'none' }}>Key Projects & MADA SME</a>
               <a href="#experience" style={{ color: '#d5dcd2', textDecoration: 'none' }}>Experience Timeline</a>
               <a href="#about" style={{ color: '#d5dcd2', textDecoration: 'none' }}>Academic Coursework</a>
-              <a href="#activities" style={{ color: '#d5dcd2', textDecoration: 'none' }}>KLIBF & Exhibitions</a>
+              <a href="#activities" style={{ color: '#d5dcd2', textDecoration: 'none' }}>Exhibitions & Diplomatic Expos</a>
               <a href="#skills" style={{ color: '#d5dcd2', textDecoration: 'none' }}>Skills & Toolkit</a>
             </div>
           </div>
