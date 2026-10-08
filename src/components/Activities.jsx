@@ -2,14 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import {
   Compass,
-  BookOpen,
-  Calendar,
-  Building2,
   CheckCircle,
   MapPin,
-  ExternalLink,
-  Users2,
-  Briefcase,
   Ticket,
 } from 'lucide-react';
 
@@ -51,21 +45,21 @@ export default function Activities() {
       title: 'KLIBF 2026 Representative',
       organization: 'Mashreq International for Books',
       desc: 'Accredited sales liaison managing Arabic and academic literature circulation across international academic delegations.',
-      color: '#0b1f3a',
+      color: '#264430',
     },
     {
       badge: 'Committee Appointment',
       title: 'UiTM Travel Exhibition Organizing Lead',
       organization: 'UiTM Consortium',
       desc: 'Appointed committee member overseeing commercial floor plans, international vendor setup, and public relations.',
-      color: '#785a00',
+      color: '#705c30',
     },
     {
       badge: 'Community Engagement',
       title: 'Refugee Capacity-Building Workshops',
       organization: 'Nagashi Relief & Development NGO',
       desc: 'Lead facilitator for community English-language modules and higher education scholarship pathways.',
-      color: '#2a7f83',
+      color: '#4a7c59',
     },
   ];
 
@@ -75,11 +69,11 @@ export default function Activities() {
         {/* Section Header */}
         <div style={{ maxWidth: '780px', marginBottom: '48px' }}>
           <div className="section-eyebrow">
-            <Compass size={14} color="#c8a24a" />
+            <Compass size={14} color="#c4a66a" />
             <span>Exhibitions, Trade Fairs & Field Coordination</span>
           </div>
           <h2 className="section-title">
-            Professional Activities & <span className="serif-italic">International Exhibitions</span>
+            Professional Activities & <span className="serif-italic" style={{ color: '#4a7c59' }}>International Exhibitions</span>
           </h2>
           <p className="section-subtitle">
             Active engagement across international exhibitions, trade fairs, multi-vendor coordination, and humanitarian field initiatives.
@@ -105,8 +99,8 @@ export default function Activities() {
               className="editorial-card"
               style={{
                 padding: '28px',
-                backgroundColor: '#fdf9f0',
-                border: '1px solid rgba(11, 31, 58, 0.1)',
+                backgroundColor: '#faf6f0',
+                border: '1px solid rgba(74, 124, 89, 0.14)',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
@@ -114,32 +108,32 @@ export default function Activities() {
             >
               <div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
-                  <span className="badge-tag-warm" style={{ backgroundColor: '#ffffff', color: '#0b1f3a', fontWeight: '600' }}>
+                  <span className="badge-tag-warm" style={{ backgroundColor: '#ffffff', color: '#264430', fontWeight: '700' }}>
                     {e.tag}
                   </span>
-                  <span className="tnum" style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', color: '#785a00', fontWeight: '700' }}>
+                  <span className="tnum" style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', color: '#705c30', fontWeight: '700' }}>
                     {e.year}
                   </span>
                 </div>
 
-                <h3 style={{ fontSize: '1.35rem', fontWeight: '600', color: '#0b1f3a', marginBottom: '4px' }}>
+                <h3 style={{ fontSize: '1.35rem', fontWeight: '600', color: '#264430', marginBottom: '4px' }}>
                   {e.title}
                 </h3>
-                <div style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', color: '#785a00', fontSize: '14.5px', marginBottom: '8px' }}>
+                <div style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', color: '#705c30', fontSize: '14.5px', marginBottom: '8px' }}>
                   {e.event}
                 </div>
-                <div style={{ fontSize: '12px', color: '#75777e', display: 'flex', alignItems: 'center', gap: '5px', marginBottom: '14px' }}>
+                <div style={{ fontSize: '12px', color: '#74796e', display: 'flex', alignItems: 'center', gap: '5px', marginBottom: '14px' }}>
                   <MapPin size={12} /> {e.location} • {e.organization}
                 </div>
 
-                <p style={{ fontSize: '13.5px', color: '#44474d', lineHeight: 1.6, marginBottom: '16px' }}>
+                <p style={{ fontSize: '13.5px', color: '#4a4e4a', lineHeight: 1.6, marginBottom: '16px' }}>
                   {e.desc}
                 </p>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '16px' }}>
                   {e.bullets.map((b, bIdx) => (
                     <div key={bIdx} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: '13px', color: '#2e3230' }}>
-                      <CheckCircle size={14} color="#2a7f83" style={{ flexShrink: 0, marginTop: '3px' }} />
+                      <CheckCircle size={14} color="#4a7c59" style={{ flexShrink: 0, marginTop: '3px' }} />
                       <span>{b}</span>
                     </div>
                   ))}
@@ -151,10 +145,10 @@ export default function Activities() {
 
         {/* Institutional Credentials Grid */}
         <div style={{ marginTop: '32px' }}>
-          <h3 style={{ fontSize: '1.35rem', fontWeight: '600', color: '#0b1f3a', marginBottom: '8px' }}>
+          <h3 style={{ fontSize: '1.35rem', fontWeight: '600', color: '#264430', marginBottom: '8px' }}>
             Accreditations & Community Engagement Roles
           </h3>
-          <p style={{ fontSize: '13.5px', color: '#75777e', marginBottom: '22px' }}>
+          <p style={{ fontSize: '13.5px', color: '#74796e', marginBottom: '22px' }}>
             Verified positions across major exhibitions and NGO programs:
           </p>
 
@@ -176,6 +170,7 @@ export default function Activities() {
                 style={{
                   padding: '24px',
                   backgroundColor: '#ffffff',
+                  border: '1px solid rgba(74, 124, 89, 0.12)',
                 }}
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
@@ -184,13 +179,13 @@ export default function Activities() {
                     {c.badge}
                   </span>
                 </div>
-                <h4 style={{ fontSize: '1.15rem', fontWeight: '600', color: '#0b1f3a', marginBottom: '4px' }}>
+                <h4 style={{ fontSize: '1.15rem', fontWeight: '600', color: '#264430', marginBottom: '4px' }}>
                   {c.title}
                 </h4>
-                <div style={{ fontSize: '12px', color: '#785a00', fontWeight: '500', marginBottom: '10px' }}>
+                <div style={{ fontSize: '12px', color: '#705c30', fontWeight: '600', marginBottom: '10px' }}>
                   {c.organization}
                 </div>
-                <p style={{ fontSize: '13px', color: '#44474d', lineHeight: 1.55 }}>
+                <p style={{ fontSize: '13px', color: '#4a4e4a', lineHeight: 1.55 }}>
                   {c.desc}
                 </p>
               </motion.div>

@@ -8,10 +8,6 @@ import {
   BarChart3,
   GraduationCap,
   Globe2,
-  TrendingUp,
-  BookOpen,
-  Sparkles,
-  ShieldCheck,
 } from 'lucide-react';
 
 export default function Hero({ onOpenResume }) {
@@ -20,25 +16,25 @@ export default function Hero({ onOpenResume }) {
       num: 'ARDL',
       label: 'Econometric Modeling',
       sub: 'Long-Run Cointegration (Thailand FDI)',
-      accent: '#2a7f83',
+      accent: '#4a7c59',
     },
     {
       num: 'RM5,000',
       label: 'Grant Budget Managed',
       sub: 'University-Funded SME Digital Training',
-      accent: '#c8a24a',
+      accent: '#c4a66a',
     },
     {
       num: '100s+',
       label: 'Outreach Beneficiaries',
       sub: 'Nagashi NGO Media & Refugee Workshops',
-      accent: '#0b1f3a',
+      accent: '#264430',
     },
     {
       num: '2x',
       label: 'University Honors',
       sub: 'Platinum Research Award & Gold Project',
-      accent: '#785a00',
+      accent: '#705c30',
     },
   ];
 
@@ -66,7 +62,7 @@ export default function Hero({ onOpenResume }) {
             marginBottom: '20px',
           }}
         >
-          <span className="badge-teal">
+          <span className="badge-sage">
             <span className="status-dot"></span>
             <span>Open for Economics & Data Analysis Roles</span>
           </span>
@@ -77,7 +73,7 @@ export default function Hero({ onOpenResume }) {
           </span>
 
           <span className="badge-tag-warm" style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
-            <MapPin size={12} color="#75777e" />
+            <MapPin size={12} color="#74796e" />
             <span>Kuala Lumpur, Malaysia</span>
           </span>
         </motion.div>
@@ -103,8 +99,8 @@ export default function Hero({ onOpenResume }) {
                 style={{
                   fontFamily: 'var(--font-sans)',
                   fontSize: '12px',
-                  fontWeight: '600',
-                  color: '#785a00',
+                  fontWeight: '700',
+                  color: '#705c30',
                   textTransform: 'uppercase',
                   letterSpacing: '0.08em',
                 }}
@@ -116,14 +112,14 @@ export default function Hero({ onOpenResume }) {
             <h1
               style={{
                 fontSize: 'clamp(2.3rem, 4.4vw, 3.8rem)',
-                fontWeight: '400',
-                lineHeight: 1.12,
+                fontWeight: '600',
+                lineHeight: 1.14,
                 letterSpacing: '-0.02em',
-                color: '#0b1f3a',
+                color: '#264430',
                 marginBottom: '20px',
               }}
             >
-              Empirical Rigor in <span className="serif-italic" style={{ color: '#0b1f3a' }}>Applied Economics</span> & Data Analysis
+              Empirical Rigor in <span className="serif-italic" style={{ color: '#4a7c59' }}>Applied Economics</span> & Data Analysis
             </h1>
 
             <p
@@ -131,7 +127,7 @@ export default function Hero({ onOpenResume }) {
                 fontFamily: 'var(--font-sans)',
                 fontSize: 'clamp(1rem, 1.8vw, 1.12rem)',
                 lineHeight: 1.68,
-                color: '#44474d',
+                color: '#4a4e4a',
                 marginBottom: '24px',
                 maxWidth: '640px',
               }}
@@ -149,7 +145,7 @@ export default function Hero({ onOpenResume }) {
               }}
             >
               <a href="#research" className="btn-primary">
-                <BarChart3 size={15} style={{ color: '#ffd577' }} />
+                <BarChart3 size={15} style={{ color: '#f8e0a8' }} />
                 <span>Explore ARDL Research Thesis</span>
               </a>
 
@@ -173,40 +169,40 @@ export default function Hero({ onOpenResume }) {
                 paddingTop: '20px',
                 borderTop: '1px solid var(--border-hairline)',
                 fontSize: '12.5px',
-                color: '#75777e',
+                color: '#74796e',
               }}
             >
               <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                <GraduationCap size={15} color="#0b1f3a" />
+                <GraduationCap size={15} color="#264430" />
                 <span>B.Econ (Hons) '26</span>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                <Globe2 size={15} color="#0b1f3a" />
+                <Globe2 size={15} color="#264430" />
                 <span>Arabic (Native) • English (Fluent)</span>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                <Award size={15} color="#c8a24a" />
+                <Award size={15} color="#c4a66a" />
                 <span>Gold Social Business Award</span>
               </div>
             </div>
           </motion.div>
 
-          {/* Right Column: Atelier Econometric Academic Crest & Monogram Plaque */}
+          {/* Right Column: Terra Organic Academic Crest & Monogram Plaque */}
           <motion.div
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.15 }}
             style={{ position: 'relative' }}
           >
-            {/* Outer Frame in Oxford Navy & Gold Hairline */}
+            {/* Outer Frame in Forest Earth & Amber Hairline */}
             <div
               style={{
                 position: 'relative',
                 backgroundColor: '#ffffff',
-                border: '1px solid rgba(11, 31, 58, 0.12)',
-                borderRadius: '20px',
+                border: '1px solid rgba(74, 124, 89, 0.2)',
+                borderRadius: '24px',
                 padding: '24px',
-                boxShadow: '0 8px 32px -4px rgba(11, 31, 58, 0.08), 0 20px 48px -12px rgba(11, 31, 58, 0.06)',
+                boxShadow: '0 8px 32px -4px rgba(38, 68, 48, 0.08), 0 20px 48px -12px rgba(38, 68, 48, 0.06)',
               }}
             >
               {/* Crest Seal Container */}
@@ -216,15 +212,15 @@ export default function Hero({ onOpenResume }) {
                   width: '100%',
                   aspectRatio: '1 / 1',
                   maxHeight: '360px',
-                  borderRadius: '16px',
-                  backgroundColor: '#0b1f3a',
+                  borderRadius: '18px',
+                  backgroundColor: '#264430',
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
                   justifyContent: 'center',
                   padding: '28px',
-                  border: '1px solid rgba(200, 162, 74, 0.35)',
-                  boxShadow: 'inset 0 0 40px rgba(0, 0, 0, 0.4)',
+                  border: '1px solid rgba(196, 166, 106, 0.45)',
+                  boxShadow: 'inset 0 0 40px rgba(0, 0, 0, 0.35)',
                   overflow: 'hidden',
                 }}
               >
@@ -235,16 +231,16 @@ export default function Hero({ onOpenResume }) {
                     inset: 0,
                     width: '100%',
                     height: '100%',
-                    opacity: 0.12,
+                    opacity: 0.15,
                     pointerEvents: 'none',
                   }}
                   viewBox="0 0 300 300"
                 >
-                  <circle cx="150" cy="150" r="120" fill="none" stroke="#ffd577" strokeWidth="1" strokeDasharray="4 4" />
-                  <circle cx="150" cy="150" r="90" fill="none" stroke="#2a7f83" strokeWidth="1" />
-                  <line x1="30" y1="150" x2="270" y2="150" stroke="#ffd577" strokeWidth="0.8" />
-                  <line x1="150" y1="30" x2="150" y2="270" stroke="#ffd577" strokeWidth="0.8" />
-                  <path d="M50 220 Q 150 120 250 80" fill="none" stroke="#2a7f83" strokeWidth="2" />
+                  <circle cx="150" cy="150" r="120" fill="none" stroke="#c4a66a" strokeWidth="1" strokeDasharray="4 4" />
+                  <circle cx="150" cy="150" r="90" fill="none" stroke="#4a7c59" strokeWidth="1" />
+                  <line x1="30" y1="150" x2="270" y2="150" stroke="#c4a66a" strokeWidth="0.8" />
+                  <line x1="150" y1="30" x2="150" y2="270" stroke="#c4a66a" strokeWidth="0.8" />
+                  <path d="M50 220 Q 150 120 250 80" fill="none" stroke="#c4a66a" strokeWidth="2" />
                 </svg>
 
                 {/* Central AI Monogram Box */}
@@ -253,17 +249,17 @@ export default function Hero({ onOpenResume }) {
                     width: '90px',
                     height: '90px',
                     borderRadius: '50%',
-                    backgroundColor: 'rgba(253, 249, 240, 0.08)',
-                    border: '2px solid #c8a24a',
+                    backgroundColor: 'rgba(250, 246, 240, 0.08)',
+                    border: '2px solid #c4a66a',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    color: '#fdf9f0',
+                    color: '#faf6f0',
                     fontFamily: 'var(--font-serif)',
                     fontSize: '38px',
                     fontWeight: '600',
                     letterSpacing: '0.06em',
-                    boxShadow: '0 0 24px rgba(200, 162, 74, 0.25)',
+                    boxShadow: '0 0 24px rgba(196, 166, 106, 0.25)',
                     marginBottom: '16px',
                     position: 'relative',
                     zIndex: 2,
@@ -277,7 +273,7 @@ export default function Hero({ onOpenResume }) {
                     fontFamily: 'var(--font-serif)',
                     fontSize: '20px',
                     fontWeight: '600',
-                    color: '#fdf9f0',
+                    color: '#faf6f0',
                     letterSpacing: '0.02em',
                     textAlign: 'center',
                     marginBottom: '4px',
@@ -292,7 +288,7 @@ export default function Hero({ onOpenResume }) {
                   style={{
                     fontFamily: 'var(--font-sans)',
                     fontSize: '12px',
-                    color: '#ffd577',
+                    color: '#f8e0a8',
                     fontWeight: '600',
                     textTransform: 'uppercase',
                     letterSpacing: '0.08em',
@@ -311,10 +307,10 @@ export default function Hero({ onOpenResume }) {
                     alignItems: 'center',
                     gap: '6px',
                     padding: '4px 10px',
-                    backgroundColor: 'rgba(200, 162, 74, 0.15)',
-                    border: '1px solid rgba(200, 162, 74, 0.3)',
-                    borderRadius: '4px',
-                    color: '#ffd577',
+                    backgroundColor: 'rgba(196, 166, 106, 0.15)',
+                    border: '1px solid rgba(196, 166, 106, 0.35)',
+                    borderRadius: '6px',
+                    color: '#f8e0a8',
                     fontSize: '11px',
                     fontWeight: '600',
                     position: 'relative',
@@ -331,9 +327,9 @@ export default function Hero({ onOpenResume }) {
                 style={{
                   marginTop: '16px',
                   padding: '14px 16px',
-                  backgroundColor: '#f7f3ea',
-                  borderRadius: '10px',
-                  border: '1px solid rgba(11, 31, 58, 0.08)',
+                  backgroundColor: '#f5f1ea',
+                  borderRadius: '12px',
+                  border: '1px solid rgba(74, 124, 89, 0.15)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'space-between',
@@ -346,7 +342,7 @@ export default function Hero({ onOpenResume }) {
                       fontFamily: 'var(--font-serif)',
                       fontSize: '14px',
                       fontWeight: '600',
-                      color: '#0b1f3a',
+                      color: '#264430',
                     }}
                   >
                     Econometrics & Quantitative Policy
@@ -355,7 +351,7 @@ export default function Hero({ onOpenResume }) {
                     style={{
                       fontFamily: 'var(--font-sans)',
                       fontSize: '11.5px',
-                      color: '#75777e',
+                      color: '#74796e',
                     }}
                   >
                     ARDL Modeling • World Bank Datasets • SPSS • Stata
@@ -364,8 +360,8 @@ export default function Hero({ onOpenResume }) {
 
                 <div
                   style={{
-                    backgroundColor: '#0b1f3a',
-                    color: '#c8a24a',
+                    backgroundColor: '#264430',
+                    color: '#c4a66a',
                     borderRadius: '50%',
                     width: '32px',
                     height: '32px',
@@ -373,7 +369,7 @@ export default function Hero({ onOpenResume }) {
                     alignItems: 'center',
                     justifyContent: 'center',
                     flexShrink: 0,
-                    border: '1px solid rgba(200, 162, 74, 0.3)',
+                    border: '1px solid rgba(196, 166, 106, 0.35)',
                   }}
                   title="Platinum Award Best Research Paper"
                 >
@@ -387,7 +383,7 @@ export default function Hero({ onOpenResume }) {
         {/* Hairline Divider */}
         <hr className="axis-divider" style={{ marginTop: '54px', marginBottom: '36px' }} />
 
-        {/* 4 Quantitative Metric Cards (Tabular Figures) */}
+        {/* 4 Quantitative Metric Cards */}
         <div
           style={{
             display: 'grid',
@@ -422,7 +418,7 @@ export default function Hero({ onOpenResume }) {
                   }}
                 />
               </div>
-              <div className="metric-num" style={{ color: m.accent === '#2a7f83' ? '#2a7f83' : '#0b1f3a' }}>
+              <div className="metric-num" style={{ color: m.accent === '#4a7c59' ? '#4a7c59' : '#264430' }}>
                 {m.num}
               </div>
               <div className="metric-sub">{m.sub}</div>

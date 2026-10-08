@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, FileText, Mail, Award, TrendingUp, ChevronRight } from 'lucide-react';
+import { Menu, X, FileText, ChevronRight } from 'lucide-react';
 
 export default function Navbar({ onOpenResume }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -32,10 +32,10 @@ export default function Navbar({ onOpenResume }) {
         left: 0,
         right: 0,
         zIndex: 900,
-        backgroundColor: isScrolled ? 'rgba(253, 249, 240, 0.94)' : 'rgba(253, 249, 240, 0.85)',
+        backgroundColor: isScrolled ? 'rgba(250, 246, 240, 0.95)' : 'rgba(250, 246, 240, 0.88)',
         backdropFilter: 'blur(16px)',
         WebkitBackdropFilter: 'blur(16px)',
-        borderBottom: isScrolled ? '1px solid rgba(11, 31, 58, 0.12)' : '1px solid rgba(11, 31, 58, 0.06)',
+        borderBottom: isScrolled ? '1px solid rgba(74, 124, 89, 0.14)' : '1px solid rgba(74, 124, 89, 0.07)',
         transition: 'all 0.25s ease',
       }}
     >
@@ -56,18 +56,18 @@ export default function Navbar({ onOpenResume }) {
             style={{
               width: '38px',
               height: '38px',
-              backgroundColor: '#0b1f3a',
-              borderRadius: '6px',
+              backgroundColor: '#264430',
+              borderRadius: '8px',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              color: '#fdf9f0',
+              color: '#faf6f0',
               fontFamily: 'var(--font-serif)',
               fontSize: '17px',
               fontWeight: '600',
               letterSpacing: '0.05em',
-              border: '1px solid rgba(200, 162, 74, 0.4)',
-              boxShadow: '0 2px 6px rgba(11, 31, 58, 0.15)',
+              border: '1px solid rgba(196, 166, 106, 0.45)',
+              boxShadow: '0 2px 8px rgba(38, 68, 48, 0.18)',
             }}
           >
             AI
@@ -79,7 +79,7 @@ export default function Navbar({ onOpenResume }) {
                   fontFamily: 'var(--font-serif)',
                   fontSize: '17px',
                   fontWeight: '600',
-                  color: '#0b1f3a',
+                  color: '#264430',
                   letterSpacing: '-0.01em',
                 }}
               >
@@ -87,12 +87,12 @@ export default function Navbar({ onOpenResume }) {
               </span>
               <span
                 style={{
-                  background: 'rgba(200, 162, 74, 0.15)',
-                  color: '#785a00',
+                  background: 'rgba(196, 166, 106, 0.18)',
+                  color: '#705c30',
                   fontSize: '10px',
                   fontWeight: '700',
-                  padding: '1px 6px',
-                  borderRadius: '3px',
+                  padding: '2px 7px',
+                  borderRadius: '4px',
                   textTransform: 'uppercase',
                   letterSpacing: '0.04em',
                 }}
@@ -104,7 +104,7 @@ export default function Navbar({ onOpenResume }) {
               style={{
                 fontFamily: 'var(--font-sans)',
                 fontSize: '11px',
-                color: '#75777e',
+                color: '#74796e',
                 letterSpacing: '0.02em',
                 textTransform: 'uppercase',
               }}
@@ -128,14 +128,14 @@ export default function Navbar({ onOpenResume }) {
               key={link.label}
               href={link.href}
               style={{
-                color: '#44474d',
+                color: '#4a4e4a',
                 textDecoration: 'none',
                 fontSize: '13.5px',
-                fontWeight: '500',
+                fontWeight: '600',
                 transition: 'color 0.15s ease',
               }}
-              onMouseEnter={(e) => (e.target.style.color = '#0b1f3a')}
-              onMouseLeave={(e) => (e.target.style.color = '#44474d')}
+              onMouseEnter={(e) => (e.target.style.color = '#4a7c59')}
+              onMouseLeave={(e) => (e.target.style.color = '#4a4e4a')}
             >
               {link.label}
             </a>
@@ -149,7 +149,7 @@ export default function Navbar({ onOpenResume }) {
             className="btn-primary"
             style={{ padding: '8px 16px', fontSize: '13px' }}
           >
-            <FileText size={14} style={{ color: '#c8a24a' }} />
+            <FileText size={14} style={{ color: '#f8e0a8' }} />
             <span>Curriculum Vitae</span>
           </button>
 
@@ -158,10 +158,10 @@ export default function Navbar({ onOpenResume }) {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             style={{
               background: 'transparent',
-              border: '1px solid rgba(11, 31, 58, 0.15)',
+              border: '1px solid rgba(74, 124, 89, 0.25)',
               borderRadius: '6px',
               padding: '8px',
-              color: '#0b1f3a',
+              color: '#264430',
               cursor: 'pointer',
               display: 'flex',
               alignItems: 'center',
@@ -179,10 +179,10 @@ export default function Navbar({ onOpenResume }) {
       {mobileMenuOpen && (
         <div
           style={{
-            backgroundColor: '#ffffff',
-            borderBottom: '1px solid rgba(11, 31, 58, 0.12)',
+            backgroundColor: '#faf6f0',
+            borderBottom: '1px solid rgba(74, 124, 89, 0.15)',
             padding: '16px 24px 24px 24px',
-            boxShadow: '0 12px 30px rgba(11, 31, 58, 0.08)',
+            boxShadow: '0 12px 30px rgba(38, 68, 48, 0.08)',
           }}
           className="mobile-drawer"
         >
@@ -193,19 +193,19 @@ export default function Navbar({ onOpenResume }) {
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
                 style={{
-                  color: '#1c1c16',
+                  color: '#2e3230',
                   textDecoration: 'none',
                   fontSize: '15px',
                   fontWeight: '500',
                   padding: '8px 0',
-                  borderBottom: '1px solid rgba(11, 31, 58, 0.05)',
+                  borderBottom: '1px solid rgba(74, 124, 89, 0.08)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'space-between',
                 }}
               >
                 <span>{link.label}</span>
-                <ChevronRight size={16} color="#75777e" />
+                <ChevronRight size={16} color="#74796e" />
               </a>
             ))}
             <div style={{ marginTop: '12px', display: 'flex', gap: '10px' }}>
@@ -217,7 +217,7 @@ export default function Navbar({ onOpenResume }) {
                 className="btn-primary"
                 style={{ width: '100%', padding: '10px' }}
               >
-                <FileText size={15} style={{ color: '#c8a24a' }} />
+                <FileText size={15} style={{ color: '#f8e0a8' }} />
                 <span>View Full CV</span>
               </button>
             </div>

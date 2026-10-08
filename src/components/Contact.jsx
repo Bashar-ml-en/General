@@ -7,10 +7,7 @@ import {
   Send,
   Copy,
   Check,
-  MessageSquare,
   ArrowUpRight,
-  Clock,
-  Sparkles,
 } from 'lucide-react';
 
 export default function Contact() {
@@ -43,14 +40,14 @@ export default function Contact() {
       <div className="container">
         {/* Section Header */}
         <div style={{ maxWidth: '780px', marginBottom: '52px' }}>
-          <div className="section-eyebrow" style={{ color: '#ffd577' }}>
-            <Mail size={14} color="#ffd577" />
+          <div className="section-eyebrow" style={{ color: '#c4a66a' }}>
+            <Mail size={14} color="#c4a66a" />
             <span>Executive & Academic Inquiries</span>
           </div>
-          <h2 className="section-title" style={{ color: '#ffffff' }}>
-            Initiate a <span className="serif-italic" style={{ color: '#ffd577' }}>Dialogue</span>
+          <h2 className="section-title" style={{ color: '#faf6f0' }}>
+            Initiate a <span className="serif-italic" style={{ color: '#f8e0a8' }}>Dialogue</span>
           </h2>
-          <p className="section-subtitle" style={{ color: '#cbd5e1' }}>
+          <p className="section-subtitle" style={{ color: '#d5dcd2' }}>
             Open for applied economics research collaborations, corporate advisory roles, digital marketing initiatives, and institutional presentations.
           </p>
         </div>
@@ -67,31 +64,31 @@ export default function Contact() {
         >
           {/* Left Column: Direct Institutional Channels */}
           <div>
-            <h3 style={{ fontSize: '1.35rem', fontWeight: '500', color: '#ffffff', marginBottom: '16px' }}>
+            <h3 style={{ fontSize: '1.35rem', fontWeight: '600', color: '#faf6f0', marginBottom: '16px' }}>
               Direct Contact Details
             </h3>
 
             {/* Email Card */}
             <div
               style={{
-                backgroundColor: 'rgba(255, 255, 255, 0.05)',
-                border: '1px solid rgba(255, 255, 255, 0.12)',
-                borderRadius: '12px',
+                backgroundColor: 'rgba(250, 246, 240, 0.06)',
+                border: '1px solid rgba(250, 246, 240, 0.16)',
+                borderRadius: '14px',
                 padding: '20px',
                 marginBottom: '16px',
               }}
             >
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#ffd577', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#f8e0a8', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: '600' }}>
                   <Mail size={14} /> Official Email
                 </div>
                 <button
                   onClick={handleCopyEmail}
                   style={{
                     background: 'transparent',
-                    border: '1px solid rgba(255, 255, 255, 0.2)',
-                    color: '#fff',
-                    borderRadius: '4px',
+                    border: '1px solid rgba(250, 246, 240, 0.25)',
+                    color: '#faf6f0',
+                    borderRadius: '6px',
                     padding: '3px 8px',
                     fontSize: '11px',
                     cursor: 'pointer',
@@ -100,7 +97,7 @@ export default function Contact() {
                     gap: '4px',
                   }}
                 >
-                  {copiedEmail ? <Check size={12} color="#ffd577" /> : <Copy size={12} />}
+                  {copiedEmail ? <Check size={12} color="#c4a66a" /> : <Copy size={12} />}
                   <span>{copiedEmail ? 'Copied' : 'Copy'}</span>
                 </button>
               </div>
@@ -118,7 +115,7 @@ export default function Contact() {
               >
                 {emailAddress}
               </a>
-              <div style={{ fontSize: '12px', color: '#94a3b8', marginTop: '4px' }}>
+              <div style={{ fontSize: '12px', color: '#d5dcd2', marginTop: '4px' }}>
                 Fast response for research & hiring inquiries.
               </div>
             </div>
@@ -126,14 +123,14 @@ export default function Contact() {
             {/* Phone & WhatsApp Card */}
             <div
               style={{
-                backgroundColor: 'rgba(255, 255, 255, 0.05)',
-                border: '1px solid rgba(255, 255, 255, 0.12)',
-                borderRadius: '12px',
+                backgroundColor: 'rgba(250, 246, 240, 0.06)',
+                border: '1px solid rgba(250, 246, 240, 0.16)',
+                borderRadius: '14px',
                 padding: '20px',
                 marginBottom: '16px',
               }}
             >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#a1f0f4', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '8px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#d9edd8', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '8px', fontWeight: '600' }}>
                 <Phone size={14} /> Direct Telephone & WhatsApp
               </div>
               <div
@@ -171,19 +168,19 @@ export default function Contact() {
             {/* Location & Availability Card */}
             <div
               style={{
-                backgroundColor: 'rgba(255, 255, 255, 0.05)',
-                border: '1px solid rgba(255, 255, 255, 0.12)',
-                borderRadius: '12px',
+                backgroundColor: 'rgba(250, 246, 240, 0.06)',
+                border: '1px solid rgba(250, 246, 240, 0.16)',
+                borderRadius: '14px',
                 padding: '20px',
               }}
             >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#cbd5e1', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '6px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#d5dcd2', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '6px', fontWeight: '600' }}>
                 <MapPin size={14} /> Base Location
               </div>
               <div style={{ color: '#ffffff', fontSize: '14.5px', fontWeight: '500' }}>
                 Kuala Lumpur, Malaysia
               </div>
-              <div style={{ fontSize: '12px', color: '#94a3b8', marginTop: '4px' }}>
+              <div style={{ fontSize: '12px', color: '#d5dcd2', marginTop: '4px' }}>
                 Available for on-site roles in Klang Valley and remote international engagements.
               </div>
             </div>
@@ -192,37 +189,38 @@ export default function Contact() {
           {/* Right Column: Interactive Dispatch Form */}
           <div
             style={{
-              backgroundColor: '#ffffff',
-              borderRadius: '16px',
+              backgroundColor: '#faf6f0',
+              borderRadius: '20px',
               padding: '32px',
-              color: '#1c1c16',
-              boxShadow: '0 20px 48px rgba(0, 0, 0, 0.3)',
+              color: '#2e3230',
+              boxShadow: '0 20px 48px rgba(0, 0, 0, 0.25)',
+              border: '1px solid rgba(74, 124, 89, 0.2)',
             }}
           >
-            <h3 style={{ fontSize: '1.35rem', fontWeight: '600', color: '#0b1f3a', marginBottom: '6px' }}>
+            <h3 style={{ fontSize: '1.35rem', fontWeight: '600', color: '#264430', marginBottom: '6px' }}>
               Send an Inquiry
             </h3>
-            <p style={{ fontSize: '13px', color: '#75777e', marginBottom: '22px' }}>
+            <p style={{ fontSize: '13px', color: '#74796e', marginBottom: '22px' }}>
               Please provide details regarding your organization, project scope, or proposed role:
             </p>
 
             {submitted ? (
               <div
                 style={{
-                  backgroundColor: 'rgba(42, 127, 131, 0.1)',
-                  border: '1px solid #2a7f83',
-                  borderRadius: '10px',
+                  backgroundColor: 'rgba(74, 124, 89, 0.12)',
+                  border: '1px solid #4a7c59',
+                  borderRadius: '12px',
                   padding: '24px',
                   textAlign: 'center',
                 }}
               >
-                <div style={{ color: '#2a7f83', marginBottom: '10px' }}>
+                <div style={{ color: '#4a7c59', marginBottom: '10px' }}>
                   <Check size={36} style={{ margin: '0 auto' }} />
                 </div>
-                <h4 style={{ fontSize: '1.2rem', color: '#0b1f3a', marginBottom: '6px' }}>
+                <h4 style={{ fontSize: '1.2rem', color: '#264430', marginBottom: '6px' }}>
                   Inquiry Dispatched Successfully
                 </h4>
-                <p style={{ fontSize: '13px', color: '#44474d', marginBottom: '16px' }}>
+                <p style={{ fontSize: '13px', color: '#4a4e4a', marginBottom: '16px' }}>
                   Thank you for reaching out, {formData.name || 'colleague'}. Alhassan will review your note and respond promptly at {formData.email || 'your email'}.
                 </p>
                 <button
@@ -236,7 +234,7 @@ export default function Contact() {
             ) : (
               <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                 <div>
-                  <label style={{ display: 'block', fontSize: '12.5px', fontWeight: '600', color: '#0b1f3a', marginBottom: '5px' }}>
+                  <label style={{ display: 'block', fontSize: '12.5px', fontWeight: '600', color: '#264430', marginBottom: '5px' }}>
                     Full Name / Organization
                   </label>
                   <input
@@ -250,7 +248,7 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label style={{ display: 'block', fontSize: '12.5px', fontWeight: '600', color: '#0b1f3a', marginBottom: '5px' }}>
+                  <label style={{ display: 'block', fontSize: '12.5px', fontWeight: '600', color: '#264430', marginBottom: '5px' }}>
                     Email Address
                   </label>
                   <input
@@ -264,7 +262,7 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label style={{ display: 'block', fontSize: '12.5px', fontWeight: '600', color: '#0b1f3a', marginBottom: '5px' }}>
+                  <label style={{ display: 'block', fontSize: '12.5px', fontWeight: '600', color: '#264430', marginBottom: '5px' }}>
                     Subject / Area of Interest
                   </label>
                   <select
@@ -282,7 +280,7 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label style={{ display: 'block', fontSize: '12.5px', fontWeight: '600', color: '#0b1f3a', marginBottom: '5px' }}>
+                  <label style={{ display: 'block', fontSize: '12.5px', fontWeight: '600', color: '#264430', marginBottom: '5px' }}>
                     Message Brief
                   </label>
                   <textarea
@@ -301,7 +299,7 @@ export default function Contact() {
                   className="btn-primary"
                   style={{ width: '100%', padding: '12px', fontSize: '14px', marginTop: '6px' }}
                 >
-                  <Send size={15} style={{ color: '#ffd577' }} />
+                  <Send size={15} style={{ color: '#f8e0a8' }} />
                   <span>Send Message to Alhassan</span>
                 </button>
               </form>

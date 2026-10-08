@@ -1,5 +1,5 @@
 import React from 'react';
-import { Award, ArrowUp, FileText, Heart, Globe, Mail } from 'lucide-react';
+import { Award, ArrowUp, FileText, Mail } from 'lucide-react';
 
 export default function Footer({ onOpenResume }) {
   const scrollToTop = () => {
@@ -9,11 +9,11 @@ export default function Footer({ onOpenResume }) {
   return (
     <footer
       style={{
-        backgroundColor: '#000615',
-        color: '#fdf9f0',
+        backgroundColor: '#16271c',
+        color: '#faf6f0',
         paddingTop: '60px',
         paddingBottom: '40px',
-        borderTop: '1px solid rgba(200, 162, 74, 0.25)',
+        borderTop: '1px solid rgba(196, 166, 106, 0.3)',
       }}
     >
       <div className="container">
@@ -34,16 +34,16 @@ export default function Footer({ onOpenResume }) {
                 style={{
                   width: '34px',
                   height: '34px',
-                  backgroundColor: '#0b1f3a',
+                  backgroundColor: '#264430',
                   borderRadius: '6px',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  color: '#fdf9f0',
+                  color: '#faf6f0',
                   fontFamily: 'var(--font-serif)',
                   fontSize: '15px',
                   fontWeight: '600',
-                  border: '1px solid rgba(200, 162, 74, 0.4)',
+                  border: '1px solid rgba(196, 166, 106, 0.45)',
                 }}
               >
                 AI
@@ -53,14 +53,14 @@ export default function Footer({ onOpenResume }) {
                   fontFamily: 'var(--font-serif)',
                   fontSize: '18px',
                   fontWeight: '600',
-                  color: '#fdf9f0',
+                  color: '#faf6f0',
                 }}
               >
                 Alhassan Ibrahim Ali Hassan
               </span>
             </div>
 
-            <p style={{ fontSize: '13px', color: '#94a3b8', lineHeight: 1.65, maxWidth: '420px', marginBottom: '16px' }}>
+            <p style={{ fontSize: '13px', color: '#d5dcd2', lineHeight: 1.65, maxWidth: '420px', marginBottom: '16px' }}>
               Economics graduate from Albukhary International University (Graduated Apr 2026). Specializing in applied econometrics (ARDL, SPSS, Stata), digital marketing, and non-profit community coordination.
             </p>
 
@@ -68,7 +68,7 @@ export default function Footer({ onOpenResume }) {
               <span className="badge-honor" style={{ fontSize: '11px', padding: '3px 8px' }}>
                 <Award size={12} /> Platinum Award 2025
               </span>
-              <span style={{ fontSize: '12px', color: '#cbd5e1' }}>Kuala Lumpur, Malaysia</span>
+              <span style={{ fontSize: '12px', color: '#d5dcd2' }}>Kuala Lumpur, Malaysia</span>
             </div>
           </div>
 
@@ -81,24 +81,24 @@ export default function Footer({ onOpenResume }) {
                 fontWeight: '700',
                 textTransform: 'uppercase',
                 letterSpacing: '0.08em',
-                color: '#ffd577',
+                color: '#c4a66a',
                 marginBottom: '14px',
               }}
             >
               Navigation
             </h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '13px' }}>
-              <a href="#hero" style={{ color: '#cbd5e1', textDecoration: 'none' }}>Overview</a>
-              <a href="#research" style={{ color: '#cbd5e1', textDecoration: 'none' }}>ARDL Econometric Thesis</a>
-              <a href="#projects" style={{ color: '#cbd5e1', textDecoration: 'none' }}>Key Projects & MADA SME</a>
-              <a href="#experience" style={{ color: '#cbd5e1', textDecoration: 'none' }}>Experience Timeline</a>
-              <a href="#about" style={{ color: '#cbd5e1', textDecoration: 'none' }}>Academic Coursework</a>
-              <a href="#activities" style={{ color: '#cbd5e1', textDecoration: 'none' }}>KLIBF & Exhibitions</a>
-              <a href="#skills" style={{ color: '#cbd5e1', textDecoration: 'none' }}>Skills & Toolkit</a>
+              <a href="#hero" style={{ color: '#d5dcd2', textDecoration: 'none' }}>Overview</a>
+              <a href="#research" style={{ color: '#d5dcd2', textDecoration: 'none' }}>ARDL Econometric Thesis</a>
+              <a href="#projects" style={{ color: '#d5dcd2', textDecoration: 'none' }}>Key Projects & MADA SME</a>
+              <a href="#experience" style={{ color: '#d5dcd2', textDecoration: 'none' }}>Experience Timeline</a>
+              <a href="#about" style={{ color: '#d5dcd2', textDecoration: 'none' }}>Academic Coursework</a>
+              <a href="#activities" style={{ color: '#d5dcd2', textDecoration: 'none' }}>KLIBF & Exhibitions</a>
+              <a href="#skills" style={{ color: '#d5dcd2', textDecoration: 'none' }}>Skills & Toolkit</a>
             </div>
           </div>
 
-          {/* Portfolio Architecture & Documents */}
+          {/* Curriculum Vitae */}
           <div>
             <h4
               style={{
@@ -107,18 +107,18 @@ export default function Footer({ onOpenResume }) {
                 fontWeight: '700',
                 textTransform: 'uppercase',
                 letterSpacing: '0.08em',
-                color: '#ffd577',
+                color: '#c4a66a',
                 marginBottom: '14px',
               }}
             >
               Curriculum Vitae
             </h4>
-            <p style={{ fontSize: '12.5px', color: '#94a3b8', lineHeight: 1.55, marginBottom: '14px' }}>
+            <p style={{ fontSize: '12.5px', color: '#d5dcd2', lineHeight: 1.55, marginBottom: '14px' }}>
               Access the complete academic and professional CV with verified citations.
             </p>
             <button
               onClick={onOpenResume}
-              className="btn-gold"
+              className="btn-amber"
               style={{ padding: '8px 16px', fontSize: '12px', width: '100%' }}
             >
               <FileText size={14} />
@@ -128,7 +128,7 @@ export default function Footer({ onOpenResume }) {
               <a
                 href="#contact"
                 style={{
-                  color: '#a1f0f4',
+                  color: '#f8e0a8',
                   fontSize: '12.5px',
                   textDecoration: 'none',
                   display: 'flex',
@@ -144,7 +144,7 @@ export default function Footer({ onOpenResume }) {
         </div>
 
         {/* Hairline Rule */}
-        <hr style={{ border: 'none', height: '1px', backgroundColor: 'rgba(255, 255, 255, 0.1)', marginBottom: '24px' }} />
+        <hr style={{ border: 'none', height: '1px', backgroundColor: 'rgba(250, 246, 240, 0.1)', marginBottom: '24px' }} />
 
         {/* Bottom Credits */}
         <div
@@ -155,19 +155,19 @@ export default function Footer({ onOpenResume }) {
             justifyContent: 'space-between',
             gap: '12px',
             fontSize: '12px',
-            color: '#75777e',
+            color: '#74796e',
           }}
         >
           <div>
-            © {new Date().getFullYear()} Alhassan Ibrahim Ali Hassan. Built with Atelier Econometric Design System via Stitch MCP.
+            © {new Date().getFullYear()} Alhassan Ibrahim Ali Hassan. Built with Terra Design System via Stitch MCP.
           </div>
 
           <button
             onClick={scrollToTop}
             style={{
               background: 'transparent',
-              border: '1px solid rgba(255, 255, 255, 0.2)',
-              color: '#cbd5e1',
+              border: '1px solid rgba(250, 246, 240, 0.2)',
+              color: '#d5dcd2',
               borderRadius: '4px',
               padding: '4px 10px',
               fontSize: '11px',

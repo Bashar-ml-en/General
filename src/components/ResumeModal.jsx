@@ -2,17 +2,9 @@ import React, { useState } from 'react';
 import {
   X,
   Printer,
-  Download,
   Copy,
   Check,
   FileText,
-  Mail,
-  Phone,
-  MapPin,
-  Award,
-  GraduationCap,
-  Briefcase,
-  ExternalLink,
 } from 'lucide-react';
 
 export default function ResumeModal({ isOpen, onClose }) {
@@ -98,8 +90,8 @@ References available upon request.`;
           maxHeight: '92vh',
           backgroundColor: '#ffffff',
           borderRadius: '16px',
-          border: '1px solid rgba(11, 31, 58, 0.2)',
-          boxShadow: '0 25px 60px -15px rgba(11, 31, 58, 0.3)',
+          border: '1px solid rgba(74, 124, 89, 0.25)',
+          boxShadow: '0 25px 60px -15px rgba(31, 54, 39, 0.35)',
           display: 'flex',
           flexDirection: 'column',
           overflow: 'hidden',
@@ -110,19 +102,19 @@ References available upon request.`;
           className="no-print"
           style={{
             padding: '16px 24px',
-            backgroundColor: '#0b1f3a',
-            color: '#fdf9f0',
+            backgroundColor: '#264430',
+            color: '#faf6f0',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-            borderBottom: '1px solid rgba(200, 162, 74, 0.3)',
+            borderBottom: '1px solid rgba(196, 166, 106, 0.45)',
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
             <div
               style={{
-                backgroundColor: 'rgba(200, 162, 74, 0.2)',
-                color: '#ffd577',
+                backgroundColor: 'rgba(196, 166, 106, 0.2)',
+                color: '#f8e0a8',
                 padding: '6px',
                 borderRadius: '6px',
               }}
@@ -133,7 +125,7 @@ References available upon request.`;
               <h3 style={{ fontSize: '15px', fontWeight: '600', color: '#ffffff' }}>
                 Curriculum Vitae • Alhassan Ibrahim Ali Hassan
               </h3>
-              <p style={{ fontSize: '11px', color: '#cbd5e1' }}>
+              <p style={{ fontSize: '11px', color: '#d5dcd2' }}>
                 Bachelor of Economics (Hons.) • Applied Econometrics & Data Analysis
               </p>
             </div>
@@ -146,13 +138,13 @@ References available upon request.`;
               style={{ padding: '6px 12px', fontSize: '12px' }}
               title="Copy plain text CV to clipboard"
             >
-              {copied ? <Check size={14} color="#ffd577" /> : <Copy size={14} />}
+              {copied ? <Check size={14} color="#f8e0a8" /> : <Copy size={14} />}
               <span>{copied ? 'Copied' : 'Copy Text'}</span>
             </button>
 
             <button
               onClick={handlePrint}
-              className="btn-gold"
+              className="btn-amber"
               style={{ padding: '6px 14px', fontSize: '12px' }}
               title="Print or Save as PDF"
             >
@@ -163,7 +155,7 @@ References available upon request.`;
             <button
               onClick={onClose}
               style={{
-                backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                backgroundColor: 'rgba(250, 246, 240, 0.12)',
                 border: 'none',
                 color: '#fff',
                 width: '32px',
@@ -188,18 +180,18 @@ References available upon request.`;
             overflowY: 'auto',
             padding: '36px 44px',
             backgroundColor: '#ffffff',
-            color: '#1c1c16',
+            color: '#2e3230',
           }}
           className="cv-document"
         >
           {/* Header */}
-          <div style={{ textAlign: 'center', borderBottom: '2px solid #0b1f3a', paddingBottom: '16px', marginBottom: '20px' }}>
+          <div style={{ textAlign: 'center', borderBottom: '2px solid #264430', paddingBottom: '16px', marginBottom: '20px' }}>
             <h1
               style={{
                 fontFamily: 'var(--font-serif)',
                 fontSize: '28px',
                 fontWeight: '700',
-                color: '#0b1f3a',
+                color: '#264430',
                 letterSpacing: '0.04em',
                 marginBottom: '4px',
               }}
@@ -211,7 +203,7 @@ References available upon request.`;
                 fontFamily: 'var(--font-sans)',
                 fontSize: '14px',
                 fontWeight: '600',
-                color: '#785a00',
+                color: '#705c30',
                 marginBottom: '8px',
               }}
             >
@@ -221,7 +213,7 @@ References available upon request.`;
               style={{
                 fontFamily: 'var(--font-sans)',
                 fontSize: '12.5px',
-                color: '#44474d',
+                color: '#4a4e4a',
                 display: 'flex',
                 flexWrap: 'wrap',
                 justifyContent: 'center',
@@ -230,7 +222,7 @@ References available upon request.`;
             >
               <span>Kuala Lumpur, Malaysia</span>
               <span>•</span>
-              <a href="mailto:alhassan.ibrahim2070@gmail.com" style={{ color: '#0b1f3a', textDecoration: 'none' }}>
+              <a href="mailto:alhassan.ibrahim2070@gmail.com" style={{ color: '#264430', textDecoration: 'none' }}>
                 alhassan.ibrahim2070@gmail.com
               </a>
               <span>•</span>
@@ -242,7 +234,7 @@ References available upon request.`;
 
           {/* Section: Professional Summary */}
           <div style={{ marginBottom: '20px' }}>
-            <h2 style={{ fontSize: '14px', fontWeight: '700', color: '#0b1f3a', borderBottom: '1px solid #c4c6ce', paddingBottom: '3px', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+            <h2 style={{ fontSize: '14px', fontWeight: '700', color: '#264430', borderBottom: '1px solid #c4c8bc', paddingBottom: '3px', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
               Professional Summary
             </h2>
             <p style={{ fontSize: '13px', lineHeight: 1.6, color: '#333' }}>
@@ -252,7 +244,7 @@ References available upon request.`;
 
           {/* Section: Core Skills */}
           <div style={{ marginBottom: '20px' }}>
-            <h2 style={{ fontSize: '14px', fontWeight: '700', color: '#0b1f3a', borderBottom: '1px solid #c4c6ce', paddingBottom: '3px', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+            <h2 style={{ fontSize: '14px', fontWeight: '700', color: '#264430', borderBottom: '1px solid #c4c8bc', paddingBottom: '3px', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
               Core Skills
             </h2>
             <div style={{ fontSize: '12.5px', lineHeight: 1.65, color: '#333' }}>
@@ -266,14 +258,14 @@ References available upon request.`;
 
           {/* Section: Professional Experience */}
           <div style={{ marginBottom: '20px' }}>
-            <h2 style={{ fontSize: '14px', fontWeight: '700', color: '#0b1f3a', borderBottom: '1px solid #c4c6ce', paddingBottom: '3px', marginBottom: '10px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+            <h2 style={{ fontSize: '14px', fontWeight: '700', color: '#264430', borderBottom: '1px solid #c4c8bc', paddingBottom: '3px', marginBottom: '10px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
               Professional Experience
             </h2>
 
             {/* Experience 1 */}
             <div style={{ marginBottom: '14px' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
-                <strong style={{ fontSize: '13.5px', color: '#0b1f3a' }}>Media & Outreach Coordinator | Nagashi Relief and Development Berhad (NGO)</strong>
+                <strong style={{ fontSize: '13.5px', color: '#264430' }}>Media & Outreach Coordinator | Nagashi Relief and Development Berhad (NGO)</strong>
                 <span style={{ fontSize: '12px', color: '#555', fontVariantNumeric: 'tabular-nums' }}>Mar 2025 – Apr 2026</span>
               </div>
               <ul style={{ paddingLeft: '18px', marginTop: '4px', fontSize: '12.5px', color: '#333', lineHeight: 1.55 }}>
@@ -286,7 +278,7 @@ References available upon request.`;
             {/* Experience 2 */}
             <div style={{ marginBottom: '14px' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
-                <strong style={{ fontSize: '13.5px', color: '#0b1f3a' }}>Digital Marketing Intern | TAKO</strong>
+                <strong style={{ fontSize: '13.5px', color: '#264430' }}>Digital Marketing Intern | TAKO</strong>
                 <span style={{ fontSize: '12px', color: '#555', fontVariantNumeric: 'tabular-nums' }}>Nov 2025 – Feb 2026</span>
               </div>
               <ul style={{ paddingLeft: '18px', marginTop: '4px', fontSize: '12.5px', color: '#333', lineHeight: 1.55 }}>
@@ -298,7 +290,7 @@ References available upon request.`;
             {/* Experience 3 */}
             <div>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
-                <strong style={{ fontSize: '13.5px', color: '#0b1f3a' }}>Scholarship & Outreach Volunteer | Ijma Foundation for Humanitarian Action</strong>
+                <strong style={{ fontSize: '13.5px', color: '#264430' }}>Scholarship & Outreach Volunteer | Ijma Foundation for Humanitarian Action</strong>
                 <span style={{ fontSize: '12px', color: '#555', fontVariantNumeric: 'tabular-nums' }}>Jul 2025 – Jan 2026</span>
               </div>
               <ul style={{ paddingLeft: '18px', marginTop: '4px', fontSize: '12.5px', color: '#333', lineHeight: 1.55 }}>
@@ -310,14 +302,14 @@ References available upon request.`;
 
           {/* Section: Key Projects */}
           <div style={{ marginBottom: '20px' }}>
-            <h2 style={{ fontSize: '14px', fontWeight: '700', color: '#0b1f3a', borderBottom: '1px solid #c4c6ce', paddingBottom: '3px', marginBottom: '10px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+            <h2 style={{ fontSize: '14px', fontWeight: '700', color: '#264430', borderBottom: '1px solid #c4c8bc', paddingBottom: '3px', marginBottom: '10px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
               Key Projects
             </h2>
 
             {/* Project 1 */}
             <div style={{ marginBottom: '14px' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
-                <strong style={{ fontSize: '13.5px', color: '#0b1f3a' }}>
+                <strong style={{ fontSize: '13.5px', color: '#264430' }}>
                   Final Year Research Project — Investigating FDI's Role on Youth Unemployment in Thailand
                 </strong>
                 <span style={{ fontSize: '12px', color: '#555' }}>Seminar in Contemporary Economic Issues 2025</span>
@@ -331,7 +323,7 @@ References available upon request.`;
             {/* Project 2 */}
             <div>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
-                <strong style={{ fontSize: '13.5px', color: '#0b1f3a' }}>
+                <strong style={{ fontSize: '13.5px', color: '#264430' }}>
                   Digital Training Program for SMEs | Final Year Community Project — Alor Setar
                 </strong>
                 <span style={{ fontSize: '12px', color: '#555' }}>2025</span>
@@ -347,13 +339,13 @@ References available upon request.`;
 
           {/* Section: Professional Activities & Exhibitions */}
           <div style={{ marginBottom: '20px' }}>
-            <h2 style={{ fontSize: '14px', fontWeight: '700', color: '#0b1f3a', borderBottom: '1px solid #c4c6ce', paddingBottom: '3px', marginBottom: '10px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+            <h2 style={{ fontSize: '14px', fontWeight: '700', color: '#264430', borderBottom: '1px solid #c4c8bc', paddingBottom: '3px', marginBottom: '10px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
               Professional Activities & Exhibitions
             </h2>
 
             <div style={{ marginBottom: '12px' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
-                <strong style={{ fontSize: '13.5px', color: '#0b1f3a' }}>
+                <strong style={{ fontSize: '13.5px', color: '#264430' }}>
                   Sales & Brand Representative | Mashreq International for Books — Kuala Lumpur International Book Fair (KLIBF)
                 </strong>
                 <span style={{ fontSize: '12px', color: '#555' }}>2026</span>
@@ -366,7 +358,7 @@ References available upon request.`;
 
             <div>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
-                <strong style={{ fontSize: '13.5px', color: '#0b1f3a' }}>
+                <strong style={{ fontSize: '13.5px', color: '#264430' }}>
                   Event Organizing Committee Member | UiTM–Umrah Plus International Travel Market Exhibition
                 </strong>
                 <span style={{ fontSize: '12px', color: '#555' }}>2026</span>
@@ -381,16 +373,16 @@ References available upon request.`;
 
           {/* Section: Education & Certifications */}
           <div style={{ marginBottom: '16px' }}>
-            <h2 style={{ fontSize: '14px', fontWeight: '700', color: '#0b1f3a', borderBottom: '1px solid #c4c6ce', paddingBottom: '3px', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+            <h2 style={{ fontSize: '14px', fontWeight: '700', color: '#264430', borderBottom: '1px solid #c4c8bc', paddingBottom: '3px', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
               Education & Certifications
             </h2>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
-              <strong style={{ fontSize: '13.5px', color: '#0b1f3a' }}>
+              <strong style={{ fontSize: '13.5px', color: '#264430' }}>
                 Bachelor of Economics (Hons.) | Albukhary International University
               </strong>
               <span style={{ fontSize: '12px', color: '#555' }}>Graduated Apr 2026</span>
             </div>
-            <div style={{ fontSize: '12.5px', color: '#44474d', marginTop: '4px' }}>
+            <div style={{ fontSize: '12.5px', color: '#4a4e4a', marginTop: '4px' }}>
               <strong>Relevant Coursework:</strong> Microeconomics, Macroeconomics, Development Economics, Econometrics, Islamic Economics & Finance, Principles of Marketing, Entrepreneurship & Innovation.
             </div>
             <ul style={{ paddingLeft: '18px', marginTop: '4px', fontSize: '12.5px', color: '#333', lineHeight: 1.55 }}>
@@ -399,7 +391,7 @@ References available upon request.`;
             </ul>
           </div>
 
-          <div style={{ fontSize: '12px', color: '#75777e', textAlign: 'center', fontStyle: 'italic', marginTop: '16px', paddingTop: '10px', borderTop: '1px solid #e6e2d9' }}>
+          <div style={{ fontSize: '12px', color: '#74796e', textAlign: 'center', fontStyle: 'italic', marginTop: '16px', paddingTop: '10px', borderTop: '1px solid #e4e0d8' }}>
             References available upon request.
           </div>
         </div>

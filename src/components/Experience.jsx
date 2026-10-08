@@ -3,12 +3,7 @@ import { motion } from 'framer-motion';
 import {
   Briefcase,
   Calendar,
-  Building,
   CheckCircle2,
-  Users2,
-  Compass,
-  ArrowRight,
-  Sparkles,
 } from 'lucide-react';
 
 export default function Experience() {
@@ -18,7 +13,7 @@ export default function Experience() {
       company: 'Nagashi Relief and Development Berhad (NGO)',
       period: 'Mar 2025 – Apr 2026',
       badge: 'NGO & Community Development',
-      badgeColor: '#0b1f3a',
+      badgeColor: '#264430',
       location: 'Kuala Lumpur / Kedah, Malaysia',
       desc: 'Directed comprehensive media strategy and community development initiatives, serving as primary liaison between institutional leadership, prospective scholars, and vulnerable demographic groups.',
       bullets: [
@@ -34,7 +29,7 @@ export default function Experience() {
       company: 'TAKO',
       period: 'Nov 2025 – Feb 2026',
       badge: 'Private Sector & SEO',
-      badgeColor: '#2a7f83',
+      badgeColor: '#4a7c59',
       location: 'Kuala Lumpur, Malaysia',
       desc: 'Executed performance-focused content marketing and on-page search engine optimization within a fast-paced agency setting, elevating organic search rankings and audience retention.',
       bullets: [
@@ -49,7 +44,7 @@ export default function Experience() {
       company: 'Ijma Foundation for Humanitarian Action',
       period: 'Jul 2025 – Jan 2026',
       badge: 'Humanitarian Outreach',
-      badgeColor: '#785a00',
+      badgeColor: '#705c30',
       location: 'Malaysia',
       desc: 'Provided dedicated mentorship and structured guidance for aspiring undergraduate candidates pursuing transformative tertiary education scholarships.',
       bullets: [
@@ -75,11 +70,11 @@ export default function Experience() {
         {/* Section Header */}
         <div style={{ maxWidth: '780px', marginBottom: '52px' }}>
           <div className="section-eyebrow">
-            <Briefcase size={14} color="#c8a24a" />
+            <Briefcase size={14} color="#c4a66a" />
             <span>Professional Career History</span>
           </div>
           <h2 className="section-title">
-            Professional Experience & <span className="serif-italic">Operational Track Record</span>
+            Professional Experience & <span className="serif-italic" style={{ color: '#4a7c59' }}>Operational Track Record</span>
           </h2>
           <p className="section-subtitle">
             Demonstrated versatility across non-profit humanitarian coordination, digital marketing strategy, and international scholarship advocacy.
@@ -97,7 +92,7 @@ export default function Experience() {
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               className="policy-node"
             >
-              {/* Gold Node Bullet */}
+              {/* Amber Node Bullet */}
               <div className="policy-dot" />
 
               {/* Experience Card */}
@@ -105,8 +100,8 @@ export default function Experience() {
                 className="editorial-card"
                 style={{
                   padding: '28px 32px',
-                  backgroundColor: '#fdf9f0',
-                  border: '1px solid rgba(11, 31, 58, 0.1)',
+                  backgroundColor: '#faf6f0',
+                  border: '1px solid rgba(74, 124, 89, 0.15)',
                 }}
               >
                 {/* Header Row */}
@@ -124,7 +119,7 @@ export default function Experience() {
                     <span
                       style={{
                         backgroundColor: exp.badgeColor,
-                        color: '#fdf9f0',
+                        color: '#faf6f0',
                         fontSize: '11px',
                         fontWeight: '600',
                         padding: '3px 9px',
@@ -135,7 +130,7 @@ export default function Experience() {
                     >
                       {exp.badge}
                     </span>
-                    <span style={{ fontSize: '12.5px', color: '#75777e' }}>{exp.location}</span>
+                    <span style={{ fontSize: '12.5px', color: '#74796e' }}>{exp.location}</span>
                   </div>
 
                   <div
@@ -144,8 +139,8 @@ export default function Experience() {
                       fontFamily: 'var(--font-mono)',
                       fontSize: '12.5px',
                       fontWeight: '600',
-                      color: '#0b1f3a',
-                      backgroundColor: 'rgba(11, 31, 58, 0.05)',
+                      color: '#264430',
+                      backgroundColor: 'rgba(74, 124, 89, 0.08)',
                       padding: '4px 10px',
                       borderRadius: '4px',
                     }}
@@ -156,14 +151,14 @@ export default function Experience() {
                 </div>
 
                 {/* Job Title & Company */}
-                <h3 style={{ fontSize: '1.4rem', fontWeight: '600', color: '#0b1f3a', marginBottom: '4px' }}>
+                <h3 style={{ fontSize: '1.4rem', fontWeight: '600', color: '#264430', marginBottom: '4px' }}>
                   {exp.role}
                 </h3>
                 <div
                   style={{
                     fontFamily: 'var(--font-serif)',
                     fontSize: '15px',
-                    color: '#785a00',
+                    color: '#705c30',
                     fontStyle: 'italic',
                     marginBottom: '14px',
                   }}
@@ -171,7 +166,7 @@ export default function Experience() {
                   {exp.company}
                 </div>
 
-                <p style={{ fontSize: '14px', color: '#44474d', lineHeight: 1.6, marginBottom: '18px' }}>
+                <p style={{ fontSize: '14px', color: '#4a4e4a', lineHeight: 1.6, marginBottom: '18px' }}>
                   {exp.desc}
                 </p>
 
@@ -190,7 +185,7 @@ export default function Experience() {
                     >
                       <CheckCircle2
                         size={15}
-                        color="#2a7f83"
+                        color="#4a7c59"
                         style={{ flexShrink: 0, marginTop: '3px' }}
                       />
                       <span>{b}</span>

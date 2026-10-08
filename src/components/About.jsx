@@ -5,12 +5,6 @@ import {
   Award,
   BookOpen,
   Languages,
-  CheckCircle2,
-  TrendingUp,
-  Globe2,
-  ShieldCheck,
-  BrainCircuit,
-  FileCheck2,
 } from 'lucide-react';
 
 export default function About() {
@@ -35,11 +29,11 @@ export default function About() {
         {/* Section Title */}
         <div style={{ maxWidth: '780px', marginBottom: '52px' }}>
           <div className="section-eyebrow">
-            <GraduationCap size={14} color="#c8a24a" />
+            <GraduationCap size={14} color="#c4a66a" />
             <span>Academic Foundations & Linguistic Fluency</span>
           </div>
           <h2 className="section-title">
-            Education, Academic Rigor & <span className="serif-italic">Strategic Vision</span>
+            Education, Academic Rigor & <span className="serif-italic" style={{ color: '#4a7c59' }}>Strategic Vision</span>
           </h2>
           <p className="section-subtitle">
             Grounded in rigorous macroeconomic theory, empirical econometrics, and cross-cultural communication to solve modern economic and organizational challenges.
@@ -61,8 +55,8 @@ export default function About() {
             <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '20px' }}>
               <div
                 style={{
-                  backgroundColor: '#0b1f3a',
-                  color: '#c8a24a',
+                  backgroundColor: '#264430',
+                  color: '#c4a66a',
                   width: '44px',
                   height: '44px',
                   borderRadius: '10px',
@@ -70,7 +64,7 @@ export default function About() {
                   alignItems: 'center',
                   justifyContent: 'center',
                   flexShrink: 0,
-                  border: '1px solid rgba(200, 162, 74, 0.4)',
+                  border: '1px solid rgba(196, 166, 106, 0.45)',
                 }}
               >
                 <GraduationCap size={24} />
@@ -79,33 +73,33 @@ export default function About() {
                 <span className="badge-tag-warm" style={{ fontSize: '11px', marginBottom: '4px' }}>
                   Conferred Degree
                 </span>
-                <h3 style={{ fontSize: '1.35rem', fontWeight: '600', color: '#0b1f3a' }}>
+                <h3 style={{ fontSize: '1.35rem', fontWeight: '600', color: '#264430' }}>
                   Bachelor of Economics (Hons.)
                 </h3>
-                <p style={{ fontSize: '13px', color: '#75777e' }}>
+                <p style={{ fontSize: '13px', color: '#74796e' }}>
                   Albukhary International University (AIU) • Graduated Apr 2026
                 </p>
               </div>
             </div>
 
-            <p style={{ fontSize: '14px', color: '#44474d', lineHeight: 1.65, marginBottom: '22px' }}>
+            <p style={{ fontSize: '14px', color: '#4a4e4a', lineHeight: 1.65, marginBottom: '22px' }}>
               Completed a comprehensive four-year curriculum centered on quantitative macroeconomic modeling, econometric analysis, and public policy evaluation. Awarded top institutional accolades for research presentation and social business innovation.
             </p>
 
             {/* Academic Accolades Box */}
             <div
               style={{
-                backgroundColor: '#f7f3ea',
+                backgroundColor: '#f5f1ea',
                 borderRadius: '12px',
                 padding: '16px 20px',
-                border: '1px solid rgba(200, 162, 74, 0.3)',
+                border: '1px solid rgba(196, 166, 106, 0.35)',
               }}
             >
               <div
                 style={{
                   fontSize: '11.5px',
                   fontWeight: '700',
-                  color: '#785a00',
+                  color: '#705c30',
                   textTransform: 'uppercase',
                   letterSpacing: '0.06em',
                   marginBottom: '10px',
@@ -118,12 +112,12 @@ export default function About() {
               </div>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: '#0b1f3a' }}>
-                  <span style={{ color: '#c8a24a', fontWeight: '700' }}>🥇 Platinum Award:</span>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: '#264430' }}>
+                  <span style={{ color: '#c4a66a', fontWeight: '700' }}>🥇 Platinum Award:</span>
                   <span>Best Research Paper, AIU Seminar Day (2025)</span>
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: '#0b1f3a' }}>
-                  <span style={{ color: '#785a00', fontWeight: '700' }}>🥈 Gold Award:</span>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: '#264430' }}>
+                  <span style={{ color: '#705c30', fontWeight: '700' }}>🥈 Gold Award:</span>
                   <span>Social Business Group Project</span>
                 </div>
               </div>
@@ -135,8 +129,8 @@ export default function About() {
             <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '20px' }}>
               <div
                 style={{
-                  backgroundColor: 'rgba(42, 127, 131, 0.12)',
-                  color: '#2a7f83',
+                  backgroundColor: 'rgba(74, 124, 89, 0.12)',
+                  color: '#4a7c59',
                   width: '44px',
                   height: '44px',
                   borderRadius: '10px',
@@ -144,25 +138,25 @@ export default function About() {
                   alignItems: 'center',
                   justifyContent: 'center',
                   flexShrink: 0,
-                  border: '1px solid rgba(42, 127, 131, 0.3)',
+                  border: '1px solid rgba(74, 124, 89, 0.25)',
                 }}
               >
                 <Languages size={24} />
               </div>
               <div>
-                <span className="badge-teal" style={{ fontSize: '11px', marginBottom: '4px' }}>
+                <span className="badge-sage" style={{ fontSize: '11px', marginBottom: '4px' }}>
                   International Engagement
                 </span>
-                <h3 style={{ fontSize: '1.35rem', fontWeight: '600', color: '#0b1f3a' }}>
+                <h3 style={{ fontSize: '1.35rem', fontWeight: '600', color: '#264430' }}>
                   Linguistic Versatility
                 </h3>
-                <p style={{ fontSize: '13px', color: '#75777e' }}>
+                <p style={{ fontSize: '13px', color: '#74796e' }}>
                   Multi-Stakeholder Cross-Cultural Communication
                 </p>
               </div>
             </div>
 
-            <p style={{ fontSize: '14px', color: '#44474d', lineHeight: 1.65, marginBottom: '22px' }}>
+            <p style={{ fontSize: '14px', color: '#4a4e4a', lineHeight: 1.65, marginBottom: '22px' }}>
               Equipped to engage executive boards, international academic faculties, and grassroots community beneficiaries seamlessly across Arabic and English.
             </p>
 
@@ -173,21 +167,21 @@ export default function About() {
                   key={l.name}
                   style={{
                     backgroundColor: '#ffffff',
-                    border: '1px solid rgba(11, 31, 58, 0.08)',
+                    border: '1px solid rgba(74, 124, 89, 0.12)',
                     borderRadius: '10px',
                     padding: '14px 18px',
                   }}
                 >
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <span style={{ fontWeight: '700', color: '#0b1f3a', fontSize: '14px' }}>{l.name}</span>
+                      <span style={{ fontWeight: '700', color: '#264430', fontSize: '14px' }}>{l.name}</span>
                       <span className="badge-tag-warm" style={{ fontSize: '11px', padding: '1px 6px' }}>{l.status}</span>
                     </div>
-                    <span className="tnum" style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', fontWeight: '600', color: '#2a7f83' }}>
+                    <span className="tnum" style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', fontWeight: '600', color: '#4a7c59' }}>
                       {l.fluency}
                     </span>
                   </div>
-                  <p style={{ fontSize: '12.5px', color: '#555', lineHeight: 1.5 }}>
+                  <p style={{ fontSize: '12.5px', color: '#4a4e4a', lineHeight: 1.5 }}>
                     {l.desc}
                   </p>
                 </div>
@@ -198,10 +192,10 @@ export default function About() {
 
         {/* Relevant Academic Coursework Matrix */}
         <div className="editorial-card" style={{ padding: '32px' }}>
-          <h3 style={{ fontSize: '1.35rem', fontWeight: '600', color: '#0b1f3a', marginBottom: '6px' }}>
+          <h3 style={{ fontSize: '1.35rem', fontWeight: '600', color: '#264430', marginBottom: '6px' }}>
             Relevant Undergraduate Coursework & Competencies
           </h3>
-          <p style={{ fontSize: '13.5px', color: '#75777e', marginBottom: '22px' }}>
+          <p style={{ fontSize: '13.5px', color: '#74796e', marginBottom: '22px' }}>
             Core curriculum modules completed at Albukhary International University:
           </p>
 
@@ -216,17 +210,17 @@ export default function About() {
               <div
                 key={c.title}
                 style={{
-                  backgroundColor: '#fdf9f0',
-                  border: '1px solid rgba(11, 31, 58, 0.08)',
+                  backgroundColor: '#faf6f0',
+                  border: '1px solid rgba(74, 124, 89, 0.12)',
                   borderRadius: '10px',
                   padding: '16px',
                 }}
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
-                  <BookOpen size={15} color="#c8a24a" />
-                  <h4 style={{ fontSize: '14px', fontWeight: '600', color: '#0b1f3a' }}>{c.title}</h4>
+                  <BookOpen size={15} color="#c4a66a" />
+                  <h4 style={{ fontSize: '14px', fontWeight: '600', color: '#264430' }}>{c.title}</h4>
                 </div>
-                <p style={{ fontSize: '12.5px', color: '#44474d', lineHeight: 1.5 }}>
+                <p style={{ fontSize: '12.5px', color: '#4a4e4a', lineHeight: 1.5 }}>
                   {c.desc}
                 </p>
               </div>

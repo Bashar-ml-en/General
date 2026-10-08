@@ -5,11 +5,7 @@ import {
   Globe,
   Monitor,
   Users,
-  CheckCircle2,
-  TrendingUp,
   Cpu,
-  Layers,
-  Sparkles,
 } from 'lucide-react';
 
 export default function Skills() {
@@ -59,11 +55,11 @@ export default function Skills() {
         {/* Section Header */}
         <div style={{ maxWidth: '780px', marginBottom: '44px' }}>
           <div className="section-eyebrow">
-            <Cpu size={14} color="#c8a24a" />
+            <Cpu size={14} color="#c4a66a" />
             <span>Comprehensive Technical & Methodological Competencies</span>
           </div>
           <h2 className="section-title">
-            Core Skills & <span className="serif-italic">Analytical Toolkit</span>
+            Core Skills & <span className="serif-italic" style={{ color: '#4a7c59' }}>Analytical Toolkit</span>
           </h2>
           <p className="section-subtitle">
             A balanced synthesis of econometric research, digital growth strategy, productivity software, and stakeholder leadership.
@@ -87,7 +83,7 @@ export default function Skills() {
               style={{
                 fontSize: '13px',
                 padding: '10px 18px',
-                borderRadius: '6px',
+                borderRadius: '8px',
               }}
             >
               {cat.icon}
@@ -108,7 +104,7 @@ export default function Skills() {
             gap: '20px',
           }}
         >
-          {skillGroups[activeTab].map((skill, idx) => (
+          {skillGroups[activeTab].map((skill) => (
             <div
               key={skill.name}
               className="editorial-card"
@@ -121,30 +117,30 @@ export default function Skills() {
             >
               <div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
-                  <h3 style={{ fontSize: '1.2rem', fontWeight: '600', color: '#0b1f3a' }}>
+                  <h3 style={{ fontSize: '1.2rem', fontWeight: '600', color: '#264430' }}>
                     {skill.name}
                   </h3>
                   <span
-                    className={skill.level === 'Expert' ? 'badge-honor' : 'badge-teal'}
+                    className={skill.level === 'Expert' ? 'badge-honor' : 'badge-sage'}
                     style={{ fontSize: '11px', padding: '2px 8px' }}
                   >
                     {skill.level}
                   </span>
                 </div>
 
-                <p style={{ fontSize: '13px', color: '#44474d', lineHeight: 1.55 }}>
+                <p style={{ fontSize: '13px', color: '#4a4e4a', lineHeight: 1.55 }}>
                   {skill.desc}
                 </p>
               </div>
 
               {/* Progress Indicator Accent */}
               <div style={{ marginTop: '16px' }}>
-                <div style={{ height: '4px', width: '100%', backgroundColor: '#f1eee5', borderRadius: '2px', overflow: 'hidden' }}>
+                <div style={{ height: '4px', width: '100%', backgroundColor: '#f0ece4', borderRadius: '2px', overflow: 'hidden' }}>
                   <div
                     style={{
                       height: '100%',
                       width: skill.level === 'Expert' ? '95%' : skill.level === 'Advanced' ? '85%' : '75%',
-                      backgroundColor: skill.level === 'Expert' ? '#c8a24a' : '#2a7f83',
+                      backgroundColor: skill.level === 'Expert' ? '#c4a66a' : '#4a7c59',
                       borderRadius: '2px',
                     }}
                   />
