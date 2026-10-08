@@ -1,5 +1,5 @@
 import React from 'react';
-import { Award, ArrowUp, FileText, Mail } from 'lucide-react';
+import { Award, ArrowUp, FileText, Mail, Linkedin } from 'lucide-react';
 
 export default function Footer({ onOpenResume }) {
   const scrollToTop = () => {
@@ -124,7 +124,7 @@ export default function Footer({ onOpenResume }) {
               <FileText size={14} />
               <span>View Official Resume</span>
             </button>
-            <div style={{ marginTop: '14px' }}>
+            <div style={{ marginTop: '14px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
               <a
                 href="#contact"
                 style={{
@@ -133,11 +133,28 @@ export default function Footer({ onOpenResume }) {
                   textDecoration: 'none',
                   display: 'flex',
                   alignItems: 'center',
-                  gap: '4px',
+                  gap: '6px',
                 }}
               >
                 <Mail size={13} />
                 <span>alhassan.ibrahim2070@gmail.com</span>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/alhassan-ibrahim-ali-hassan-a4b2ab323"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  color: '#93c5fd',
+                  fontSize: '12.5px',
+                  textDecoration: 'none',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  fontWeight: '500',
+                }}
+              >
+                <Linkedin size={13} />
+                <span>LinkedIn • Alhassan Ibrahim</span>
               </a>
             </div>
           </div>

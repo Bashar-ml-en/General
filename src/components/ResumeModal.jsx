@@ -18,7 +18,7 @@ export default function ResumeModal({ isOpen, onClose }) {
 
   const plainTextCV = `ALHASSAN IBRAHIM ALI HASSAN
 Economics Graduate | Applied Economics & Data Analysis
-Kuala Lumpur, Malaysia | alhassan.ibrahim2070@gmail.com | +60 17 922 6551 | LinkedIn
+Kuala Lumpur, Malaysia | alhassan.ibrahim2070@gmail.com | +60 17 922 6551 | LinkedIn: https://www.linkedin.com/in/alhassan-ibrahim-ali-hassan-a4b2ab323
 
 PROFESSIONAL SUMMARY
 Economics graduate with hands-on experience in applied econometrics and data analysis (Excel, SPSS, Stata, World Bank datasets), combined with a strong track record in digital marketing, community outreach, and event coordination. Delivered a Platinum Award-winning research project using ARDL modeling, led a university-funded SME digital-skills training program with a RM5,000 budget, and managed communications for an NGO reaching hundreds of beneficiaries. Native Arabic speaker, fluent in English, with proven ability to engage diverse stakeholders and drive measurable outcomes.
@@ -226,9 +226,18 @@ References available upon request.`;
                 alhassan.ibrahim2070@gmail.com
               </a>
               <span>•</span>
-              <span>+60 17 922 6551</span>
+              <a href="tel:+60179226551" style={{ color: '#264430', textDecoration: 'none' }}>
+                +60 17 922 6551
+              </a>
               <span>•</span>
-              <span>LinkedIn</span>
+              <a
+                href="https://www.linkedin.com/in/alhassan-ibrahim-ali-hassan-a4b2ab323"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: '#0a66c2', textDecoration: 'none', fontWeight: '600' }}
+              >
+                LinkedIn Profile
+              </a>
             </div>
           </div>
 

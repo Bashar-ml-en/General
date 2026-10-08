@@ -8,9 +8,12 @@ import {
   BarChart3,
   GraduationCap,
   Globe2,
+  Linkedin,
 } from 'lucide-react';
 
 export default function Hero({ onOpenResume }) {
+  const linkedinUrl = 'https://www.linkedin.com/in/alhassan-ibrahim-ali-hassan-a4b2ab323';
+
   const metrics = [
     {
       num: 'ARDL',
@@ -154,6 +157,24 @@ export default function Hero({ onOpenResume }) {
                 <span>View Official Resume</span>
               </button>
 
+              <a
+                href={linkedinUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  borderColor: 'rgba(10, 102, 194, 0.4)',
+                  color: '#0a66c2',
+                  backgroundColor: '#ffffff',
+                }}
+              >
+                <Linkedin size={15} />
+                <span>Connect on LinkedIn</span>
+              </a>
+
               <a href="#contact" className="btn-secondary" style={{ borderStyle: 'dashed' }}>
                 <Mail size={15} />
                 <span>Contact Alhassan</span>
@@ -187,7 +208,7 @@ export default function Hero({ onOpenResume }) {
             </div>
           </motion.div>
 
-          {/* Right Column: Terra Organic Academic Crest & Monogram Plaque */}
+          {/* Right Column: Alhassan's Portrait & Verification Card */}
           <motion.div
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -201,128 +222,137 @@ export default function Hero({ onOpenResume }) {
                 backgroundColor: '#ffffff',
                 border: '1px solid rgba(74, 124, 89, 0.2)',
                 borderRadius: '24px',
-                padding: '24px',
+                padding: '20px',
                 boxShadow: '0 8px 32px -4px rgba(38, 68, 48, 0.08), 0 20px 48px -12px rgba(38, 68, 48, 0.06)',
               }}
             >
-              {/* Crest Seal Container */}
+              {/* Portrait Container */}
               <div
                 style={{
                   position: 'relative',
                   width: '100%',
-                  aspectRatio: '1 / 1',
-                  maxHeight: '360px',
+                  aspectRatio: '4 / 5',
+                  maxHeight: '440px',
                   borderRadius: '18px',
-                  backgroundColor: '#264430',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  padding: '28px',
-                  border: '1px solid rgba(196, 166, 106, 0.45)',
-                  boxShadow: 'inset 0 0 40px rgba(0, 0, 0, 0.35)',
                   overflow: 'hidden',
+                  backgroundColor: '#264430',
+                  border: '1.5px solid rgba(196, 166, 106, 0.45)',
+                  boxShadow: '0 12px 32px rgba(38, 68, 48, 0.18)',
                 }}
               >
-                {/* Background Geometric Axis Lines */}
-                <svg
+                <img
+                  src="/alhassan-profile.jpg"
+                  alt="Alhassan Ibrahim Ali Hassan"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    objectPosition: 'center 20%',
+                    display: 'block',
+                  }}
+                />
+
+                {/* Soft Vignette / Gradient Overlay at Bottom */}
+                <div
                   style={{
                     position: 'absolute',
                     inset: 0,
-                    width: '100%',
-                    height: '100%',
-                    opacity: 0.15,
+                    background: 'linear-gradient(to top, rgba(22, 39, 28, 0.9) 0%, rgba(22, 39, 28, 0.25) 35%, transparent 60%)',
                     pointerEvents: 'none',
                   }}
-                  viewBox="0 0 300 300"
-                >
-                  <circle cx="150" cy="150" r="120" fill="none" stroke="#c4a66a" strokeWidth="1" strokeDasharray="4 4" />
-                  <circle cx="150" cy="150" r="90" fill="none" stroke="#4a7c59" strokeWidth="1" />
-                  <line x1="30" y1="150" x2="270" y2="150" stroke="#c4a66a" strokeWidth="0.8" />
-                  <line x1="150" y1="30" x2="150" y2="270" stroke="#c4a66a" strokeWidth="0.8" />
-                  <path d="M50 220 Q 150 120 250 80" fill="none" stroke="#c4a66a" strokeWidth="2" />
-                </svg>
+                />
 
-                {/* Central AI Monogram Box */}
-                <div
+                {/* Top Badge: Verified LinkedIn Profile Pill */}
+                <a
+                  href={linkedinUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   style={{
-                    width: '90px',
-                    height: '90px',
-                    borderRadius: '50%',
-                    backgroundColor: 'rgba(250, 246, 240, 0.08)',
-                    border: '2px solid #c4a66a',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: '#faf6f0',
-                    fontFamily: 'var(--font-serif)',
-                    fontSize: '38px',
-                    fontWeight: '600',
-                    letterSpacing: '0.06em',
-                    boxShadow: '0 0 24px rgba(196, 166, 106, 0.25)',
-                    marginBottom: '16px',
-                    position: 'relative',
-                    zIndex: 2,
-                  }}
-                >
-                  AI
-                </div>
-
-                <div
-                  style={{
-                    fontFamily: 'var(--font-serif)',
-                    fontSize: '20px',
-                    fontWeight: '600',
-                    color: '#faf6f0',
-                    letterSpacing: '0.02em',
-                    textAlign: 'center',
-                    marginBottom: '4px',
-                    position: 'relative',
-                    zIndex: 2,
-                  }}
-                >
-                  Alhassan Ibrahim Ali Hassan
-                </div>
-
-                <div
-                  style={{
-                    fontFamily: 'var(--font-sans)',
-                    fontSize: '12px',
-                    color: '#f8e0a8',
-                    fontWeight: '600',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.08em',
-                    textAlign: 'center',
-                    marginBottom: '12px',
-                    position: 'relative',
-                    zIndex: 2,
-                  }}
-                >
-                  Bachelor of Economics (Hons.)
-                </div>
-
-                <div
-                  style={{
+                    position: 'absolute',
+                    top: '14px',
+                    right: '14px',
                     display: 'inline-flex',
                     alignItems: 'center',
                     gap: '6px',
-                    padding: '4px 10px',
-                    backgroundColor: 'rgba(196, 166, 106, 0.15)',
-                    border: '1px solid rgba(196, 166, 106, 0.35)',
-                    borderRadius: '6px',
-                    color: '#f8e0a8',
-                    fontSize: '11px',
-                    fontWeight: '600',
-                    position: 'relative',
+                    padding: '5px 12px',
+                    backgroundColor: 'rgba(255, 255, 255, 0.94)',
+                    backdropFilter: 'blur(8px)',
+                    WebkitBackdropFilter: 'blur(8px)',
+                    borderRadius: '20px',
+                    color: '#0a66c2',
+                    fontSize: '11.5px',
+                    fontWeight: '700',
+                    textDecoration: 'none',
+                    boxShadow: '0 4px 14px rgba(0, 0, 0, 0.15)',
+                    border: '1px solid rgba(10, 102, 194, 0.3)',
+                    zIndex: 3,
+                    transition: 'transform 0.15s ease',
+                  }}
+                >
+                  <Linkedin size={13} />
+                  <span>LinkedIn Verified</span>
+                </a>
+
+                {/* Bottom Info Overlay on Portrait */}
+                <div
+                  style={{
+                    position: 'absolute',
+                    bottom: '16px',
+                    left: '16px',
+                    right: '16px',
                     zIndex: 2,
                   }}
                 >
-                  <Award size={12} />
-                  <span>Albukhary International University • 2026</span>
+                  <div
+                    style={{
+                      fontFamily: 'var(--font-serif)',
+                      fontSize: '20px',
+                      fontWeight: '700',
+                      color: '#faf6f0',
+                      letterSpacing: '0.01em',
+                      marginBottom: '2px',
+                      textShadow: '0 2px 8px rgba(0, 0, 0, 0.6)',
+                    }}
+                  >
+                    Alhassan Ibrahim Ali Hassan
+                  </div>
+                  <div
+                    style={{
+                      fontFamily: 'var(--font-sans)',
+                      fontSize: '12px',
+                      color: '#f8e0a8',
+                      fontWeight: '600',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.06em',
+                      marginBottom: '8px',
+                      textShadow: '0 1px 4px rgba(0, 0, 0, 0.5)',
+                    }}
+                  >
+                    Bachelor of Economics (Hons.) • AIU
+                  </div>
+
+                  <div
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '6px',
+                      padding: '4px 10px',
+                      backgroundColor: 'rgba(38, 68, 48, 0.8)',
+                      backdropFilter: 'blur(6px)',
+                      border: '1px solid rgba(196, 166, 106, 0.45)',
+                      borderRadius: '6px',
+                      color: '#f8e0a8',
+                      fontSize: '11px',
+                      fontWeight: '600',
+                    }}
+                  >
+                    <Award size={12} color="#c4a66a" />
+                    <span>Platinum Award Winner — Best Research Paper</span>
+                  </div>
                 </div>
               </div>
 
-              {/* Plaque Excerpt Below Crest */}
+              {/* Plaque Excerpt Below Portrait with LinkedIn Direct Access */}
               <div
                 style={{
                   marginTop: '16px',
@@ -358,23 +388,30 @@ export default function Hero({ onOpenResume }) {
                   </div>
                 </div>
 
-                <div
+                <a
+                  href={linkedinUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   style={{
-                    backgroundColor: '#264430',
-                    color: '#c4a66a',
-                    borderRadius: '50%',
-                    width: '32px',
-                    height: '32px',
-                    display: 'flex',
+                    backgroundColor: '#0a66c2',
+                    color: '#ffffff',
+                    borderRadius: '8px',
+                    padding: '7px 12px',
+                    display: 'inline-flex',
                     alignItems: 'center',
-                    justifyContent: 'center',
+                    gap: '6px',
+                    fontSize: '11.5px',
+                    fontWeight: '600',
+                    textDecoration: 'none',
                     flexShrink: 0,
-                    border: '1px solid rgba(196, 166, 106, 0.35)',
+                    boxShadow: '0 2px 6px rgba(10, 102, 194, 0.3)',
+                    transition: 'opacity 0.15s ease',
                   }}
-                  title="Platinum Award Best Research Paper"
+                  title="View Alhassan Ibrahim on LinkedIn"
                 >
-                  <Award size={16} />
-                </div>
+                  <Linkedin size={13} />
+                  <span>Profile</span>
+                </a>
               </div>
             </div>
           </motion.div>

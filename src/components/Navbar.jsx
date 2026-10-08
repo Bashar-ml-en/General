@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, FileText, ChevronRight } from 'lucide-react';
+import { Menu, X, FileText, ChevronRight, Linkedin } from 'lucide-react';
 
 export default function Navbar({ onOpenResume }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -224,6 +224,30 @@ export default function Navbar({ onOpenResume }) {
             <span>Resume</span>
           </button>
 
+          {/* LinkedIn Icon Action */}
+          <a
+            href="https://www.linkedin.com/in/alhassan-ibrahim-ali-hassan-a4b2ab323"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Connect with Alhassan on LinkedIn"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '38px',
+              height: '38px',
+              borderRadius: '8px',
+              border: '1px solid rgba(10, 102, 194, 0.35)',
+              color: '#0a66c2',
+              backgroundColor: '#ffffff',
+              textDecoration: 'none',
+              boxShadow: '0 1px 4px rgba(10, 102, 194, 0.1)',
+              transition: 'all 0.18s ease',
+            }}
+          >
+            <Linkedin size={17} />
+          </a>
+
           {/* Mobile Menu Trigger */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -279,6 +303,28 @@ export default function Navbar({ onOpenResume }) {
                 <ChevronRight size={16} color="#74796e" />
               </a>
             ))}
+
+            <a
+              href="https://www.linkedin.com/in/alhassan-ibrahim-ali-hassan-a4b2ab323"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMobileMenuOpen(false)}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                padding: '9px 4px',
+                borderBottom: '1px solid rgba(74, 124, 89, 0.08)',
+                textDecoration: 'none',
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#0a66c2', fontWeight: '700', fontSize: '14.5px' }}>
+                <Linkedin size={16} />
+                <span>LinkedIn Profile</span>
+              </div>
+              <ChevronRight size={16} color="#0a66c2" />
+            </a>
+
             <div style={{ marginTop: '16px' }}>
               <button
                 onClick={() => {

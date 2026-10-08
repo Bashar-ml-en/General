@@ -8,6 +8,7 @@ import {
   Copy,
   Check,
   ArrowUpRight,
+  Linkedin,
 } from 'lucide-react';
 
 export default function Contact() {
@@ -163,6 +164,48 @@ export default function Contact() {
                   <span>Call Directly</span>
                 </a>
               </div>
+            </div>
+
+            {/* LinkedIn Professional Network Card */}
+            <div
+              style={{
+                backgroundColor: 'rgba(250, 246, 240, 0.06)',
+                border: '1px solid rgba(250, 246, 240, 0.16)',
+                borderRadius: '14px',
+                padding: '20px',
+                marginBottom: '16px',
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#8ec5fc', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: '600' }}>
+                  <Linkedin size={14} /> Professional Network
+                </div>
+                <span style={{ fontSize: '11px', color: '#d5dcd2', backgroundColor: 'rgba(255, 255, 255, 0.1)', padding: '2px 7px', borderRadius: '4px' }}>
+                  Verified
+                </span>
+              </div>
+              <div
+                style={{
+                  fontFamily: 'var(--font-sans)',
+                  fontSize: '15px',
+                  color: '#ffffff',
+                  fontWeight: '600',
+                  marginBottom: '10px',
+                }}
+              >
+                Alhassan Ibrahim Ali Hassan
+              </div>
+              <a
+                href="https://www.linkedin.com/in/alhassan-ibrahim-ali-hassan-a4b2ab323"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-ghost-dark"
+                style={{ fontSize: '12px', padding: '7px 14px', width: 'fit-content', gap: '6px' }}
+              >
+                <Linkedin size={13} style={{ color: '#8ec5fc' }} />
+                <span>View LinkedIn Profile</span>
+                <ArrowUpRight size={13} />
+              </a>
             </div>
 
             {/* Location & Availability Card */}
