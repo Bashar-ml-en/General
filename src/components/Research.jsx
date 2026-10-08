@@ -1,9 +1,14 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import {
   Award,
   CheckCircle2,
   Database,
+  Maximize2,
+  X,
+  ChevronLeft,
+  ChevronRight,
+  Sparkles,
 } from 'lucide-react';
 
 export default function Research() {
@@ -11,6 +16,44 @@ export default function Research() {
   const [fdiInflow, setFdiInflow] = useState(3.8); // % of GDP
   const [educationEnrollment, setEducationEnrollment] = useState(82); // % gross secondary
   const [gdpGrowth, setGdpGrowth] = useState(3.5); // % annual
+
+  // Lightbox State for Research Award Photos
+  const [activeAwardPhotoIndex, setActiveAwardPhotoIndex] = useState(null);
+
+  const awardPhotos = [
+    {
+      id: 'award-presentation',
+      src: '/research/platinum-award-presentation.jpg',
+      title: 'Platinum Award Presentation & Official Certificate',
+      subtitle: 'Alhassan Ibrahim Ali Hassan with Academic Supervisor',
+      caption: 'Alhassan receiving the prestigious Platinum Award for "Outstanding Paper Presentation" at the Seminar in Contemporary Issues in Economics and Finance (AIU), accompanied by his Certificate of Appreciation as Presenter.',
+      badge: 'Platinum Award Ceremony',
+    },
+    {
+      id: 'seminar-cohort',
+      src: '/research/seminar-cohort-stage.jpg',
+      title: 'Seminar in Economics & Finance Stage Cohort',
+      subtitle: 'Albukhary International University • School of Business & Social Sciences',
+      caption: 'Official photo session on the main auditorium stage with the seminar faculty committee, academic dean, and award-winning presenters.',
+      badge: 'Academic Defense Cohort',
+    },
+  ];
+
+  // Lightbox keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (activeAwardPhotoIndex === null) return;
+      if (e.key === 'Escape') setActiveAwardPhotoIndex(null);
+      if (e.key === 'ArrowRight') {
+        setActiveAwardPhotoIndex((prev) => (prev + 1) % awardPhotos.length);
+      }
+      if (e.key === 'ArrowLeft') {
+        setActiveAwardPhotoIndex((prev) => (prev - 1 + awardPhotos.length) % awardPhotos.length);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [activeAwardPhotoIndex]);
 
   // ARDL Elasticity Model:
   // Base model: YouthUnemp = 8.5 - 0.45*(FDI) - 0.28*(GDP_Growth) + 0.04*(Educ_Mismatch_Adj)
@@ -35,7 +78,7 @@ export default function Research() {
     >
       <div className="container">
         {/* Section Heading */}
-        <div style={{ maxWidth: '780px', marginBottom: '44px' }}>
+        <div style={{ maxWidth: '820px', marginBottom: '44px' }}>
           <div className="section-eyebrow">
             <Award size={14} color="#c4a66a" />
             <span>Seminal Academic Research • AIU Seminar Day 2025</span>
@@ -58,7 +101,7 @@ export default function Research() {
           }}
           className="research-grid"
         >
-          {/* Left Column: Scholarly Thesis Breakdown */}
+          {/* Left Column: Scholarly Thesis Breakdown & Photographic Proof */}
           <div>
             {/* Platinum Honor Badge Card */}
             <div
@@ -67,7 +110,7 @@ export default function Research() {
                 border: '1px solid rgba(196, 166, 106, 0.45)',
                 borderRadius: '18px',
                 padding: '24px',
-                marginBottom: '28px',
+                marginBottom: '24px',
                 position: 'relative',
               }}
             >
@@ -112,6 +155,111 @@ export default function Research() {
                 <span className="badge-tag-warm" style={{ fontSize: '11px', background: '#ffffff' }}>
                   SPSS & Stata Validation
                 </span>
+              </div>
+            </div>
+
+            {/* Photographic Evidence Gallery: Platinum Award Presentation */}
+            <div
+              style={{
+                backgroundColor: '#ffffff',
+                border: '1px solid rgba(74, 124, 89, 0.2)',
+                borderRadius: '16px',
+                padding: '20px',
+                marginBottom: '28px',
+                boxShadow: '0 4px 16px rgba(38, 68, 48, 0.05)',
+              }}
+            >
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '14px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                  <Sparkles size={14} color="#c4a66a" />
+                  <span style={{ fontSize: '12px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '0.06em', color: '#264430' }}>
+                    Award Presentation & Defense Evidence
+                  </span>
+                </div>
+                <span style={{ fontSize: '11px', color: '#705c30', fontStyle: 'italic' }}>
+                  Click to inspect full certificate
+                </span>
+              </div>
+
+              <div
+                style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
+                  gap: '12px',
+                }}
+              >
+                {awardPhotos.map((photo, idx) => (
+                  <div
+                    key={photo.id}
+                    onClick={() => setActiveAwardPhotoIndex(idx)}
+                    style={{
+                      borderRadius: '10px',
+                      overflow: 'hidden',
+                      border: '1px solid rgba(196, 166, 106, 0.35)',
+                      cursor: 'pointer',
+                      backgroundColor: '#faf6f0',
+                      transition: 'all 0.2s ease',
+                      position: 'relative',
+                    }}
+                    className="award-photo-thumb"
+                  >
+                    <div style={{ position: 'relative', height: '170px', overflow: 'hidden', backgroundColor: '#16271c' }}>
+                      <img
+                        src={photo.src}
+                        alt={photo.title}
+                        style={{
+                          width: '100%',
+                          height: '100%',
+                          objectFit: 'cover',
+                          objectPosition: 'center 20%',
+                          transition: 'transform 0.3s ease',
+                        }}
+                        className="award-img-zoom"
+                      />
+                      <div
+                        style={{
+                          position: 'absolute',
+                          top: '8px',
+                          left: '8px',
+                          backgroundColor: 'rgba(22, 39, 28, 0.85)',
+                          backdropFilter: 'blur(4px)',
+                          color: '#faf6f0',
+                          fontSize: '10px',
+                          fontWeight: '700',
+                          padding: '2px 7px',
+                          borderRadius: '4px',
+                          border: '1px solid rgba(196, 166, 106, 0.4)',
+                        }}
+                      >
+                        {photo.badge}
+                      </div>
+                      <div
+                        style={{
+                          position: 'absolute',
+                          bottom: '8px',
+                          right: '8px',
+                          backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                          color: '#264430',
+                          borderRadius: '5px',
+                          padding: '4px',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                        }}
+                      >
+                        <Maximize2 size={12} />
+                      </div>
+                    </div>
+                    <div style={{ padding: '10px 12px' }}>
+                      <strong style={{ fontSize: '12px', color: '#264430', display: 'block', lineHeight: 1.35, marginBottom: '2px' }}>
+                        {photo.title}
+                      </strong>
+                      <span style={{ fontSize: '11px', color: '#705c30' }}>
+                        {photo.subtitle}
+                      </span>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
 
@@ -250,14 +398,14 @@ export default function Research() {
                   transition: 'all 0.15s ease',
                 }}
               >
-                Baseline 2024
+                Baseline (2024 Actual)
               </button>
               <button
                 type="button"
-                onClick={() => { setFdiInflow(6.5); setGdpGrowth(5.0); setEducationEnrollment(90); }}
+                onClick={() => { setFdiInflow(6.5); setGdpGrowth(5.2); setEducationEnrollment(90); }}
                 style={{
-                  background: fdiInflow === 6.5 && gdpGrowth === 5.0 && educationEnrollment === 90 ? '#264430' : '#ffffff',
-                  color: fdiInflow === 6.5 && gdpGrowth === 5.0 && educationEnrollment === 90 ? '#ffffff' : '#264430',
+                  background: fdiInflow === 6.5 && gdpGrowth === 5.2 && educationEnrollment === 90 ? '#264430' : '#ffffff',
+                  color: fdiInflow === 6.5 && gdpGrowth === 5.2 && educationEnrollment === 90 ? '#ffffff' : '#264430',
                   border: '1px solid rgba(74, 124, 89, 0.25)',
                   borderRadius: '6px',
                   padding: '4px 10px',
@@ -267,15 +415,15 @@ export default function Research() {
                   transition: 'all 0.15s ease',
                 }}
               >
-                High Capital Inflow (+6.5%)
+                FDI Surge & Upskilling
               </button>
               <button
                 type="button"
-                onClick={() => { setFdiInflow(1.2); setGdpGrowth(1.0); setEducationEnrollment(72); }}
+                onClick={() => { setFdiInflow(1.8); setGdpGrowth(1.5); setEducationEnrollment(74); }}
                 style={{
-                  background: fdiInflow === 1.2 && gdpGrowth === 1.0 && educationEnrollment === 72 ? '#264430' : '#ffffff',
-                  color: fdiInflow === 1.2 && gdpGrowth === 1.0 && educationEnrollment === 72 ? '#ffffff' : '#264430',
-                  border: '1px solid rgba(74, 124, 89, 0.25)',
+                  background: fdiInflow === 1.8 && gdpGrowth === 1.5 && educationEnrollment === 74 ? '#ba1a1a' : '#ffffff',
+                  color: fdiInflow === 1.8 && gdpGrowth === 1.5 && educationEnrollment === 74 ? '#ffffff' : '#ba1a1a',
+                  border: '1px solid rgba(186, 26, 26, 0.3)',
                   borderRadius: '6px',
                   padding: '4px 10px',
                   fontSize: '11.5px',
@@ -284,19 +432,15 @@ export default function Research() {
                   transition: 'all 0.15s ease',
                 }}
               >
-                External Shock (Stagnation)
+                Stagflation Shock
               </button>
             </div>
 
             {/* Slider 1: FDI Inflow */}
             <div style={{ marginBottom: '18px' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '6px', fontSize: '13px' }}>
-                <span style={{ fontWeight: '600', color: '#264430' }}>
-                  Foreign Direct Investment (FDI Inflows):
-                </span>
-                <span className="tnum" style={{ fontWeight: '700', color: '#4a7c59', fontFamily: 'var(--font-mono)' }}>
-                  {fdiInflow.toFixed(1)}% of GDP
-                </span>
+              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '13px', marginBottom: '6px' }}>
+                <span style={{ fontWeight: '600', color: '#264430' }}>FDI Net Inflows (% of GDP)</span>
+                <span style={{ fontFamily: 'var(--font-mono)', fontWeight: '700', color: '#4a7c59' }}>{fdiInflow}%</span>
               </div>
               <input
                 type="range"
@@ -304,102 +448,107 @@ export default function Research() {
                 max="8.0"
                 step="0.1"
                 value={fdiInflow}
-                onChange={(e) => setFdiInflow(parseFloat(e.target.value))}
+                onChange={(e) => setFdiInflow(Number(e.target.value))}
                 style={{ width: '100%', accentColor: '#4a7c59', cursor: 'pointer' }}
               />
-              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '11px', color: '#74796e', marginTop: '2px' }}>
-                <span>0.5% (Low Inflows)</span>
-                <span>8.0% (High Capital Inflow)</span>
+              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '10.5px', color: '#74796e', marginTop: '2px' }}>
+                <span>0.5% (Low Capital Inflow)</span>
+                <span>Elasticity: -0.48% Youth Unemp per 1% FDI</span>
+                <span>8.0% (Boom)</span>
               </div>
             </div>
 
-            {/* Slider 2: Real GDP Growth */}
+            {/* Slider 2: GDP Growth */}
             <div style={{ marginBottom: '18px' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '6px', fontSize: '13px' }}>
-                <span style={{ fontWeight: '600', color: '#264430' }}>
-                  Real Annual GDP Growth:
-                </span>
-                <span className="tnum" style={{ fontWeight: '700', color: '#264430', fontFamily: 'var(--font-mono)' }}>
-                  {gdpGrowth.toFixed(1)}% YoY
-                </span>
+              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '13px', marginBottom: '6px' }}>
+                <span style={{ fontWeight: '600', color: '#264430' }}>Annual GDP Growth Rate (%)</span>
+                <span style={{ fontFamily: 'var(--font-mono)', fontWeight: '700', color: '#4a7c59' }}>{gdpGrowth}%</span>
               </div>
               <input
                 type="range"
-                min="0.0"
-                max="8.0"
-                step="0.2"
+                min="0.5"
+                max="7.0"
+                step="0.1"
                 value={gdpGrowth}
-                onChange={(e) => setGdpGrowth(parseFloat(e.target.value))}
-                style={{ width: '100%', accentColor: '#264430', cursor: 'pointer' }}
+                onChange={(e) => setGdpGrowth(Number(e.target.value))}
+                style={{ width: '100%', accentColor: '#4a7c59', cursor: 'pointer' }}
               />
-              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '11px', color: '#74796e', marginTop: '2px' }}>
-                <span>0.0% (Stagnation)</span>
-                <span>8.0% (Rapid Expansion)</span>
+              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '10.5px', color: '#74796e', marginTop: '2px' }}>
+                <span>0.5% (Sluggish)</span>
+                <span>Okun's Law Proxy (-0.32)</span>
+                <span>7.0% (High Growth)</span>
               </div>
             </div>
 
-            {/* Slider 3: Secondary Education Enrollment */}
-            <div style={{ marginBottom: '24px' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '6px', fontSize: '13px' }}>
-                <span style={{ fontWeight: '600', color: '#264430' }}>
-                  Secondary Education Gross Enrollment:
-                </span>
-                <span className="tnum" style={{ fontWeight: '700', color: '#705c30', fontFamily: 'var(--font-mono)' }}>
-                  {educationEnrollment}%
-                </span>
+            {/* Slider 3: Secondary School Enrollment */}
+            <div style={{ marginBottom: '22px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '13px', marginBottom: '6px' }}>
+                <span style={{ fontWeight: '600', color: '#264430' }}>Secondary School Enrollment (% Gross)</span>
+                <span style={{ fontFamily: 'var(--font-mono)', fontWeight: '700', color: '#4a7c59' }}>{educationEnrollment}%</span>
               </div>
               <input
                 type="range"
-                min="60"
+                min="65"
                 max="98"
                 step="1"
                 value={educationEnrollment}
-                onChange={(e) => setEducationEnrollment(parseInt(e.target.value))}
-                style={{ width: '100%', accentColor: '#c4a66a', cursor: 'pointer' }}
+                onChange={(e) => setEducationEnrollment(Number(e.target.value))}
+                style={{ width: '100%', accentColor: '#4a7c59', cursor: 'pointer' }}
               />
-              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '11px', color: '#74796e', marginTop: '2px' }}>
-                <span>60% (Base Enrollment)</span>
-                <span>98% (High Human Capital)</span>
+              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '10.5px', color: '#74796e', marginTop: '2px' }}>
+                <span>65% (High Mismatch)</span>
+                <span>Human Capital Absorptive Threshold</span>
+                <span>98% (High Capacity)</span>
               </div>
             </div>
 
-            {/* Output Telemetry Card */}
+            {/* Live Model Output Display */}
             <div
               style={{
                 backgroundColor: '#ffffff',
-                border: '1px solid rgba(74, 124, 89, 0.16)',
+                border: '2px solid rgba(74, 124, 89, 0.25)',
                 borderRadius: '14px',
-                padding: '20px',
-                marginBottom: '18px',
-                boxShadow: '0 2px 8px rgba(38, 68, 48, 0.05)',
+                padding: '18px 20px',
+                marginBottom: '16px',
               }}
             >
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                <div>
-                  <span style={{ fontSize: '11.5px', color: '#74796e', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
-                    Predicted Youth Unemployment Rate
-                  </span>
-                  <div
-                    className="tnum"
-                    style={{
-                      fontSize: '2.4rem',
-                      fontWeight: '800',
-                      color: calculatedYouthUnemp < 5.0 ? '#4a7c59' : '#264430',
-                      lineHeight: 1.1,
-                      marginTop: '4px',
-                    }}
-                  >
-                    {calculatedYouthUnemp}%
-                  </div>
-                </div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '8px' }}>
+                <span style={{ fontSize: '12px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '0.06em', color: '#705c30' }}>
+                  Model-Predicted Youth Unemployment:
+                </span>
+                <span
+                  style={{
+                    fontFamily: 'var(--font-serif)',
+                    fontSize: '2rem',
+                    fontWeight: '700',
+                    color: calculatedYouthUnemp < 5.0 ? '#264430' : '#8c3d18',
+                  }}
+                >
+                  {calculatedYouthUnemp}%
+                </span>
+              </div>
 
-                <div style={{ textAlign: 'right' }}>
-                  <div className="badge-honor" style={{ marginBottom: '6px' }}>
-                    F-Stat: {boundsFStat}
-                  </div>
-                  <div style={{ fontSize: '11.5px', color: '#74796e' }}>
-                    Speed of Adj: <strong>{ecmSpeed}</strong>
-                  </div>
+              <div
+                style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(3, 1fr)',
+                  gap: '10px',
+                  paddingTop: '12px',
+                  borderTop: '1px solid rgba(74, 124, 89, 0.12)',
+                  textAlign: 'center',
+                }}
+              >
+                <div>
+                  <div style={{ fontSize: '10.5px', color: '#74796e', textTransform: 'uppercase' }}>Cointegration</div>
+                  <div style={{ fontSize: '12.5px', fontWeight: '700', color: '#264430' }}>Confirmed I(1)</div>
+                </div>
+                <div>
+                  <div style={{ fontSize: '10.5px', color: '#74796e', textTransform: 'uppercase' }}>Bounds F-Stat</div>
+                  <div style={{ fontSize: '12.5px', fontWeight: '700', color: '#4a7c59' }}>{boundsFStat}</div>
+                </div>
+                <div>
+                  <div style={{ fontSize: '10.5px', color: '#74796e', textTransform: 'uppercase' }}>ECM Restoration</div>
+                  <div style={{ fontSize: '12.5px', fontWeight: '700', color: '#264430' }}>{ecmSpeed}/yr</div>
                 </div>
               </div>
 
@@ -452,7 +601,189 @@ export default function Research() {
         </div>
       </div>
 
+      {/* =========================================================================
+          LIGHTBOX MODAL FOR RESEARCH AWARD CERTIFICATE INSPECTION
+          ========================================================================= */}
+      <AnimatePresence>
+        {activeAwardPhotoIndex !== null && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setActiveAwardPhotoIndex(null)}
+            style={{
+              position: 'fixed',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              backgroundColor: 'rgba(22, 39, 28, 0.94)',
+              backdropFilter: 'blur(8px)',
+              zIndex: 9999,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: '20px',
+            }}
+          >
+            <div
+              onClick={(e) => e.stopPropagation()}
+              style={{
+                position: 'relative',
+                maxWidth: '920px',
+                width: '100%',
+                maxHeight: '92vh',
+                backgroundColor: '#16271c',
+                borderRadius: '16px',
+                border: '1px solid rgba(196, 166, 106, 0.4)',
+                boxShadow: '0 25px 60px rgba(0,0,0,0.5)',
+                display: 'flex',
+                flexDirection: 'column',
+                overflow: 'hidden',
+              }}
+            >
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                  padding: '14px 20px',
+                  borderBottom: '1px solid rgba(250, 246, 240, 0.12)',
+                  color: '#faf6f0',
+                }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                  <span
+                    style={{
+                      backgroundColor: 'rgba(196, 166, 106, 0.25)',
+                      color: '#f8e0a8',
+                      fontSize: '11px',
+                      fontWeight: '700',
+                      padding: '3px 8px',
+                      borderRadius: '4px',
+                    }}
+                  >
+                    {awardPhotos[activeAwardPhotoIndex].badge}
+                  </span>
+                  <span style={{ fontSize: '13px', color: '#d5dcd2' }}>
+                    Photo {activeAwardPhotoIndex + 1} of {awardPhotos.length}
+                  </span>
+                </div>
+
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <button
+                    onClick={() =>
+                      setActiveAwardPhotoIndex(
+                        (prev) => (prev - 1 + awardPhotos.length) % awardPhotos.length
+                      )
+                    }
+                    style={{
+                      backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                      border: 'none',
+                      color: '#faf6f0',
+                      borderRadius: '6px',
+                      padding: '6px 10px',
+                      cursor: 'pointer',
+                    }}
+                    title="Previous"
+                  >
+                    <ChevronLeft size={16} />
+                  </button>
+
+                  <button
+                    onClick={() =>
+                      setActiveAwardPhotoIndex((prev) => (prev + 1) % awardPhotos.length)
+                    }
+                    style={{
+                      backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                      border: 'none',
+                      color: '#faf6f0',
+                      borderRadius: '6px',
+                      padding: '6px 10px',
+                      cursor: 'pointer',
+                    }}
+                    title="Next"
+                  >
+                    <ChevronRight size={16} />
+                  </button>
+
+                  <button
+                    onClick={() => setActiveAwardPhotoIndex(null)}
+                    style={{
+                      backgroundColor: 'rgba(255, 255, 255, 0.15)',
+                      border: 'none',
+                      color: '#faf6f0',
+                      borderRadius: '6px',
+                      width: '32px',
+                      height: '32px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      cursor: 'pointer',
+                      marginLeft: '6px',
+                    }}
+                    aria-label="Close"
+                  >
+                    <X size={18} />
+                  </button>
+                </div>
+              </div>
+
+              <div
+                style={{
+                  position: 'relative',
+                  flex: 1,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  backgroundColor: '#0d1811',
+                  maxHeight: '65vh',
+                  overflow: 'hidden',
+                  padding: '12px',
+                }}
+              >
+                <img
+                  src={awardPhotos[activeAwardPhotoIndex].src}
+                  alt={awardPhotos[activeAwardPhotoIndex].title}
+                  style={{
+                    maxWidth: '100%',
+                    maxHeight: '60vh',
+                    objectFit: 'contain',
+                    borderRadius: '8px',
+                    boxShadow: '0 8px 30px rgba(0,0,0,0.6)',
+                  }}
+                />
+              </div>
+
+              <div
+                style={{
+                  padding: '16px 22px',
+                  borderTop: '1px solid rgba(250, 246, 240, 0.12)',
+                  backgroundColor: '#16271c',
+                  color: '#faf6f0',
+                }}
+              >
+                <h4 style={{ fontSize: '15px', fontWeight: '700', color: '#f8e0a8', marginBottom: '4px' }}>
+                  {awardPhotos[activeAwardPhotoIndex].title}
+                </h4>
+                <p style={{ fontSize: '13px', color: '#d5dcd2', lineHeight: 1.5, margin: 0 }}>
+                  {awardPhotos[activeAwardPhotoIndex].caption}
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       <style>{`
+        .award-photo-thumb:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 8px 20px rgba(38, 68, 48, 0.12);
+          border-color: rgba(74, 124, 89, 0.45) !important;
+        }
+        .award-photo-thumb:hover .award-img-zoom {
+          transform: scale(1.04);
+        }
         @media (max-width: 960px) {
           .research-grid {
             grid-template-columns: 1fr !important;

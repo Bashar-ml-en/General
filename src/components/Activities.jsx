@@ -16,12 +16,12 @@ import {
   Building2,
   Users,
   Globe2,
-  Calendar,
+  BookOpen,
 } from 'lucide-react';
 
 export default function Activities() {
   // Lightbox state: tracks which gallery is active and the current photo index
-  const [lightboxState, setLightboxState] = useState(null); // { gallery: 'nice' | 'uitm', index: number }
+  const [lightboxState, setLightboxState] = useState(null); // { gallery: 'nice' | 'uitm' | 'klibf', index: number }
 
   const nicePhotos = [
     {
@@ -92,10 +92,33 @@ export default function Activities() {
     },
   ];
 
+  const klibfPhotos = [
+    {
+      id: 'klibf-vest',
+      src: '/klibf-2026/klibf-alhassan-vest.png',
+      title: 'Alhassan Ibrahim Ali Hassan — Sales & Brand Representative',
+      subtitle: 'Mashreq International for Books • WTC Kuala Lumpur',
+      caption: 'Alhassan in official publisher representative uniform at the Kuala Lumpur International Book Fair (KLIBF 2026), managing catalog circulation and client inquiries.',
+      badge: 'Official Publisher Uniform',
+      badgeColor: '#264430',
+    },
+    {
+      id: 'klibf-stage',
+      src: '/klibf-2026/klibf-stage-ceremony.jpg',
+      title: 'KLIBF 2026 Main Stage Presentation & Dignitary Gathering',
+      subtitle: 'World Trade Centre Kuala Lumpur (WTCKL)',
+      caption: 'Official stage ceremony with international publishing delegations, cultural representatives, and dignitaries during the 10-day international expo.',
+      badge: 'Main Stage Ceremony',
+      badgeColor: '#705c30',
+    },
+  ];
+
   const currentGalleryList = lightboxState
     ? lightboxState.gallery === 'nice'
       ? nicePhotos
-      : uitmPhotos
+      : lightboxState.gallery === 'uitm'
+      ? uitmPhotos
+      : klibfPhotos
     : [];
 
   // Keyboard navigation for lightbox
@@ -138,7 +161,7 @@ export default function Activities() {
     {
       badge: 'Trade Expo Credential',
       title: 'KLIBF 2026 Representative',
-      organization: 'Mashreq International for Books',
+      organization: 'Mashreq International for Books • WTCKL',
       desc: 'Accredited sales liaison managing Arabic and academic literature circulation across international academic delegations.',
       color: '#264430',
     },
@@ -158,13 +181,13 @@ export default function Activities() {
         <div style={{ maxWidth: '840px', marginBottom: '44px' }}>
           <div className="section-eyebrow">
             <Compass size={14} color="#c4a66a" />
-            <span>Innovation Expos, Diplomatic Forums & Field Coordination</span>
+            <span>Innovation Expos, Diplomatic Forums & Book Fairs 2026</span>
           </div>
           <h2 className="section-title">
             Professional Activities & <span className="serif-italic" style={{ color: '#4a7c59' }}>International Exhibitions</span>
           </h2>
           <p className="section-subtitle">
-            Accredited delegate representation and event committee leadership across national technology expos, bilateral diplomatic forums, and international trade fairs.
+            Accredited delegate representation, diplomatic floor management, and international trade fair execution across Malaysia’s premier national expos and book fairs in 2026.
           </p>
         </div>
 
@@ -553,7 +576,7 @@ export default function Activities() {
             border: '2px solid rgba(196, 166, 106, 0.35)',
             borderRadius: '16px',
             padding: '36px',
-            marginBottom: '48px',
+            marginBottom: '44px',
             boxShadow: '0 12px 36px -10px rgba(112, 92, 48, 0.08)',
           }}
           className="uitm-showcase-card"
@@ -913,67 +936,302 @@ export default function Activities() {
         </motion.div>
 
         {/* =========================================================================
-            ADDITIONAL ACCREDITED EXHIBITION: KLIBF 2026 (MASHREQ INTERNATIONAL)
+            FEATURED SHOWCASE 3: KUALA LUMPUR INTERNATIONAL BOOK FAIR 2026 (KLIBF 2026)
             ========================================================================= */}
-        <div style={{ marginBottom: '44px' }}>
-          <h3 style={{ fontSize: '1.45rem', fontWeight: '600', color: '#264430', marginBottom: '8px' }}>
-            International Publishing & Trade Expos
-          </h3>
-          <p style={{ fontSize: '13.5px', color: '#74796e', marginBottom: '24px' }}>
-            Flagship publishing and commercial trade fair representation:
-          </p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4 }}
-            className="editorial-card"
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.15 }}
+          style={{
+            backgroundColor: '#faf6f0',
+            border: '2px solid rgba(74, 124, 89, 0.2)',
+            borderRadius: '16px',
+            padding: '36px',
+            marginBottom: '44px',
+            boxShadow: '0 12px 36px -10px rgba(38, 68, 48, 0.08)',
+          }}
+          className="klibf-showcase-card"
+        >
+          {/* Header Plaque */}
+          <div
             style={{
-              padding: '30px',
-              backgroundColor: '#faf6f0',
-              border: '1px solid rgba(74, 124, 89, 0.16)',
+              display: 'flex',
+              flexWrap: 'wrap',
+              justifyContent: 'space-between',
+              alignItems: 'flex-start',
+              gap: '16px',
+              borderBottom: '1px solid rgba(74, 124, 89, 0.16)',
+              paddingBottom: '24px',
+              marginBottom: '26px',
             }}
           >
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
-              <span className="badge-tag-warm" style={{ backgroundColor: '#ffffff', color: '#264430', fontWeight: '700' }}>
-                Publishing & International Trade
+            <div>
+              <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
+                <span
+                  style={{
+                    backgroundColor: '#264430',
+                    color: '#faf6f0',
+                    fontSize: '11px',
+                    fontWeight: '700',
+                    padding: '4px 10px',
+                    borderRadius: '6px',
+                    letterSpacing: '0.04em',
+                    textTransform: 'uppercase',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '5px',
+                  }}
+                >
+                  <BookOpen size={12} color="#c4a66a" />
+                  International Publishing Fair • 2026
+                </span>
+                <span
+                  style={{
+                    backgroundColor: 'rgba(196, 166, 106, 0.2)',
+                    color: '#705c30',
+                    fontSize: '11px',
+                    fontWeight: '700',
+                    padding: '4px 10px',
+                    borderRadius: '6px',
+                    border: '1px solid rgba(196, 166, 106, 0.4)',
+                  }}
+                >
+                  Mashreq International for Books
+                </span>
+                <span
+                  style={{
+                    backgroundColor: '#ffffff',
+                    color: '#264430',
+                    fontSize: '11px',
+                    fontWeight: '700',
+                    padding: '4px 10px',
+                    borderRadius: '6px',
+                    border: '1px solid rgba(74, 124, 89, 0.2)',
+                  }}
+                >
+                  World Trade Centre Kuala Lumpur (WTCKL)
+                </span>
+              </div>
+
+              <h3
+                style={{
+                  fontFamily: 'var(--font-serif)',
+                  fontSize: '1.95rem',
+                  fontWeight: '700',
+                  color: '#264430',
+                  lineHeight: 1.25,
+                  marginBottom: '6px',
+                }}
+              >
+                Kuala Lumpur International Book Fair 2026 (KLIBF 2026)
+              </h3>
+
+              <div
+                style={{
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  alignItems: 'center',
+                  gap: '14px',
+                  fontSize: '13px',
+                  color: '#705c30',
+                  fontWeight: '600',
+                }}
+              >
+                <span style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
+                  <Building2 size={14} color="#4a7c59" />
+                  Mashreq International for Books
+                </span>
+                <span>•</span>
+                <span style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
+                  <MapPin size={14} color="#4a7c59" />
+                  World Trade Centre Kuala Lumpur (WTCKL)
+                </span>
+                <span>•</span>
+                <span style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
+                  <Globe2 size={14} color="#4a7c59" />
+                  Arabic, Islamic & Academic Publishing
+                </span>
+              </div>
+            </div>
+
+            <div
+              style={{
+                backgroundColor: '#ffffff',
+                border: '1px solid rgba(74, 124, 89, 0.2)',
+                borderRadius: '8px',
+                padding: '10px 16px',
+                textAlign: 'right',
+                boxShadow: '0 2px 6px rgba(0,0,0,0.03)',
+              }}
+            >
+              <div style={{ fontSize: '11px', color: '#74796e', textTransform: 'uppercase', letterSpacing: '0.06em', fontWeight: '700' }}>
+                Exhibition Role
+              </div>
+              <div style={{ fontSize: '14px', fontWeight: '700', color: '#264430' }}>
+                Sales & Brand Representative
+              </div>
+              <div style={{ fontSize: '12px', color: '#4a7c59', fontWeight: '600' }}>
+                International Publishing Trade Liaison
+              </div>
+            </div>
+          </div>
+
+          <p
+            style={{
+              fontSize: '14.5px',
+              color: '#383d39',
+              lineHeight: 1.68,
+              maxWidth: '960px',
+              marginBottom: '26px',
+            }}
+          >
+            Represented <strong>Mashreq International for Books</strong> at Malaysia’s flagship publishing expo at the <strong>World Trade Centre Kuala Lumpur (WTCKL)</strong>. Managed institutional client acquisitions, academic book circulation, and high-volume public engagement across a 10-day intensive international trade exhibition.
+          </p>
+
+          {/* 2-Image Photographic Evidence Grid */}
+          <div style={{ marginBottom: '26px' }}>
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                marginBottom: '14px',
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <Layers size={16} color="#4a7c59" />
+                <h4 style={{ fontSize: '13.5px', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '0.06em', color: '#264430', margin: 0 }}>
+                  Book Fair Photography & Field Representation (2 Photos)
+                </h4>
+              </div>
+              <span style={{ fontSize: '12px', color: '#705c30', fontStyle: 'italic' }}>
+                Click to inspect in high resolution
               </span>
-              <span className="tnum" style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', color: '#705c30', fontWeight: '700' }}>
-                2026
-              </span>
             </div>
 
-            <h3 style={{ fontSize: '1.4rem', fontWeight: '600', color: '#264430', marginBottom: '4px' }}>
-              Sales & Brand Representative
-            </h3>
-            <div style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', color: '#705c30', fontSize: '15px', marginBottom: '8px' }}>
-              Kuala Lumpur International Book Fair (KLIBF 2026)
-            </div>
-            <div style={{ fontSize: '12.5px', color: '#74796e', display: 'flex', alignItems: 'center', gap: '5px', marginBottom: '14px' }}>
-              <MapPin size={12} /> World Trade Centre Kuala Lumpur (WTCKL) • Mashreq International for Books
-            </div>
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+                gap: '18px',
+              }}
+              className="expo-photo-grid"
+            >
+              {klibfPhotos.map((photo, pIdx) => (
+                <div
+                  key={photo.id}
+                  onClick={() => setLightboxState({ gallery: 'klibf', index: pIdx })}
+                  style={{
+                    backgroundColor: '#ffffff',
+                    border: '1px solid rgba(74, 124, 89, 0.16)',
+                    borderRadius: '12px',
+                    overflow: 'hidden',
+                    cursor: 'pointer',
+                    transition: 'all 0.22s ease',
+                    boxShadow: '0 4px 12px rgba(0,0,0,0.04)',
+                    display: 'flex',
+                    flexDirection: 'column',
+                  }}
+                  className="expo-photo-card"
+                >
+                  <div
+                    style={{
+                      position: 'relative',
+                      width: '100%',
+                      height: '220px',
+                      backgroundColor: '#16271c',
+                      overflow: 'hidden',
+                    }}
+                  >
+                    <img
+                      src={photo.src}
+                      alt={photo.title}
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        objectPosition: photo.id === 'klibf-vest' ? 'center 15%' : 'center center',
+                        transition: 'transform 0.35s ease',
+                      }}
+                      className="expo-img-zoom"
+                    />
 
-            <p style={{ fontSize: '13.5px', color: '#4a4e4a', lineHeight: 1.6, marginBottom: '16px' }}>
-              Represented Mashreq International at Malaysia’s flagship publishing expo, managing client relations, institutional acquisitions, and book circulation for international Arabic, Islamic, and academic titles across a 10-day intensive trade exhibition.
-            </p>
+                    <div
+                      style={{
+                        position: 'absolute',
+                        top: '10px',
+                        left: '10px',
+                        backgroundColor: 'rgba(22, 39, 28, 0.85)',
+                        backdropFilter: 'blur(6px)',
+                        color: '#faf6f0',
+                        fontSize: '10.5px',
+                        fontWeight: '700',
+                        padding: '3px 8px',
+                        borderRadius: '4px',
+                        border: '1px solid rgba(196, 166, 106, 0.4)',
+                      }}
+                    >
+                      {photo.badge}
+                    </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '10px' }}>
-              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: '13px', color: '#2e3230' }}>
-                <CheckCircle size={14} color="#4a7c59" style={{ flexShrink: 0, marginTop: '3px' }} />
-                <span>Represented company across 10-day exhibition, promoting diverse catalogs of Arabic, Islamic, and academic works.</span>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: '13px', color: '#2e3230' }}>
-                <CheckCircle size={14} color="#4a7c59" style={{ flexShrink: 0, marginTop: '3px' }} />
-                <span>Engaged thousands of international visitors, academic buyers, and delegations, driving revenue and brand awareness.</span>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: '13px', color: '#2e3230' }}>
-                <CheckCircle size={14} color="#4a7c59" style={{ flexShrink: 0, marginTop: '3px' }} />
-                <span>Managed on-site inventory reconciliation and real-time customer feedback collection.</span>
-              </div>
+                    <div
+                      style={{
+                        position: 'absolute',
+                        bottom: '10px',
+                        right: '10px',
+                        backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                        color: '#264430',
+                        borderRadius: '6px',
+                        padding: '5px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        boxShadow: '0 2px 6px rgba(0,0,0,0.15)',
+                      }}
+                    >
+                      <Maximize2 size={13} />
+                    </div>
+                  </div>
+
+                  <div style={{ padding: '14px 16px', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                    <div>
+                      <h5 style={{ fontSize: '13.5px', fontWeight: '700', color: '#264430', marginBottom: '4px', lineHeight: 1.35 }}>
+                        {photo.title}
+                      </h5>
+                      <div style={{ fontSize: '11.5px', color: '#705c30', fontWeight: '600', marginBottom: '6px' }}>
+                        {photo.subtitle}
+                      </div>
+                      <p style={{ fontSize: '12px', color: '#4a4e4a', lineHeight: 1.45, margin: 0 }}>
+                        {photo.caption}
+                      </p>
+                    </div>
+
+                    <div style={{ marginTop: '10px', paddingTop: '8px', borderTop: '1px solid rgba(74, 124, 89, 0.08)', fontSize: '11px', color: '#4a7c59', fontWeight: '700', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                      <Maximize2 size={11} /> Click to expand
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
-          </motion.div>
-        </div>
+          </div>
+
+          {/* Core Highlights */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '12px' }}>
+            <div style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: '13px', color: '#2e3230' }}>
+              <CheckCircle size={15} color="#4a7c59" style={{ flexShrink: 0, marginTop: '2px' }} />
+              <span><strong>10-Day Intensive Trade Exhibition:</strong> Represented Mashreq International, presenting diverse catalogs of Arabic, Islamic, and academic works.</span>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: '13px', color: '#2e3230' }}>
+              <CheckCircle size={15} color="#4a7c59" style={{ flexShrink: 0, marginTop: '2px' }} />
+              <span><strong>Delegation & Public Engagement:</strong> Interacted with thousands of international visitors, university delegations, and academic buyers.</span>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: '13px', color: '#2e3230' }}>
+              <CheckCircle size={15} color="#4a7c59" style={{ flexShrink: 0, marginTop: '2px' }} />
+              <span><strong>Inventory & Commercial Logistics:</strong> Managed on-site inventory reconciliation and real-time customer acquisition feedback.</span>
+            </div>
+          </div>
+        </motion.div>
 
         {/* Institutional Credentials Grid */}
         <div style={{ marginTop: '36px' }}>
@@ -1239,7 +1497,7 @@ export default function Activities() {
           transform: scale(1.04);
         }
         @media (max-width: 768px) {
-          .nice-showcase-card, .uitm-showcase-card {
+          .nice-showcase-card, .uitm-showcase-card, .klibf-showcase-card {
             padding: 20px !important;
           }
           .expo-photo-grid {
