@@ -198,6 +198,16 @@ export default function Research() {
   const activeProd = productions[activeProdIndex];
   const activeTrack = activeProd.tracks[activeTrackIndex];
 
+  const formatTimecode = (percent, durationStr) => {
+    const parts = (durationStr || '24:00').split(':').map(Number);
+    const totalSec = (parts[0] || 0) * 60 + (parts[1] || 0);
+    const currentSec = (percent / 100) * totalSec;
+    const m = Math.floor(currentSec / 60);
+    const s = Math.floor(currentSec % 60);
+    const f = Math.floor((currentSec % 1) * 24);
+    return `TC 00:${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}:${f.toString().padStart(2, '0')}`;
+  };
+
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === 'Escape' && isCopyrightOpen) {
@@ -719,7 +729,7 @@ export default function Research() {
                 <span>PREMIERE PRO / DAVINCI RESOLVE MULTI-TRACK NLE SEQUENCE (CLICK ANY TRACK TO INSPECT)</span>
               </div>
 
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', minWidth: '240px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', minWidth: '280px', flexWrap: 'wrap' }}>
                 <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: '#c7bfb2' }}>
                   SCRUB PLAYHEAD:
                 </span>
@@ -731,10 +741,21 @@ export default function Research() {
                   onChange={(e) => setPlayheadPercent(Number(e.target.value))}
                   className="econometric-slider"
                   aria-label="Scrub timeline playhead"
-                  style={{ width: '130px' }}
+                  style={{ width: '120px' }}
                 />
-                <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: '#f3c677' }}>
-                  {playheadPercent}%
+                <span
+                  style={{
+                    fontFamily: 'var(--font-mono)',
+                    fontSize: '11px',
+                    color: '#f3c677',
+                    backgroundColor: 'rgba(200, 138, 50, 0.16)',
+                    padding: '3px 8px',
+                    borderRadius: '5px',
+                    border: '1px solid rgba(200, 138, 50, 0.35)',
+                    whiteSpace: 'nowrap',
+                  }}
+                >
+                  {formatTimecode(playheadPercent, activeProd.duration)} • {playheadPercent}%
                 </span>
               </div>
             </div>
@@ -798,25 +819,38 @@ export default function Research() {
                         gap: '6px',
                       }}
                     >
-                      {tr.segments.map((seg) => (
-                        <div
-                          key={seg}
-                          style={{
-                            backgroundColor: barColor,
-                            padding: '5px 10px',
-                            borderRadius: '5px',
-                            fontFamily: 'var(--font-mono)',
-                            fontSize: '10.5px',
-                            color: '#ffffff',
-                            border: '1px solid rgba(255, 255, 255, 0.22)',
-                            whiteSpace: 'nowrap',
-                            overflow: 'hidden',
-                            textOverflow: 'ellipsis',
-                          }}
-                        >
-                          {seg}
-                        </div>
-                      ))}
+                      {tr.segments.map((seg, sIdx) => {
+                        const targetPercent = 18 + sIdx * 32;
+                        return (
+                          <div
+                            key={seg}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              setActiveTrackIndex(tIdx);
+                              setPlayheadPercent(targetPercent);
+                            }}
+                            title={`Click to jump playhead to ${seg}`}
+                            style={{
+                              backgroundColor: barColor,
+                              padding: '5px 10px',
+                              borderRadius: '5px',
+                              fontFamily: 'var(--font-mono)',
+                              fontSize: '10.5px',
+                              color: '#ffffff',
+                              border: '1px solid rgba(255, 255, 255, 0.22)',
+                              whiteSpace: 'nowrap',
+                              overflow: 'hidden',
+                              textOverflow: 'ellipsis',
+                              cursor: 'pointer',
+                              transition: 'all 0.15s ease',
+                            }}
+                            onMouseEnter={(e) => (e.currentTarget.style.filter = 'brightness(1.25)')}
+                            onMouseLeave={(e) => (e.currentTarget.style.filter = 'brightness(1.0)')}
+                          >
+                            {seg}
+                          </div>
+                        );
+                      })}
                     </div>
                   </button>
                 );

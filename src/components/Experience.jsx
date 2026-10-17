@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import {
   Briefcase,
   TrendingUp,
@@ -12,29 +12,32 @@ import {
   Users,
   Video,
   Globe2,
+  Maximize2,
+  X,
 } from 'lucide-react';
 
 export default function Experience() {
   const [selectedCampaignAsset, setSelectedCampaignAsset] = useState(0);
+  const [lightboxImage, setLightboxImage] = useState(null);
 
   const klemAssets = [
     {
+      title: 'On-Site Production & Content Filming (KLEM Lounge)',
+      role: 'Multimedia Production & Corporate Reels',
+      src: '/mosab/raw/img_018_obj1205_405x540.jpg',
+      caption: 'Directing and capturing on-site content, patient experiences, and short-form executive reels inside the KLEM Clinics wellness lounge.',
+    },
+    {
       title: 'Career Lifestyle & Success Empowerment Poster',
       role: 'Visual Design & Promotional Campaign',
-      src: '/mosab/raw/img_018_obj1205_405x540.jpg',
+      src: '/mosab/raw/img_019_obj1207_488x608.jpg',
       caption: 'Designed high-conversion executive training promotional poster for KLEM Corporate Care (Trillion Hotel KL).',
     },
     {
       title: 'Nutritional Therapies IV Services Infographic',
       role: 'Medical & Wellness Brand Design',
-      src: '/mosab/raw/img_019_obj1207_488x608.jpg',
-      caption: 'Created clinical service awareness graphics for KLEM Wellness maintaining brand identity and medical clarity.',
-    },
-    {
-      title: 'On-Site Gimbal Event Videography (35mm Frame)',
-      role: 'Multimedia Production & Reels Capture',
       src: '/mosab/raw/img_021_obj1211_454x608.jpg',
-      caption: 'Capturing on-site corporate wellness events and short-form video reels in KL Eco City.',
+      caption: 'Created clinical service awareness graphics for KLEM Wellness maintaining strict brand identity and medical clarity.',
     },
     {
       title: 'KLEM Clinics TikTok Channel (2,169 Followers • 11.2K Likes)',
@@ -294,6 +297,13 @@ export default function Experience() {
                 </h4>
 
                 <div
+                  onClick={() =>
+                    setLightboxImage({
+                      src: klemAssets[selectedCampaignAsset].src,
+                      title: klemAssets[selectedCampaignAsset].title,
+                      caption: klemAssets[selectedCampaignAsset].caption,
+                    })
+                  }
                   style={{
                     width: '100%',
                     height: '330px',
@@ -305,7 +315,10 @@ export default function Experience() {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
+                    cursor: 'pointer',
+                    position: 'relative',
                   }}
+                  title="Click to view full image in lightbox"
                 >
                   <img
                     src={klemAssets[selectedCampaignAsset].src}
@@ -315,8 +328,29 @@ export default function Experience() {
                       height: '100%',
                       objectFit: 'contain',
                       display: 'block',
+                      transition: 'transform 0.25s ease',
                     }}
                   />
+                  <div
+                    style={{
+                      position: 'absolute',
+                      top: '10px',
+                      right: '10px',
+                      backgroundColor: 'rgba(20, 18, 16, 0.85)',
+                      color: '#f3c677',
+                      padding: '4px 9px',
+                      borderRadius: '6px',
+                      fontSize: '11px',
+                      fontFamily: 'var(--font-mono)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '5px',
+                      border: '1px solid rgba(243, 198, 119, 0.3)',
+                    }}
+                  >
+                    <Maximize2 size={12} />
+                    <span>Zoom</span>
+                  </div>
                 </div>
                 <p style={{ fontSize: '13px', color: 'var(--text-secondary)', marginBottom: '14px' }}>
                   {klemAssets[selectedCampaignAsset].caption}
@@ -556,9 +590,12 @@ export default function Experience() {
                         overflow: 'hidden',
                       }}
                     >
-                      <div
+                      <motion.div
+                        initial={{ width: 0 }}
+                        whileInView={{ width: `${bar.pct}%` }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.85, ease: 'easeOut', delay: 0.2 }}
                         style={{
-                          width: `${bar.pct}%`,
                           height: '100%',
                           backgroundColor: bar.color,
                           borderRadius: '999px',
@@ -583,11 +620,32 @@ export default function Experience() {
               {visual7vibesScreenshots.map((s) => (
                 <div
                   key={s.label}
+                  onClick={() =>
+                    setLightboxImage({
+                      src: s.src,
+                      title: s.label,
+                      caption: 'Visual7vibes Social Media Analytics & Content Proof (@visual7vibes)',
+                    })
+                  }
                   style={{
                     borderRadius: '10px',
                     overflow: 'hidden',
                     border: '1px solid rgba(246, 242, 234, 0.16)',
                     backgroundColor: '#0e0c0a',
+                    cursor: 'pointer',
+                    transition: 'transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease',
+                    position: 'relative',
+                  }}
+                  title={`Click to zoom: ${s.label}`}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'translateY(-4px)';
+                    e.currentTarget.style.borderColor = '#f3c677';
+                    e.currentTarget.style.boxShadow = '0 12px 24px rgba(0,0,0,0.5)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'none';
+                    e.currentTarget.style.borderColor = 'rgba(246, 242, 234, 0.16)';
+                    e.currentTarget.style.boxShadow = 'none';
                   }}
                 >
                   <img
@@ -617,6 +675,108 @@ export default function Experience() {
           </div>
         </motion.div>
       </div>
+
+      {/* High-Resolution Deliverables Lightbox Modal */}
+      <AnimatePresence>
+        {lightboxImage && (
+          <div
+            className="modal-overlay"
+            onClick={() => setLightboxImage(null)}
+            style={{
+              position: 'fixed',
+              inset: 0,
+              backgroundColor: 'rgba(10, 8, 6, 0.88)',
+              backdropFilter: 'blur(8px)',
+              zIndex: 9999,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: '24px',
+            }}
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.94 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.94 }}
+              onClick={(e) => e.stopPropagation()}
+              style={{
+                maxWidth: '820px',
+                width: '100%',
+                maxHeight: '90vh',
+                backgroundColor: '#141210',
+                borderRadius: '16px',
+                border: '1.5px solid rgba(200, 138, 50, 0.4)',
+                overflow: 'hidden',
+                boxShadow: '0 25px 60px rgba(0, 0, 0, 0.7)',
+                display: 'flex',
+                flexDirection: 'column',
+              }}
+            >
+              <div
+                style={{
+                  padding: '14px 20px',
+                  backgroundColor: '#1f1c18',
+                  borderBottom: '1px solid rgba(246, 242, 234, 0.12)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  gap: '12px',
+                }}
+              >
+                <div>
+                  <h4 style={{ fontFamily: 'var(--font-serif)', fontSize: '18px', color: '#ffffff', margin: 0 }}>
+                    {lightboxImage.title}
+                  </h4>
+                  <div style={{ fontSize: '12.5px', color: '#f3c677', marginTop: '2px' }}>
+                    {lightboxImage.caption}
+                  </div>
+                </div>
+                <button
+                  onClick={() => setLightboxImage(null)}
+                  style={{
+                    backgroundColor: 'rgba(255, 255, 255, 0.08)',
+                    border: '1px solid rgba(255, 255, 255, 0.16)',
+                    color: '#ffffff',
+                    width: '32px',
+                    height: '32px',
+                    borderRadius: '8px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    cursor: 'pointer',
+                  }}
+                  aria-label="Close image preview"
+                >
+                  <X size={16} />
+                </button>
+              </div>
+
+              <div
+                style={{
+                  padding: '16px',
+                  backgroundColor: '#0c0b09',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  overflowY: 'auto',
+                  maxHeight: 'calc(90vh - 80px)',
+                }}
+              >
+                <img
+                  src={lightboxImage.src}
+                  alt={lightboxImage.title}
+                  style={{
+                    maxWidth: '100%',
+                    maxHeight: '75vh',
+                    objectFit: 'contain',
+                    borderRadius: '8px',
+                  }}
+                />
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
 
       <style>{`
         @media (max-width: 1024px) {

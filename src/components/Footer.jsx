@@ -1,7 +1,11 @@
 import React from 'react';
-import { Film, Linkedin, Mail, Phone, FileText, Download, ExternalLink } from 'lucide-react';
+import { Film, Linkedin, Mail, Phone, FileText, Download, ExternalLink, ArrowUp } from 'lucide-react';
 
 export default function Footer({ onOpenResume }) {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <footer
       style={{
@@ -66,6 +70,15 @@ export default function Footer({ onOpenResume }) {
               <Linkedin size={14} color="#0a66c2" />
               <span>LinkedIn</span>
             </a>
+            <button
+              onClick={scrollToTop}
+              className="btn-secondary"
+              style={{ padding: '8px 13px', fontSize: '12.5px', cursor: 'pointer' }}
+              title="Smooth scroll to top of page"
+            >
+              <ArrowUp size={14} color="#f3c677" />
+              <span>Top</span>
+            </button>
           </div>
         </div>
 

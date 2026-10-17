@@ -13,6 +13,8 @@ import {
   ExternalLink,
   Sparkles,
   CheckCircle2,
+  BatteryCharging,
+  Mic,
 } from 'lucide-react';
 
 export default function Hero({ onOpenResume }) {
@@ -352,8 +354,42 @@ export default function Hero({ onOpenResume }) {
                     {activeCam.code}
                   </span>
                 </div>
+
+                {/* Animated Dual-Channel Audio VU Meter */}
                 <div
                   style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '7px',
+                    padding: '3px 8px',
+                    borderRadius: '5px',
+                    backgroundColor: 'rgba(0, 0, 0, 0.45)',
+                    border: '1px solid rgba(246, 242, 234, 0.12)',
+                  }}
+                >
+                  <Mic size={10} color="#f3c677" />
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '3px' }}>
+                      <span style={{ fontFamily: 'var(--font-mono)', fontSize: '8px', color: '#9c9284' }}>L</span>
+                      <div style={{ width: '38px', height: '3.5px', backgroundColor: 'rgba(255, 255, 255, 0.1)', borderRadius: '2px', overflow: 'hidden' }}>
+                        <div style={{ width: '82%', height: '100%', background: 'linear-gradient(to right, #1e4d3b 60%, #c88a32 85%, #d93829 100%)' }} />
+                      </div>
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '3px' }}>
+                      <span style={{ fontFamily: 'var(--font-mono)', fontSize: '8px', color: '#9c9284' }}>R</span>
+                      <div style={{ width: '38px', height: '3.5px', backgroundColor: 'rgba(255, 255, 255, 0.1)', borderRadius: '2px', overflow: 'hidden' }}>
+                        <div style={{ width: '68%', height: '100%', background: 'linear-gradient(to right, #1e4d3b 60%, #c88a32 85%, #d93829 100%)' }} />
+                      </div>
+                    </div>
+                  </div>
+                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: '8.5px', color: '#f3c677' }}>-12dB</span>
+                </div>
+
+                <div
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '6px',
                     fontFamily: 'var(--font-mono)',
                     fontSize: '11px',
                     color: '#f3c677',
@@ -363,7 +399,8 @@ export default function Hero({ onOpenResume }) {
                     border: '1px solid rgba(200, 138, 50, 0.35)',
                   }}
                 >
-                  TC {activeCam.timecode} • 24FPS
+                  <BatteryCharging size={11} color="#f3c677" />
+                  <span>TC {activeCam.timecode} • 24FPS</span>
                 </div>
               </div>
 
@@ -379,10 +416,30 @@ export default function Hero({ onOpenResume }) {
                   backgroundColor: '#0c0b09',
                   marginBottom: '12px',
                   background: activeCam.isStudioPng
-                    ? 'radial-gradient(circle at 50% 45%, #2a241c 0%, #0c0b09 75%)'
+                    ? 'radial-gradient(circle at 50% 45%, rgba(200, 138, 50, 0.18) 0%, rgba(28, 24, 20, 0.95) 55%, #0c0b09 85%)'
                     : '#0c0b09',
                 }}
               >
+                {/* Cinema Sensor Telemetry HUD */}
+                <div
+                  style={{
+                    position: 'absolute',
+                    top: '10px',
+                    right: '10px',
+                    padding: '3px 8px',
+                    borderRadius: '5px',
+                    backgroundColor: 'rgba(12, 11, 9, 0.75)',
+                    border: '1px solid rgba(246, 242, 234, 0.15)',
+                    fontFamily: 'var(--font-mono)',
+                    fontSize: '9.5px',
+                    color: '#f3c677',
+                    zIndex: 2,
+                    letterSpacing: '0.05em',
+                  }}
+                >
+                  ISO 800 • 5600K • 1/48s • RAW 4K
+                </div>
+
                 <img
                   src={activeCam.src}
                   alt={activeCam.label}
@@ -395,6 +452,27 @@ export default function Hero({ onOpenResume }) {
                     transition: 'all 0.35s ease',
                   }}
                 />
+
+                {/* Center Crosshair Reticle */}
+                <div
+                  style={{
+                    position: 'absolute',
+                    top: '50%',
+                    left: '50%',
+                    transform: 'translate(-50%, -50%)',
+                    pointerEvents: 'none',
+                    zIndex: 1,
+                    opacity: 0.28,
+                  }}
+                >
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#f6f2ea" strokeWidth="1.2">
+                    <line x1="12" y1="4" x2="12" y2="9" />
+                    <line x1="12" y1="15" x2="12" y2="20" />
+                    <line x1="4" y1="12" x2="9" y2="12" />
+                    <line x1="15" y1="12" x2="20" y2="12" />
+                    <circle cx="12" cy="12" r="2.5" />
+                  </svg>
+                </div>
 
                 {/* Corner Viewfinder Reticles */}
                 <div

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import {
   Mail,
   Phone,
@@ -367,6 +367,38 @@ export default function Contact({ onOpenResume }) {
           </motion.div>
         </div>
       </div>
+
+      {/* Floating Clipboard Copy Toast Notification */}
+      <AnimatePresence>
+        {copiedEmail && (
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 16 }}
+            style={{
+              position: 'fixed',
+              bottom: '24px',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              backgroundColor: '#141210',
+              color: '#f6f2ea',
+              padding: '10px 18px',
+              borderRadius: '999px',
+              border: '1.5px solid #1e4d3b',
+              boxShadow: '0 10px 30px rgba(0, 0, 0, 0.45)',
+              zIndex: 9999,
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px',
+              fontSize: '13px',
+              fontFamily: 'var(--font-mono)',
+            }}
+          >
+            <Check size={14} color="#6ee7b7" />
+            <span>Copied mosaab.adam15@gmail.com to clipboard!</span>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <style>{`
         @media (max-width: 1024px) {
