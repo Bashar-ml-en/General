@@ -18,7 +18,7 @@ import {
 } from 'lucide-react';
 
 export default function Hero({ onOpenResume }) {
-  const linkedinUrl = 'https://www.linkedin.com/in/mosaab-mohammed-0289b2275/';
+  const linkedinUrl = 'https://www.linkedin.com/in/mosaab-mohammed-adam-0289b2275/';
   const portfolioDeckUrl = 'https://drive.google.com/file/d/1j_jt-twpKlI4EB9TwqnRfUCj7CcjdJih/view?usp=sharing';
 
   // Multi-camera viewfinder switcher for Mosaab's portrait

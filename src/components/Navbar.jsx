@@ -203,7 +203,7 @@ export default function Navbar({ onOpenResume }) {
         {/* Action Controls */}
         <div className="desktop-actions" style={{ display: 'flex', alignItems: 'center', gap: '8px', flexShrink: 0 }}>
           <a
-            href="https://www.linkedin.com/in/mosaab-mohammed-0289b2275/"
+            href="https://www.linkedin.com/in/mosaab-mohammed-adam-0289b2275/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Mosaab Mohammed LinkedIn Profile"

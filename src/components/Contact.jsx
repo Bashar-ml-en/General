@@ -189,7 +189,7 @@ export default function Contact({ onOpenResume }) {
               {/* LinkedIn & Portfolio Deck */}
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
                 <a
-                  href="https://www.linkedin.com/in/mosaab-mohammed-0289b2275/"
+                  href="https://www.linkedin.com/in/mosaab-mohammed-adam-0289b2275/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-secondary"

@@ -61,7 +61,7 @@ export default function Footer({ onOpenResume }) {
               <span>Download PDF CV</span>
             </a>
             <a
-              href="https://www.linkedin.com/in/mosaab-mohammed-0289b2275/"
+              href="https://www.linkedin.com/in/mosaab-mohammed-adam-0289b2275/"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-secondary"

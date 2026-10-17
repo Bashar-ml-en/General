@@ -22,7 +22,7 @@ export default function ResumeModal({ isOpen, onClose }) {
   const plainTextCV = `MOSAAB MOHAMMED ADAM
 Digital Marketing Executive | Multimedia Producer & Filmmaker
 +60 11-5779 7454 | mosaab.adam15@gmail.com | mosaab.mohammed@student.aiu.edu.my
-LinkedIn: https://www.linkedin.com/in/mosaab-mohammed-0289b2275/
+LinkedIn: https://www.linkedin.com/in/mosaab-mohammed-adam-0289b2275/
 Portfolio Deck: https://drive.google.com/file/d/1j_jt-twpKlI4EB9TwqnRfUCj7CcjdJih/view?usp=sharing
 
 PROFILE
@@ -241,7 +241,7 @@ Languages: Arabic & English (Professional Fluency)`;
               </a>{' '}
               &nbsp;|&nbsp;{' '}
               <a
-                href="https://www.linkedin.com/in/mosaab-mohammed-0289b2275/"
+                href="https://www.linkedin.com/in/mosaab-mohammed-adam-0289b2275/"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ color: '#0a66c2', fontWeight: 600 }}
