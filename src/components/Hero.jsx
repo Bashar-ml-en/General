@@ -23,22 +23,23 @@ export default function Hero({ onOpenResume }) {
   const cameraFeeds = [
     {
       id: 'cam-a',
-      code: 'CAM A // CINEMA RIG',
-      label: 'On-Set Director & Camera Op',
-      src: '/mosab/raw/img_123_obj1636_1108x960.jpg',
-      lens: 'Canon Cinema EOS • 24-70mm f/2.8L • Benro Fluid Head',
-      timecode: '00:24:18:09',
-      caption: 'Framing principal photography on location — combining narrative blocking, tripod/gimbal operation, and live audio monitoring.',
-      objectPosition: 'center top',
+      code: 'CAM A // STUDIO PORTRAIT',
+      label: 'Executive Studio Portrait',
+      src: '/mosab/mosaab-portrait-studio.png',
+      lens: '85mm Prime Portrait • Dual Key & Fill • 4K Master',
+      timecode: '00:01:24:00',
+      caption: 'Mosaab Mohammed Adam — Digital Marketing Executive & Media and Communication (Honours) Graduate at Albukhary International University.',
+      objectPosition: 'center center',
+      isStudioPng: true,
     },
     {
       id: 'cam-b',
-      code: 'CAM B // EXECUTIVE',
-      label: 'Executive Studio Portrait',
-      src: '/mosab/raw/img_004_obj1153_319x628.jpg',
-      lens: '85mm Prime Portrait • Studio Key Light • ISO 200',
-      timecode: '01:08:42:00',
-      caption: 'Mosaab Mohammed Adam — Digital Marketing Executive & Media and Communication (Honours) Graduate at Albukhary International University.',
+      code: 'CAM B // CINEMA RIG',
+      label: 'On-Set Director & Camera Op',
+      src: '/mosab/raw/img_123_obj1636_1108x960.jpg',
+      lens: 'Canon Cinema EOS • 24-70mm f/2.8L • Benro Fluid Head',
+      timecode: '01:24:18:09',
+      caption: 'Framing principal photography on location — combining narrative blocking, tripod/gimbal operation, and live audio monitoring.',
       objectPosition: 'center top',
     },
     {
@@ -377,6 +378,9 @@ export default function Hero({ onOpenResume }) {
                   border: '1px solid rgba(246, 242, 234, 0.18)',
                   backgroundColor: '#0c0b09',
                   marginBottom: '12px',
+                  background: activeCam.isStudioPng
+                    ? 'radial-gradient(circle at 50% 45%, #2a241c 0%, #0c0b09 75%)'
+                    : '#0c0b09',
                 }}
               >
                 <img
@@ -385,7 +389,7 @@ export default function Hero({ onOpenResume }) {
                   style={{
                     width: '100%',
                     height: '100%',
-                    objectFit: 'cover',
+                    objectFit: activeCam.isStudioPng ? 'contain' : 'cover',
                     objectPosition: activeCam.objectPosition,
                     display: 'block',
                     transition: 'all 0.35s ease',

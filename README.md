@@ -49,8 +49,20 @@ Plus **Global Eyes (2023)** (8-Min Campus Broadcast) and **Sugar Savvy Malaysia 
 
 ---
 
-## 📄 Executive Resume System
+## 📄 Executive Resume & Portrait System
 
+- **Executive Studio Portrait (`mosaab-portrait-studio.png`)**: Master 4K studio portrait integrated into the **Hero Multi-Cam Viewfinder (CAM A)** and the **About Storyteller Card**.
 - **Interactive ATS Resume Modal (`ResumeModal.jsx`)**: Mirrors Mosaab's official 1-page resume verbatim with 1-click **Copy Plain Text** and **Print** support.
 - **Direct 1-Page PDF Download**: Served from `/Mosaab_Adam_Resume.pdf`.
-- **Branch**: `Mosab-branch`
+
+---
+
+## 🚀 Deployment & Vercel Domain Configuration
+
+- **Active Git Branch**: `Mosab-branch` (synced with `main` for Vercel production auto-deployment).
+- **Vercel Project Renaming (30-second fix)**:
+  Because the GitHub repository was originally imported into Vercel under the name `omer-hr-portfolio`, Vercel initially assigned `omer-hr-portfolio.vercel.app`.
+  To point your public URL directly to `mosab-portfolio.vercel.app`:
+  1. Open [Vercel Project Settings](https://vercel.com/bishas-projects-127e51f8/omer-hr-portfolio/settings)
+  2. Under **Project Name**, change `omer-hr-portfolio` to `mosab-portfolio` (or `mosaab-portfolio`)
+  3. Click **Save** — Vercel immediately updates your primary domain to `https://mosab-portfolio.vercel.app`.

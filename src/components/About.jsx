@@ -166,20 +166,23 @@ export default function About({ onOpenResume }) {
                   <div
                     style={{
                       width: '110px',
-                      height: '135px',
-                      borderRadius: '12px',
+                      height: '110px',
+                      borderRadius: '50%',
                       overflow: 'hidden',
-                      border: '2px solid #1e4d3b',
+                      border: '3px solid #1e4d3b',
+                      backgroundColor: '#141210',
+                      boxShadow: '0 8px 24px rgba(30, 77, 59, 0.2)',
+                      flexShrink: 0,
                     }}
                   >
                     <img
-                      src="/mosab/raw/img_004_obj1153_319x628.jpg"
+                      src="/mosab/mosaab-portrait-studio.png"
                       alt="Mosaab Mohammed Adam"
                       style={{
                         width: '100%',
                         height: '100%',
                         objectFit: 'cover',
-                        objectPosition: 'center top',
+                        objectPosition: 'center 15%',
                         display: 'block',
                       }}
                     />
