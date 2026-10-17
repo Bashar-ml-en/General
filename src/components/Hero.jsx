@@ -1,43 +1,94 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import {
   MapPin,
-  Mail,
   FileText,
   Award,
-  BarChart3,
-  GraduationCap,
-  Globe2,
+  Play,
+  Film,
+  Camera,
+  TrendingUp,
   Linkedin,
+  Download,
+  ExternalLink,
+  Sparkles,
+  CheckCircle2,
 } from 'lucide-react';
 
 export default function Hero({ onOpenResume }) {
-  const linkedinUrl = 'https://www.linkedin.com/in/alhassan-ibrahim-ali-hassan-a4b2ab323';
+  const linkedinUrl = 'https://www.linkedin.com/in/mosaab-mohammed-0289b2275';
+  const portfolioDeckUrl = 'https://drive.google.com/file/d/1j_jt-twpKlI4EB9TwqnRfUCj7CcjdJih/view?usp=sharing';
+
+  // Multi-camera viewfinder switcher for Mosaab's portrait
+  const cameraFeeds = [
+    {
+      id: 'cam-a',
+      code: 'CAM A // CINEMA RIG',
+      label: 'On-Set Director & Camera Op',
+      src: '/mosab/raw/img_123_obj1636_1108x960.jpg',
+      lens: 'Canon Cinema EOS • 24-70mm f/2.8L • Benro Fluid Head',
+      timecode: '00:24:18:09',
+      caption: 'Framing principal photography on location — combining narrative blocking, tripod/gimbal operation, and live audio monitoring.',
+      objectPosition: 'center top',
+    },
+    {
+      id: 'cam-b',
+      code: 'CAM B // EXECUTIVE',
+      label: 'Executive Studio Portrait',
+      src: '/mosab/raw/img_004_obj1153_319x628.jpg',
+      lens: '85mm Prime Portrait • Studio Key Light • ISO 200',
+      timecode: '01:08:42:00',
+      caption: 'Mosaab Mohammed Adam — Digital Marketing Executive & Media and Communication (Honours) Graduate at Albukhary International University.',
+      objectPosition: 'center top',
+    },
+    {
+      id: 'cam-c',
+      code: 'CAM C // GIMBAL OP',
+      label: 'Night Shoot 3-Axis Stabilizer',
+      src: '/mosab/raw/img_035_obj1264_576x768.jpg',
+      lens: '35mm Anamorphic • 3-Axis Gimbal • Night Exterior',
+      timecode: '02:14:55:21',
+      caption: 'Operating a 3-axis motorized gimbal during night exterior sequences for the narrative drama short film "The Wake-Up Call" (2024).',
+      objectPosition: 'center center',
+    },
+  ];
+
+  const [activeCamIndex, setActiveCamIndex] = useState(0);
+  const activeCam = cameraFeeds[activeCamIndex];
+
+  const disciplines = [
+    'Digital Marketing',
+    'Video Editing',
+    'Graphic Design',
+    'Filmmaking & Docs',
+    'Social Media Management',
+    'Broadcast Journalism',
+  ];
 
   const metrics = [
     {
-      num: 'ARDL',
-      label: 'Econometric Modeling',
-      sub: 'Long-Run Cointegration (Thailand FDI)',
-      accent: '#4a7c59',
+      num: '+110.3%',
+      label: 'Brand Reach Growth',
+      sub: 'Founder, Visual7vibes • 530 Accounts Reached & 83.8% Reels Mix',
+      accent: '#d93829',
     },
     {
-      num: 'RM5,000',
-      label: 'Grant Budget Managed',
-      sub: 'University-Funded SME Digital Training',
-      accent: '#c4a66a',
+      num: 'CRFM2025',
+      label: 'Copyright Registered Film',
+      sub: 'Malaysia Copyright Act 1987 (No. CRFM2025P01130 • 24-Min Documentary)',
+      accent: '#c88a32',
     },
     {
-      num: '100s+',
-      label: 'Outreach Beneficiaries',
-      sub: 'Nagashi NGO Media & Refugee Workshops',
-      accent: '#264430',
+      num: '2 Global',
+      label: 'Marketing & Design Roles',
+      sub: 'KLEM Wellness (KL Eco City) & Rabita Center Australia (Remote)',
+      accent: '#1e4d3b',
     },
     {
-      num: '2x',
-      label: 'University Honors',
-      sub: 'Platinum Research Award & Gold Project',
-      accent: '#705c30',
+      num: '06 Films',
+      label: 'Broadcast & PR Productions',
+      sub: 'Short Film, Heritage Documentary, TV News & Sustainability PR',
+      accent: '#7c5216',
     },
   ];
 
@@ -45,430 +96,460 @@ export default function Hero({ onOpenResume }) {
     <section
       id="hero"
       style={{
-        paddingTop: '116px',
-        paddingBottom: '70px',
+        paddingTop: '112px',
+        paddingBottom: '72px',
         position: 'relative',
         backgroundColor: 'var(--canvas-bg)',
+        backgroundImage: 'radial-gradient(rgba(30, 77, 59, 0.06) 1px, transparent 1px)',
+        backgroundSize: '24px 24px',
       }}
     >
       <div className="container">
-        {/* Top Badges */}
+        {/* Top Broadcast & Credentials Strip */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.45 }}
           style={{
             display: 'flex',
             flexWrap: 'wrap',
             alignItems: 'center',
             gap: '8px',
-            marginBottom: '20px',
+            marginBottom: '22px',
           }}
         >
-          <span className="badge-sage">
-            <span className="status-dot"></span>
-            <span>Open for Economics & Data Analysis Roles</span>
+          <span className="badge-crimson">
+            <span className="tally-dot"></span>
+            <span>REC • Open for Digital Marketing, Video Editing & Media Roles</span>
           </span>
 
-          <span className="badge-honor">
-            <Award size={13} />
-            <span>Platinum Award Winner — AIU Seminar Day 2025</span>
-          </span>
+          <a
+            href="#research"
+            className="badge-honor"
+            style={{ textDecoration: 'none' }}
+          >
+            <Award size={13} color="#f3c677" />
+            <span>Malaysia Copyright Act 1987 Registered Filmmaker (CRFM2025P01130)</span>
+          </a>
 
           <span className="badge-tag-warm" style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
-            <MapPin size={12} color="#74796e" />
-            <span>Kuala Lumpur, Malaysia</span>
+            <MapPin size={12} color="#1e4d3b" />
+            <span>Kuala Lumpur, Malaysia • EN & AR Fluency</span>
           </span>
         </motion.div>
 
-        {/* Main 2-Column Editorial Grid */}
+        {/* Main 12-Column Hero Grid */}
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: '1.2fr 0.8fr',
-            gap: '48px',
-            alignItems: 'center',
+            gridTemplateColumns: 'repeat(12, 1fr)',
+            gap: '32px',
+            alignItems: 'stretch',
           }}
-          className="hero-grid"
         >
-          {/* Left Column: Editorial Proposition */}
+          {/* Left 7 Columns: Executive Identity & Storyteller Narrative */}
           <motion.div
-            initial={{ opacity: 0, x: -24 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, delay: 0.08 }}
+            style={{
+              gridColumn: 'span 7',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+            }}
+            className="hero-left-col"
           >
-            <div style={{ marginBottom: '12px' }}>
-              <span
-                style={{
-                  fontFamily: 'var(--font-sans)',
-                  fontSize: '12px',
-                  fontWeight: '700',
-                  color: '#705c30',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.08em',
-                }}
-              >
-                Curated Academic & Strategic Portfolio
-              </span>
-            </div>
-
-            <h1
-              style={{
-                fontSize: 'clamp(2.3rem, 4.4vw, 3.8rem)',
-                fontWeight: '600',
-                lineHeight: 1.14,
-                letterSpacing: '-0.02em',
-                color: '#264430',
-                marginBottom: '20px',
-              }}
-            >
-              Empirical Rigor in <span className="serif-italic" style={{ color: '#4a7c59' }}>Applied Economics</span> & Data Analysis
-            </h1>
-
-            <p
-              style={{
-                fontFamily: 'var(--font-sans)',
-                fontSize: 'clamp(1rem, 1.8vw, 1.12rem)',
-                lineHeight: 1.68,
-                color: '#4a4e4a',
-                marginBottom: '24px',
-                maxWidth: '640px',
-              }}
-            >
-              Economics graduate from <strong>Albukhary International University</strong> combining hands-on econometrics (ARDL, SPSS, Stata, World Bank datasets) with proven leadership in digital marketing, multi-stakeholder community outreach, and project delivery.
-            </p>
-
-            {/* Quick CTAs */}
-            <div
-              style={{
-                display: 'flex',
-                flexWrap: 'wrap',
-                gap: '12px',
-                marginBottom: '32px',
-              }}
-            >
-              <a href="#research" className="btn-primary">
-                <BarChart3 size={15} style={{ color: '#f8e0a8' }} />
-                <span>Explore ARDL Research Thesis</span>
-              </a>
-
-              <button onClick={onOpenResume} className="btn-secondary">
-                <FileText size={15} />
-                <span>View Official Resume</span>
-              </button>
-
-              <a
-                href={linkedinUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-secondary"
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  borderColor: 'rgba(10, 102, 194, 0.4)',
-                  color: '#0a66c2',
-                  backgroundColor: '#ffffff',
-                }}
-              >
-                <Linkedin size={15} />
-                <span>Connect on LinkedIn</span>
-              </a>
-
-              <a href="#contact" className="btn-secondary" style={{ borderStyle: 'dashed' }}>
-                <Mail size={15} />
-                <span>Contact Alhassan</span>
-              </a>
-            </div>
-
-            {/* Micro Credentials List */}
-            <div
-              style={{
-                display: 'flex',
-                flexWrap: 'wrap',
-                gap: '16px',
-                paddingTop: '20px',
-                borderTop: '1px solid var(--border-hairline)',
-                fontSize: '12.5px',
-                color: '#74796e',
-              }}
-            >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                <GraduationCap size={15} color="#264430" />
-                <span>B.Econ (Hons) '26</span>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                <Globe2 size={15} color="#264430" />
-                <span>Arabic (Native) • English (Fluent)</span>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                <Award size={15} color="#c4a66a" />
-                <span>Gold Social Business Award</span>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Right Column: Alhassan's Portrait & Verification Card */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.96 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.15 }}
-            style={{ position: 'relative' }}
-          >
-            {/* Outer Frame in Forest Earth & Amber Hairline */}
-            <div
-              style={{
-                position: 'relative',
-                backgroundColor: '#ffffff',
-                border: '1px solid rgba(74, 124, 89, 0.2)',
-                borderRadius: '24px',
-                padding: '20px',
-                boxShadow: '0 8px 32px -4px rgba(38, 68, 48, 0.08), 0 20px 48px -12px rgba(38, 68, 48, 0.06)',
-              }}
-            >
-              {/* Portrait Container */}
+            <div>
               <div
                 style={{
-                  position: 'relative',
-                  width: '100%',
-                  aspectRatio: '4 / 5',
-                  maxHeight: '440px',
-                  borderRadius: '18px',
-                  overflow: 'hidden',
-                  backgroundColor: '#264430',
-                  border: '1.5px solid rgba(196, 166, 106, 0.45)',
-                  boxShadow: '0 12px 32px rgba(38, 68, 48, 0.18)',
+                  fontFamily: 'var(--font-mono)',
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.12em',
+                  color: '#1e4d3b',
+                  marginBottom: '10px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '8px',
                 }}
               >
-                <img
-                  src="/alhassan-profile.jpg"
-                  alt="Alhassan Ibrahim Ali Hassan"
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                    objectPosition: 'center 20%',
-                    display: 'block',
-                  }}
-                />
+                <span>MOSAAB MOHAMMED ADAM</span>
+                <span style={{ color: '#c88a32' }}>//</span>
+                <span>DIGITAL MARKETING EXECUTIVE & FILMMAKER</span>
+              </div>
 
-                {/* Soft Vignette / Gradient Overlay at Bottom */}
-                <div
-                  style={{
-                    position: 'absolute',
-                    inset: 0,
-                    background: 'linear-gradient(to top, rgba(22, 39, 28, 0.9) 0%, rgba(22, 39, 28, 0.25) 35%, transparent 60%)',
-                    pointerEvents: 'none',
-                  }}
-                />
+              <h1
+                style={{
+                  fontFamily: 'var(--font-serif)',
+                  fontSize: 'clamp(34px, 4.5vw, 54px)',
+                  fontWeight: 700,
+                  lineHeight: 1.09,
+                  letterSpacing: '-0.02em',
+                  color: 'var(--text-primary)',
+                  marginBottom: '18px',
+                }}
+              >
+                Purposeful Storytelling Across{' '}
+                <span className="serif-italic" style={{ color: '#1e4d3b', fontWeight: 600 }}>
+                  Cinema, Broadcast
+                </span>{' '}
+                & Digital Growth.
+              </h1>
 
-                {/* Top Badge: Verified LinkedIn Profile Pill */}
-                <a
-                  href={linkedinUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    position: 'absolute',
-                    top: '14px',
-                    right: '14px',
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '6px',
-                    padding: '5px 12px',
-                    backgroundColor: 'rgba(255, 255, 255, 0.94)',
-                    backdropFilter: 'blur(8px)',
-                    WebkitBackdropFilter: 'blur(8px)',
-                    borderRadius: '20px',
-                    color: '#0a66c2',
-                    fontSize: '11.5px',
-                    fontWeight: '700',
-                    textDecoration: 'none',
-                    boxShadow: '0 4px 14px rgba(0, 0, 0, 0.15)',
-                    border: '1px solid rgba(10, 102, 194, 0.3)',
-                    zIndex: 3,
-                    transition: 'transform 0.15s ease',
-                  }}
-                >
-                  <Linkedin size={13} />
-                  <span>LinkedIn Verified</span>
-                </a>
+              <p
+                style={{
+                  fontSize: '16.5px',
+                  lineHeight: 1.7,
+                  color: 'var(--text-secondary)',
+                  marginBottom: '20px',
+                  maxWidth: '650px',
+                }}
+              >
+                <strong>Media and Communication (Honours)</strong> graduate from{' '}
+                <strong>Albukhary International University (AIU)</strong> with hands-on leadership across corporate digital marketing, narrative & expository filmmaking, broadcast news reporting, and brand design. Currently serving as{' '}
+                <strong>Digital Marketing Executive at KLEM Wellness (KL Eco City)</strong> and{' '}
+                <strong>Graphic Designer & Content Writer at Rabita Center Australia (Remote)</strong>.
+              </p>
 
-                {/* Bottom Info Overlay on Portrait */}
-                <div
-                  style={{
-                    position: 'absolute',
-                    bottom: '16px',
-                    left: '16px',
-                    right: '16px',
-                    zIndex: 2,
-                  }}
-                >
-                  <div
-                    style={{
-                      fontFamily: 'var(--font-serif)',
-                      fontSize: '20px',
-                      fontWeight: '700',
-                      color: '#faf6f0',
-                      letterSpacing: '0.01em',
-                      marginBottom: '2px',
-                      textShadow: '0 2px 8px rgba(0, 0, 0, 0.6)',
-                    }}
-                  >
-                    Alhassan Ibrahim Ali Hassan
-                  </div>
-                  <div
-                    style={{
-                      fontFamily: 'var(--font-sans)',
-                      fontSize: '12px',
-                      color: '#f8e0a8',
-                      fontWeight: '600',
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.06em',
-                      marginBottom: '8px',
-                      textShadow: '0 1px 4px rgba(0, 0, 0, 0.5)',
-                    }}
-                  >
-                    Bachelor of Economics (Hons.) • AIU
-                  </div>
-
-                  <div
+              {/* 6 Discipline Pills from Portfolio Cover */}
+              <div
+                style={{
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  gap: '8px',
+                  marginBottom: '26px',
+                }}
+              >
+                {disciplines.map((d, i) => (
+                  <span
+                    key={d}
                     style={{
                       display: 'inline-flex',
                       alignItems: 'center',
                       gap: '6px',
-                      padding: '4px 10px',
-                      backgroundColor: 'rgba(38, 68, 48, 0.8)',
-                      backdropFilter: 'blur(6px)',
-                      border: '1px solid rgba(196, 166, 106, 0.45)',
-                      borderRadius: '6px',
-                      color: '#f8e0a8',
-                      fontSize: '11px',
-                      fontWeight: '600',
+                      padding: '6px 13px',
+                      borderRadius: '9999px',
+                      fontSize: '12.5px',
+                      fontWeight: 700,
+                      backgroundColor: i === 0 ? '#1e4d3b' : '#ffffff',
+                      color: i === 0 ? '#ffffff' : 'var(--text-primary)',
+                      border: i === 0 ? '1px solid #112e23' : '1px solid rgba(26, 23, 20, 0.15)',
+                      boxShadow: 'var(--shadow-sm)',
                     }}
                   >
-                    <Award size={12} color="#c4a66a" />
-                    <span>Platinum Award Winner — Best Research Paper</span>
-                  </div>
-                </div>
+                    <CheckCircle2 size={12} color={i === 0 ? '#f3c677' : '#1e4d3b'} />
+                    {d}
+                  </span>
+                ))}
               </div>
+            </div>
 
-              {/* Plaque Excerpt Below Portrait with LinkedIn Direct Access */}
+            {/* Primary & Secondary Action Suite */}
+            <div>
               <div
                 style={{
-                  marginTop: '16px',
-                  padding: '14px 16px',
-                  backgroundColor: '#f5f1ea',
-                  borderRadius: '12px',
-                  border: '1px solid rgba(74, 124, 89, 0.15)',
                   display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  gap: '12px',
+                  flexWrap: 'wrap',
+                  gap: '11px',
+                  paddingTop: '14px',
+                  borderTop: '1px solid var(--border-hairline)',
                 }}
               >
-                <div>
-                  <div
-                    style={{
-                      fontFamily: 'var(--font-serif)',
-                      fontSize: '14px',
-                      fontWeight: '600',
-                      color: '#264430',
-                    }}
-                  >
-                    Econometrics & Quantitative Policy
-                  </div>
-                  <div
-                    style={{
-                      fontFamily: 'var(--font-sans)',
-                      fontSize: '11.5px',
-                      color: '#74796e',
-                    }}
-                  >
-                    ARDL Modeling • World Bank Datasets • SPSS • Stata
-                  </div>
-                </div>
+                <a href="#research" className="btn-crimson">
+                  <Play size={15} fill="#ffffff" />
+                  <span>Enter Screening Room (4 Films)</span>
+                </a>
+
+                <button onClick={onOpenResume} className="btn-primary">
+                  <FileText size={15} color="#f3c677" />
+                  <span>Interactive Resume</span>
+                </button>
+
+                <a
+                  href="/Mosaab_Adam_Resume.pdf"
+                  download="Mosaab_Mohammed_Adam_Resume.pdf"
+                  className="btn-secondary"
+                >
+                  <Download size={15} color="#1e4d3b" />
+                  <span>Download CV</span>
+                </a>
+
+                <a
+                  href={portfolioDeckUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-secondary"
+                  title="Open 21-Page Creative Portfolio Deck on Google Drive"
+                >
+                  <ExternalLink size={15} color="#c88a32" />
+                  <span>21-Page Deck</span>
+                </a>
 
                 <a
                   href={linkedinUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="btn-secondary"
                   style={{
-                    backgroundColor: '#0a66c2',
-                    color: '#ffffff',
-                    borderRadius: '8px',
-                    padding: '7px 12px',
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '6px',
-                    fontSize: '11.5px',
-                    fontWeight: '600',
-                    textDecoration: 'none',
-                    flexShrink: 0,
-                    boxShadow: '0 2px 6px rgba(10, 102, 194, 0.3)',
-                    transition: 'opacity 0.15s ease',
+                    borderColor: 'rgba(10, 102, 194, 0.3)',
+                    color: '#0a66c2',
                   }}
-                  title="View Alhassan Ibrahim on LinkedIn"
                 >
-                  <Linkedin size={13} />
-                  <span>Profile</span>
+                  <Linkedin size={15} />
+                  <span>LinkedIn</span>
                 </a>
               </div>
             </div>
           </motion.div>
-        </div>
 
-        {/* Hairline Divider */}
-        <hr className="axis-divider" style={{ marginTop: '54px', marginBottom: '36px' }} />
-
-        {/* 4 Quantitative Metric Cards */}
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-            gap: '18px',
-          }}
-        >
-          {metrics.map((m, idx) => (
-            <motion.div
-              key={m.label}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: idx * 0.08 }}
-              className="metric-box"
+          {/* Right 5 Columns: Interactive Director's Viewfinder Monitor */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, delay: 0.16 }}
+            style={{ gridColumn: 'span 5' }}
+            className="hero-right-col"
+          >
+            <div
+              className="cinema-card"
+              style={{
+                height: '100%',
+                padding: '18px',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                background: 'linear-gradient(155deg, #141210 0%, #1f1c18 100%)',
+                border: '1px solid rgba(200, 138, 50, 0.35)',
+                position: 'relative',
+                overflow: 'hidden',
+              }}
             >
+              {/* Top Viewfinder Telemetry Bar */}
               <div
                 style={{
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'space-between',
-                  marginBottom: '6px',
+                  marginBottom: '12px',
+                  gap: '8px',
+                  flexWrap: 'wrap',
                 }}
               >
-                <span className="metric-label">{m.label}</span>
-                <span
+                <div style={{ display: 'flex', alignItems: 'center', gap: '7px' }}>
+                  <span className="tally-dot" />
+                  <span
+                    style={{
+                      fontFamily: 'var(--font-mono)',
+                      fontSize: '11px',
+                      fontWeight: 700,
+                      color: '#f6f2ea',
+                      letterSpacing: '0.08em',
+                    }}
+                  >
+                    {activeCam.code}
+                  </span>
+                </div>
+                <div
                   style={{
-                    width: '8px',
-                    height: '8px',
-                    borderRadius: '50%',
-                    backgroundColor: m.accent,
+                    fontFamily: 'var(--font-mono)',
+                    fontSize: '11px',
+                    color: '#f3c677',
+                    backgroundColor: 'rgba(200, 138, 50, 0.16)',
+                    padding: '3px 9px',
+                    borderRadius: '6px',
+                    border: '1px solid rgba(200, 138, 50, 0.35)',
+                  }}
+                >
+                  TC {activeCam.timecode} • 24FPS
+                </div>
+              </div>
+
+              {/* Viewfinder Viewport with Reticle Brackets */}
+              <div
+                style={{
+                  position: 'relative',
+                  width: '100%',
+                  height: '330px',
+                  borderRadius: '14px',
+                  overflow: 'hidden',
+                  border: '1px solid rgba(246, 242, 234, 0.18)',
+                  backgroundColor: '#0c0b09',
+                  marginBottom: '12px',
+                }}
+              >
+                <img
+                  src={activeCam.src}
+                  alt={activeCam.label}
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    objectPosition: activeCam.objectPosition,
+                    display: 'block',
+                    transition: 'all 0.35s ease',
                   }}
                 />
+
+                {/* Corner Viewfinder Reticles */}
+                <div
+                  style={{
+                    position: 'absolute',
+                    inset: '12px',
+                    pointerEvents: 'none',
+                    border: '1px dashed rgba(246, 242, 234, 0.22)',
+                    borderRadius: '8px',
+                  }}
+                />
+
+                {/* Bottom Gradient Overlay inside Monitor */}
+                <div
+                  style={{
+                    position: 'absolute',
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    padding: '14px',
+                    background: 'linear-gradient(to top, rgba(14, 12, 10, 0.94) 0%, rgba(14, 12, 10, 0.55) 70%, transparent 100%)',
+                  }}
+                >
+                  <div
+                    style={{
+                      fontFamily: 'var(--font-mono)',
+                      fontSize: '10.5px',
+                      color: '#f3c677',
+                      marginBottom: '3px',
+                    }}
+                  >
+                    {activeCam.lens}
+                  </div>
+                  <div
+                    style={{
+                      fontSize: '12.5px',
+                      color: '#f6f2ea',
+                      lineHeight: 1.4,
+                    }}
+                  >
+                    {activeCam.caption}
+                  </div>
+                </div>
               </div>
-              <div className="metric-num" style={{ color: m.accent === '#4a7c59' ? '#4a7c59' : '#264430' }}>
-                {m.num}
+
+              {/* Multi-Camera Angle Switcher Buttons */}
+              <div
+                style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(3, 1fr)',
+                  gap: '8px',
+                }}
+              >
+                {cameraFeeds.map((cam, idx) => {
+                  const isSelected = idx === activeCamIndex;
+                  return (
+                    <button
+                      key={cam.id}
+                      onClick={() => setActiveCamIndex(idx)}
+                      style={{
+                        padding: '8px 10px',
+                        borderRadius: '9px',
+                        border: isSelected
+                          ? '1px solid #f3c677'
+                          : '1px solid rgba(246, 242, 234, 0.14)',
+                        backgroundColor: isSelected
+                          ? 'rgba(200, 138, 50, 0.22)'
+                          : 'rgba(255, 255, 255, 0.04)',
+                        color: isSelected ? '#f3c677' : '#c7bfb2',
+                        fontFamily: 'var(--font-mono)',
+                        fontSize: '10.5px',
+                        fontWeight: 700,
+                        cursor: 'pointer',
+                        textAlign: 'left',
+                        transition: 'all 0.18s ease',
+                      }}
+                    >
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '5px', marginBottom: '2px' }}>
+                        <Camera size={11} color={isSelected ? '#f3c677' : '#9c9284'} />
+                        <span>CAM 0{idx + 1}</span>
+                      </div>
+                      <div
+                        style={{
+                          fontFamily: 'var(--font-sans)',
+                          fontSize: '11px',
+                          color: '#f6f2ea',
+                          whiteSpace: 'nowrap',
+                          overflow: 'hidden',
+                          textOverflow: 'ellipsis',
+                        }}
+                      >
+                        {cam.label}
+                      </div>
+                    </button>
+                  );
+                })}
               </div>
-              <div className="metric-sub">{m.sub}</div>
-            </motion.div>
-          ))}
+            </div>
+          </motion.div>
         </div>
+
+        {/* Bottom 4 Executive & Production Telemetry Cards */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55, delay: 0.25 }}
+          className="grid-4"
+          style={{ marginTop: '32px' }}
+        >
+          {metrics.map((m) => (
+            <div
+              key={m.label}
+              className="editorial-card"
+              style={{
+                padding: '22px 24px',
+                borderTop: `3px solid ${m.accent}`,
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+              }}
+            >
+              <div>
+                <div
+                  className="tnum"
+                  style={{
+                    fontFamily: 'var(--font-display)',
+                    fontSize: '28px',
+                    fontWeight: 800,
+                    color: m.accent,
+                    lineHeight: 1.1,
+                    marginBottom: '6px',
+                  }}
+                >
+                  {m.num}
+                </div>
+                <div
+                  style={{
+                    fontFamily: 'var(--font-serif)',
+                    fontSize: '16px',
+                    fontWeight: 700,
+                    color: 'var(--text-primary)',
+                    marginBottom: '4px',
+                  }}
+                >
+                  {m.label}
+                </div>
+              </div>
+              <div style={{ fontSize: '12.5px', color: 'var(--text-muted)', lineHeight: 1.45 }}>
+                {m.sub}
+              </div>
+            </div>
+          ))}
+        </motion.div>
       </div>
 
       <style>{`
-        @media (max-width: 900px) {
-          .hero-grid {
-            grid-template-columns: 1fr !important;
-            gap: 36px !important;
+        @media (max-width: 960px) {
+          .hero-left-col, .hero-right-col {
+            grid-column: span 12 !important;
           }
         }
       `}</style>

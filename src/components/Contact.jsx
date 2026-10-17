@@ -4,391 +4,374 @@ import {
   Mail,
   Phone,
   MapPin,
+  Linkedin,
   Send,
   Copy,
   Check,
-  ArrowUpRight,
-  Linkedin,
+  FileText,
+  Download,
+  ExternalLink,
+  Sparkles,
+  MessageSquare,
 } from 'lucide-react';
 
-export default function Contact() {
+export default function Contact({ onOpenResume }) {
   const [copiedEmail, setCopiedEmail] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    topic: 'Applied Econometrics & Research',
-    message: '',
-  });
 
-  const emailAddress = 'alhassan.ibrahim2070@gmail.com';
-  const phoneNumber = '+60 17 922 6551';
-  const phoneClean = '60179226551';
+  const presets = [
+    {
+      label: 'Digital Marketing Role',
+      subject: 'Digital Marketing Executive Opportunity — Mosaab Mohammed Adam',
+      body: 'Hi Mosaab,\n\nWe reviewed your portfolio and your work as Digital Marketing Executive at KLEM Wellness and Founder of Visual7vibes (+110.3% reach growth). We would love to schedule an interview for a Digital Marketing role with our team.',
+    },
+    {
+      label: 'Video Editing & Production',
+      subject: 'Multimedia Producer / Video Editor Inquiry — Mosaab Mohammed Adam',
+      body: 'Hi Mosaab,\n\nWe were impressed by your copyright-registered documentary "Keris: Supremacy of Legacy" (CRFM2025P01130) and your short film "The Wake-Up Call". We would like to discuss a video production / editing opportunity.',
+    },
+    {
+      label: 'Graphic & Brand Design',
+      subject: 'Graphic Designer & Content Creator Inquiry — Mosaab Mohammed Adam',
+      body: 'Hi Mosaab,\n\nYour visual branding work for Rabita Center Australia and KLEM Wellness caught our attention. Let’s connect regarding a graphic design and content creation opportunity.',
+    },
+    {
+      label: 'PR & Media Communications',
+      subject: 'Public Relations & Communications Role — Mosaab Mohammed Adam',
+      body: 'Hi Mosaab,\n\nHaving seen your bilingual journalism (EN/AR) and PR campaigns like Sugar Savvy Malaysia, we would love to speak with you about a Media & Communications position.',
+    },
+  ];
+
+  const [selectedPreset, setSelectedPreset] = useState(0);
+  const [subject, setSubject] = useState(presets[0].subject);
+  const [message, setMessage] = useState(presets[0].body);
+
+  const handleSelectPreset = (idx) => {
+    setSelectedPreset(idx);
+    setSubject(presets[idx].subject);
+    setMessage(presets[idx].body);
+  };
 
   const handleCopyEmail = () => {
-    navigator.clipboard.writeText(emailAddress);
+    navigator.clipboard.writeText('mosaab.adam15@gmail.com');
     setCopiedEmail(true);
     setTimeout(() => setCopiedEmail(false), 2200);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
+  const mailtoHref = `mailto:mosaab.adam15@gmail.com?subject=${encodeURIComponent(
+    subject
+  )}&body=${encodeURIComponent(message)}`;
+
+  const whatsappHref = `https://wa.me/601157797454?text=${encodeURIComponent(
+    `${subject}\n\n${message}`
+  )}`;
 
   return (
-    <section id="contact" className="section-padding section-monograph">
+    <section id="contact" className="section-padding" style={{ backgroundColor: '#ffffff' }}>
       <div className="container">
-        {/* Section Header */}
-        <div style={{ maxWidth: '780px', marginBottom: '52px' }}>
-          <div className="section-eyebrow" style={{ color: '#c4a66a' }}>
-            <Mail size={14} color="#c4a66a" />
-            <span>Executive & Academic Inquiries</span>
-          </div>
-          <h2 className="section-title" style={{ color: '#faf6f0' }}>
-            Initiate a <span className="serif-italic" style={{ color: '#f8e0a8' }}>Dialogue</span>
-          </h2>
-          <p className="section-subtitle" style={{ color: '#d5dcd2' }}>
-            Open for applied economics research collaborations, corporate advisory roles, digital marketing initiatives, and institutional presentations.
-          </p>
-        </div>
+        <div className="grid-12" style={{ alignItems: 'stretch' }}>
+          {/* Left 5 Columns: Direct Contact Coordinates */}
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            style={{ gridColumn: 'span 5', display: 'flex', flexDirection: 'column', gap: '20px' }}
+            className="contact-left"
+          >
+            <div>
+              <div className="section-eyebrow">
+                <Mail size={14} color="#d93829" />
+                <span>Direct Booking & Recruitment Console</span>
+              </div>
+              <h2 className="section-title">
+                Let’s Create{' '}
+                <span className="serif-italic" style={{ color: '#1e4d3b' }}>
+                  Meaningful Impact
+                </span>
+              </h2>
+              <p className="section-subtitle">
+                Available for roles in <strong>Digital Marketing, Graphic Design, Video Editing, Public Relations, Content Creation, and Social Media Management</strong>.
+              </p>
+            </div>
 
-        {/* 2-Column Grid: Contact Channels & Message Dispatch */}
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 1.2fr',
-            gap: '40px',
-            alignItems: 'start',
-          }}
-          className="contact-grid"
-        >
-          {/* Left Column: Direct Institutional Channels */}
-          <div>
-            <h3 style={{ fontSize: '1.35rem', fontWeight: '600', color: '#faf6f0', marginBottom: '16px' }}>
-              Direct Contact Details
-            </h3>
-
-            {/* Email Card */}
             <div
+              className="editorial-card"
               style={{
-                backgroundColor: 'rgba(250, 246, 240, 0.06)',
-                border: '1px solid rgba(250, 246, 240, 0.16)',
-                borderRadius: '14px',
-                padding: '20px',
-                marginBottom: '16px',
+                padding: '24px',
+                backgroundColor: 'var(--canvas-bg)',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '14px',
               }}
             >
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#f8e0a8', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: '600' }}>
-                  <Mail size={14} /> Official Email
+              {/* Primary Email */}
+              <div
+                style={{
+                  padding: '14px',
+                  borderRadius: '12px',
+                  backgroundColor: '#ffffff',
+                  border: '1px solid rgba(26, 23, 20, 0.12)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  gap: '10px',
+                }}
+              >
+                <div>
+                  <div style={{ fontFamily: 'var(--font-mono)', fontSize: '10.5px', color: 'var(--text-muted)' }}>
+                    PRIMARY EMAIL
+                  </div>
+                  <a
+                    href="mailto:mosaab.adam15@gmail.com"
+                    style={{
+                      fontSize: '14.5px',
+                      fontWeight: 700,
+                      color: '#1e4d3b',
+                      textDecoration: 'none',
+                    }}
+                  >
+                    mosaab.adam15@gmail.com
+                  </a>
+                  <div style={{ fontSize: '11.5px', color: 'var(--text-muted)', marginTop: '2px' }}>
+                    Academic: mosaab.mohammed@student.aiu.edu.my
+                  </div>
                 </div>
                 <button
                   onClick={handleCopyEmail}
-                  style={{
-                    background: 'transparent',
-                    border: '1px solid rgba(250, 246, 240, 0.25)',
-                    color: '#faf6f0',
-                    borderRadius: '6px',
-                    padding: '3px 8px',
-                    fontSize: '11px',
-                    cursor: 'pointer',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '4px',
-                  }}
+                  className="btn-secondary"
+                  style={{ padding: '7px 11px', fontSize: '11.5px' }}
                 >
-                  {copiedEmail ? <Check size={12} color="#c4a66a" /> : <Copy size={12} />}
+                  {copiedEmail ? <Check size={13} color="#1e4d3b" /> : <Copy size={13} />}
                   <span>{copiedEmail ? 'Copied' : 'Copy'}</span>
                 </button>
               </div>
 
-              <a
-                href={`mailto:${emailAddress}`}
-                style={{
-                  fontFamily: 'var(--font-mono)',
-                  fontSize: '14.5px',
-                  color: '#ffffff',
-                  textDecoration: 'none',
-                  display: 'block',
-                  fontWeight: '500',
-                }}
-              >
-                {emailAddress}
-              </a>
-              <div style={{ fontSize: '12px', color: '#d5dcd2', marginTop: '4px' }}>
-                Fast response for research & hiring inquiries.
-              </div>
-            </div>
-
-            {/* Phone & WhatsApp Card */}
-            <div
-              style={{
-                backgroundColor: 'rgba(250, 246, 240, 0.06)',
-                border: '1px solid rgba(250, 246, 240, 0.16)',
-                borderRadius: '14px',
-                padding: '20px',
-                marginBottom: '16px',
-              }}
-            >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#d9edd8', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '8px', fontWeight: '600' }}>
-                <Phone size={14} /> Direct Telephone & WhatsApp
-              </div>
+              {/* Phone & WhatsApp */}
               <div
                 style={{
-                  fontFamily: 'var(--font-mono)',
-                  fontSize: '15px',
-                  color: '#ffffff',
-                  fontWeight: '600',
-                  marginBottom: '8px',
+                  padding: '14px',
+                  borderRadius: '12px',
+                  backgroundColor: '#ffffff',
+                  border: '1px solid rgba(26, 23, 20, 0.12)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  gap: '10px',
                 }}
               >
-                {phoneNumber}
-              </div>
-              <div style={{ display: 'flex', gap: '10px' }}>
+                <div>
+                  <div style={{ fontFamily: 'var(--font-mono)', fontSize: '10.5px', color: 'var(--text-muted)' }}>
+                    PHONE & WHATSAPP (MALAYSIA)
+                  </div>
+                  <a
+                    href="tel:+601157797454"
+                    style={{
+                      fontSize: '15px',
+                      fontWeight: 700,
+                      color: 'var(--text-primary)',
+                      textDecoration: 'none',
+                    }}
+                  >
+                    +60 11-5779 7454
+                  </a>
+                </div>
                 <a
-                  href={`https://wa.me/${phoneClean}`}
+                  href="https://wa.me/601157797454"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-ghost-dark"
-                  style={{ fontSize: '12px', padding: '6px 12px' }}
+                  className="btn-primary"
+                  style={{ padding: '7px 12px', fontSize: '12px' }}
                 >
-                  <span>Chat on WhatsApp</span>
-                  <ArrowUpRight size={13} />
+                  <Phone size={13} />
+                  <span>WhatsApp</span>
+                </a>
+              </div>
+
+              {/* LinkedIn & Portfolio Deck */}
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
+                <a
+                  href="https://www.linkedin.com/in/mosaab-mohammed-0289b2275"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-secondary"
+                  style={{ padding: '10px', fontSize: '12.5px', color: '#0a66c2' }}
+                >
+                  <Linkedin size={14} />
+                  <span>LinkedIn Profile</span>
                 </a>
                 <a
-                  href={`tel:${phoneNumber}`}
-                  className="btn-ghost-dark"
-                  style={{ fontSize: '12px', padding: '6px 12px' }}
+                  href="https://drive.google.com/file/d/1j_jt-twpKlI4EB9TwqnRfUCj7CcjdJih/view?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-secondary"
+                  style={{ padding: '10px', fontSize: '12.5px' }}
                 >
-                  <span>Call Directly</span>
+                  <ExternalLink size={14} color="#c88a32" />
+                  <span>21-Page Deck</span>
+                </a>
+              </div>
+
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
+                <button
+                  onClick={onOpenResume}
+                  className="btn-primary"
+                  style={{ padding: '10px', fontSize: '12.5px' }}
+                >
+                  <FileText size={14} color="#f3c677" />
+                  <span>Interactive Resume</span>
+                </button>
+                <a
+                  href="/Mosaab_Adam_Resume.pdf"
+                  download="Mosaab_Mohammed_Adam_Resume.pdf"
+                  className="btn-secondary"
+                  style={{ padding: '10px', fontSize: '12.5px' }}
+                >
+                  <Download size={14} color="#1e4d3b" />
+                  <span>Download PDF CV</span>
                 </a>
               </div>
             </div>
+          </motion.div>
 
-            {/* LinkedIn Professional Network Card */}
-            <div
-              style={{
-                backgroundColor: 'rgba(250, 246, 240, 0.06)',
-                border: '1px solid rgba(250, 246, 240, 0.16)',
-                borderRadius: '14px',
-                padding: '20px',
-                marginBottom: '16px',
-              }}
-            >
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#8ec5fc', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: '600' }}>
-                  <Linkedin size={14} /> Professional Network
-                </div>
-                <span style={{ fontSize: '11px', color: '#d5dcd2', backgroundColor: 'rgba(255, 255, 255, 0.1)', padding: '2px 7px', borderRadius: '4px' }}>
-                  Verified
-                </span>
-              </div>
-              <div
-                style={{
-                  fontFamily: 'var(--font-sans)',
-                  fontSize: '15px',
-                  color: '#ffffff',
-                  fontWeight: '600',
-                  marginBottom: '10px',
-                }}
-              >
-                Alhassan Ibrahim Ali Hassan
-              </div>
-              <a
-                href="https://www.linkedin.com/in/alhassan-ibrahim-ali-hassan-a4b2ab323"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-ghost-dark"
-                style={{ fontSize: '12px', padding: '7px 14px', width: 'fit-content', gap: '6px' }}
-              >
-                <Linkedin size={13} style={{ color: '#8ec5fc' }} />
-                <span>View LinkedIn Profile</span>
-                <ArrowUpRight size={13} />
-              </a>
-            </div>
-
-            {/* Location & Availability Card */}
-            <div
-              style={{
-                backgroundColor: 'rgba(250, 246, 240, 0.06)',
-                border: '1px solid rgba(250, 246, 240, 0.16)',
-                borderRadius: '14px',
-                padding: '20px',
-              }}
-            >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#d5dcd2', fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '6px', fontWeight: '600' }}>
-                <MapPin size={14} /> Base Location
-              </div>
-              <div style={{ color: '#ffffff', fontSize: '14.5px', fontWeight: '500' }}>
-                Kuala Lumpur, Malaysia
-              </div>
-              <div style={{ fontSize: '12px', color: '#d5dcd2', marginTop: '4px' }}>
-                Available for on-site roles in Klang Valley and remote international engagements.
-              </div>
-            </div>
-          </div>
-
-          {/* Right Column: Interactive Dispatch Form */}
-          <div
-            style={{
-              backgroundColor: '#faf6f0',
-              borderRadius: '20px',
-              padding: '32px',
-              color: '#2e3230',
-              boxShadow: '0 20px 48px rgba(0, 0, 0, 0.25)',
-              border: '1px solid rgba(74, 124, 89, 0.2)',
-            }}
+          {/* Right 7 Columns: Interactive Recruiter Outreach Composer */}
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            style={{ gridColumn: 'span 7' }}
+            className="contact-right"
           >
-            <h3 style={{ fontSize: '1.35rem', fontWeight: '600', color: '#264430', marginBottom: '6px' }}>
-              Send an Inquiry
-            </h3>
-            <p style={{ fontSize: '13px', color: '#74796e', marginBottom: '22px' }}>
-              Please provide details regarding your organization, project scope, or proposed role:
-            </p>
-
-            {submitted ? (
-              <div
-                style={{
-                  backgroundColor: 'rgba(74, 124, 89, 0.12)',
-                  border: '1px solid #4a7c59',
-                  borderRadius: '12px',
-                  padding: '24px',
-                  textAlign: 'center',
-                }}
-              >
-                <div style={{ color: '#4a7c59', marginBottom: '10px' }}>
-                  <Check size={36} style={{ margin: '0 auto' }} />
-                </div>
-                <h4 style={{ fontSize: '1.2rem', color: '#264430', marginBottom: '6px' }}>
-                  Inquiry Dispatched Successfully
-                </h4>
-                <p style={{ fontSize: '13px', color: '#4a4e4a', marginBottom: '16px' }}>
-                  Thank you for reaching out, {formData.name || 'colleague'}. Alhassan will review your note and respond promptly at {formData.email || 'your email'}.
-                </p>
-                <button
-                  onClick={() => setSubmitted(false)}
-                  className="btn-secondary"
-                  style={{ fontSize: '12px' }}
+            <div
+              className="editorial-card"
+              style={{
+                height: '100%',
+                padding: '30px',
+                backgroundColor: 'var(--canvas-bg)',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+              }}
+            >
+              <div>
+                <div
+                  style={{
+                    fontFamily: 'var(--font-mono)',
+                    fontSize: '11px',
+                    fontWeight: 700,
+                    color: '#1e4d3b',
+                    marginBottom: '8px',
+                  }}
                 >
-                  Send Another Note
-                </button>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                <div>
-                  <label style={{ display: 'block', fontSize: '12.5px', fontWeight: '600', color: '#264430', marginBottom: '5px' }}>
-                    Full Name / Organization
+                  1-CLICK RECRUITER BRIEF COMPOSER // SELECT ROLE TEMPLATE
+                </div>
+
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '18px' }}>
+                  {presets.map((p, idx) => (
+                    <button
+                      key={p.label}
+                      onClick={() => handleSelectPreset(idx)}
+                      style={{
+                        padding: '7px 13px',
+                        borderRadius: '999px',
+                        fontSize: '12px',
+                        fontWeight: 700,
+                        cursor: 'pointer',
+                        backgroundColor: selectedPreset === idx ? '#1e4d3b' : '#ffffff',
+                        color: selectedPreset === idx ? '#ffffff' : 'var(--text-secondary)',
+                        border: '1px solid rgba(26, 23, 20, 0.14)',
+                      }}
+                    >
+                      {p.label}
+                    </button>
+                  ))}
+                </div>
+
+                <div style={{ marginBottom: '14px' }}>
+                  <label
+                    style={{
+                      display: 'block',
+                      fontFamily: 'var(--font-mono)',
+                      fontSize: '11px',
+                      fontWeight: 700,
+                      color: 'var(--text-muted)',
+                      marginBottom: '5px',
+                    }}
+                  >
+                    SUBJECT LINE
                   </label>
                   <input
                     type="text"
-                    required
-                    placeholder="e.g. Dr. Ahmad / Strategic Economic Advisory"
-                    className="input-field"
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    value={subject}
+                    onChange={(e) => setSubject(e.target.value)}
+                    style={{
+                      width: '100%',
+                      padding: '11px 14px',
+                      borderRadius: '10px',
+                      border: '1px solid rgba(26, 23, 20, 0.18)',
+                      backgroundColor: '#ffffff',
+                      fontFamily: 'var(--font-sans)',
+                      fontSize: '14px',
+                      color: 'var(--text-primary)',
+                    }}
                   />
                 </div>
 
-                <div>
-                  <label style={{ display: 'block', fontSize: '12.5px', fontWeight: '600', color: '#264430', marginBottom: '5px' }}>
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    required
-                    placeholder="name@organization.com"
-                    className="input-field"
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  />
-                </div>
-
-                <div>
-                  <label style={{ display: 'block', fontSize: '12.5px', fontWeight: '600', color: '#264430', marginBottom: '8px' }}>
-                    Subject / Area of Interest
-                  </label>
-
-                  {/* Quick Clickable Topic Chips */}
-                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '10px' }}>
-                    {[
-                      { key: 'Applied Econometrics & Research', label: 'ARDL & Econometrics' },
-                      { key: 'Economics Graduate Role / Hiring', label: 'Graduate Role' },
-                      { key: 'SME Digital Skills & Training', label: 'SME Digitalization' },
-                      { key: 'NGO & Community Outreach', label: 'NGO Outreach' },
-                      { key: 'Other Inquiries', label: 'Other Inquiries' },
-                    ].map((t) => {
-                      const isSelected = formData.topic === t.key;
-                      return (
-                        <button
-                          key={t.key}
-                          type="button"
-                          onClick={() => setFormData({ ...formData, topic: t.key })}
-                          style={{
-                            background: isSelected ? '#264430' : '#ffffff',
-                            color: isSelected ? '#faf6f0' : '#264430',
-                            border: isSelected ? '1px solid #264430' : '1px solid rgba(74, 124, 89, 0.25)',
-                            borderRadius: '6px',
-                            padding: '4px 10px',
-                            fontSize: '11.5px',
-                            fontWeight: isSelected ? '700' : '500',
-                            cursor: 'pointer',
-                            transition: 'all 0.15s ease',
-                          }}
-                        >
-                          {t.label}
-                        </button>
-                      );
-                    })}
-                  </div>
-
-                  <select
-                    className="input-field"
-                    value={formData.topic}
-                    onChange={(e) => setFormData({ ...formData, topic: e.target.value })}
-                    style={{ cursor: 'pointer' }}
+                <div style={{ marginBottom: '18px' }}>
+                  <label
+                    style={{
+                      display: 'block',
+                      fontFamily: 'var(--font-mono)',
+                      fontSize: '11px',
+                      fontWeight: 700,
+                      color: 'var(--text-muted)',
+                      marginBottom: '5px',
+                    }}
                   >
-                    <option value="Applied Econometrics & Research">Applied Econometrics & ARDL Research</option>
-                    <option value="Economics Graduate Role / Hiring">Economics Graduate Role / Employment</option>
-                    <option value="SME Digital Skills & Training">SME Digital Skills & Training Consultation</option>
-                    <option value="NGO & Community Outreach">NGO & Community Outreach Collaboration</option>
-                    <option value="Other Inquiries">Other Inquiries</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label style={{ display: 'block', fontSize: '12.5px', fontWeight: '600', color: '#264430', marginBottom: '5px' }}>
-                    Message Brief
+                    MESSAGE BRIEF
                   </label>
                   <textarea
-                    rows={4}
-                    required
-                    placeholder="Please outline the requirements, timeline, or scope of discussion..."
-                    className="input-field"
-                    style={{ resize: 'vertical' }}
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    rows={5}
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    style={{
+                      width: '100%',
+                      padding: '12px 14px',
+                      borderRadius: '10px',
+                      border: '1px solid rgba(26, 23, 20, 0.18)',
+                      backgroundColor: '#ffffff',
+                      fontFamily: 'var(--font-sans)',
+                      fontSize: '14px',
+                      lineHeight: 1.55,
+                      color: 'var(--text-primary)',
+                      resize: 'vertical',
+                    }}
                   />
                 </div>
+              </div>
 
-                <button
-                  type="submit"
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
+                <a href={mailtoHref} className="btn-crimson" style={{ flex: 1 }}>
+                  <Send size={15} />
+                  <span>Send via Email (mosaab.adam15@gmail.com)</span>
+                </a>
+                <a
+                  href={whatsappHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="btn-primary"
-                  style={{ width: '100%', padding: '12px', fontSize: '14px', marginTop: '6px' }}
                 >
-                  <Send size={15} style={{ color: '#f8e0a8' }} />
-                  <span>Send Message to Alhassan</span>
-                </button>
-              </form>
-            )}
-          </div>
+                  <MessageSquare size={15} color="#f3c677" />
+                  <span>Send via WhatsApp</span>
+                </a>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
 
       <style>{`
-        @media (max-width: 900px) {
-          .contact-grid {
-            grid-template-columns: 1fr !important;
+        @media (max-width: 1024px) {
+          .contact-left, .contact-right {
+            grid-column: span 12 !important;
           }
         }
       `}</style>

@@ -5,6 +5,9 @@ import {
   Copy,
   Check,
   FileText,
+  Download,
+  ExternalLink,
+  Award,
 } from 'lucide-react';
 
 export default function ResumeModal({ isOpen, onClose }) {
@@ -16,67 +19,49 @@ export default function ResumeModal({ isOpen, onClose }) {
     window.print();
   };
 
-  const plainTextCV = `ALHASSAN IBRAHIM ALI HASSAN
-Economics Graduate | Applied Economics & Data Analysis
-Kuala Lumpur, Malaysia | alhassan.ibrahim2070@gmail.com | +60 17 922 6551 | LinkedIn: https://www.linkedin.com/in/alhassan-ibrahim-ali-hassan-a4b2ab323
+  const plainTextCV = `MOSAAB MOHAMMED ADAM
+Digital Marketing Executive | Multimedia Producer & Filmmaker
++60 11-5779 7454 | mosaab.adam15@gmail.com | mosaab.mohammed@student.aiu.edu.my
+LinkedIn: https://www.linkedin.com/in/mosaab-mohammed-0289b2275
+Portfolio Deck: https://drive.google.com/file/d/1j_jt-twpKlI4EB9TwqnRfUCj7CcjdJih/view?usp=sharing
 
-PROFESSIONAL SUMMARY
-Economics graduate with hands-on experience in applied econometrics and data analysis (Excel, SPSS, Stata, World Bank datasets), combined with a strong track record in digital marketing, community outreach, and event coordination. Delivered a Platinum Award-winning research project using ARDL modeling, led a university-funded SME digital-skills training program with a RM5,000 budget, and managed communications for an NGO reaching hundreds of beneficiaries. Native Arabic speaker, fluent in English, with proven ability to engage diverse stakeholders and drive measurable outcomes.
-
-CORE SKILLS
-• Data & Analysis: Excel, SPSS, Stata, World Bank Data, ARDL Modeling, Econometrics
-• Digital Marketing: WordPress (Blog/SEO), Social Media Marketing, Canva, CapCut
-• Productivity & Design: Microsoft Office (Word, Excel, PowerPoint), Google Workspace (Docs, Sheets, Slides)
-• Professional: Community Outreach, Event Coordination, Stakeholder & Vendor Relations, Public Speaking
-• Languages: Arabic (Native), English (Fluent)
+PROFILE
+Media and Communication graduate with hands-on experience in video editing, graphic design, and social media content production across corporate, nonprofit, and personal-brand settings. Grew a personal content brand's audience reach by 110% and produced a documentary officially registered under the Malaysia Copyright Act 1987. Seeking opportunities in digital marketing, multimedia production, or graphic design.
 
 PROFESSIONAL EXPERIENCE
-Media & Outreach Coordinator | Nagashi Relief and Development Berhad (NGO) | Mar 2025 – Apr 2026
-• Managed Nagashi Media's digital outreach and content strategy, growing organizational visibility across social platforms.
-• Advised prospective students on the Albukhary International University (AIU) scholarship process and academic transition.
-• Facilitated English-language and capacity-building workshops for refugees, strengthening community engagement.
+Graphic Designer & Content Writer — Rabita Center Australia (Remote) | Mar 2026 – Present
+• Designed digital visual assets and wrote blog and publication content to support brand outreach and audience engagement across platforms.
+• Maintained consistent brand voice and visual identity across all published content.
 
-Digital Marketing Intern | TAKO | Nov 2025 – Feb 2026
-• Wrote and managed SEO-optimized blog content on WordPress, improving on-site engagement and readability.
-• Supported end-to-end digital marketing campaigns, from content planning to publication.
+Digital Marketing Executive — KLEM Wellness (KL Eco City, Malaysia) | Nov 2025 – Present
+• Led the digital marketing strategy for KLEM Clinics, enhancing brand awareness and audience engagement.
+• Developed and managed content calendars for social media platforms, ensuring consistent messaging and branding.
+• Created and edited promotional visuals and short-form videos, aligning with the clinic's voice and marketing goals.
+• Collaborated with management on creative projects, overseeing the process from concept to final delivery.
 
-Scholarship & Outreach Volunteer | Ijma Foundation for Humanitarian Action | Jul 2025 – Jan 2026
-• Guided prospective applicants through the AIU scholarship application process from inquiry to submission.
-• Supported digital outreach campaigns to promote scholarship opportunities to prospective students.
+FILM & VIDEO PROJECTS
+• Keris: Supremacy of Legacy (2023) — Assistant Cameraman & Scriptwriter, 24-min documentary; officially registered under the Malaysia Copyright Act 1987 (Notification No. CRFM2025P01130).
+• The Wake-Up Call (2024) — Assistant Director, Camera Operator, Editor & Sound Designer, narrative short film.
+• News Sphere (2023) — Cameraman, Editor & Sports Reporter, 15-minute campus news broadcast.
+• Water Conservation Campaign (2025) — Cameraman, Scriptwriter & Editor, 10-minute sustainability film.
+• Global Eyes (2023) — Assistant Director, Cameraman, Scriptwriter & Graphic Designer, 8-minute campus broadcast.
+• Sugar Savvy Malaysia (2025) — Campaign Content Creator, Graphic Designer & Logistics Coordinator, Public Relations campaign.
 
-KEY PROJECTS
-Final Year Research Project — Investigating FDI's Role on Youth Unemployment in Thailand | Seminar in Contemporary Economic Issues 2025
-• Conducted independent research applying ARDL modeling and SPSS to analyze long- and short-run economic relationships.
-• Presented findings at AIU Seminar Day; received the Platinum Award for research quality and presentation.
+PERSONAL BRAND & LEADERSHIP
+• Founder, Visual7vibes — photography and short-form video content brand across Instagram, TikTok, and Facebook; grew account reach by 110% (530 accounts reached, 1,822 post views) in one month.
+• Media Officer, Nagashi Club (2023–2025) — designed promotional materials and produced event content.
+• News Writer, Student News Platform / Updazone (UDZ) (2023–2024) — wrote bilingual (Arabic/English) weekly articles on Sudanese political and humanitarian developments.
+• Sports Affairs Officer, Sudanese Student Community (2022–2023) — designed, promoted, organized, and documented sports events.
+• Designer, Community Protection Network, Kassala – Sudan (2020) — designed awareness posters for the "Lifeline" safe-migration initiative and engaged refugee camp communities.
 
-Digital Training Program for SMEs | Final Year Community Project — Alor Setar 2025
-• Led a digital-skills training program for local SMEs to strengthen online presence and business performance.
-• Conducted needs assessments through surveys and interviews with entrepreneurs to tailor training content.
-• Trained participants in Canva, social media marketing, and e-commerce fundamentals.
-• Managed a RM5,000 university-funded project budget and collaborated with the Muda Agricultural Development Authority (MADA) on coordination and delivery.
+TECHNICAL SKILLS
+• Video Editing: Adobe Premiere Pro, After Effects, CapCut, DaVinci Resolve, Adobe Audition, VN
+• Design: Adobe Photoshop, Illustrator, Lightroom, Canva, Figma
+• Content & Marketing: Content Writing, Social Media Strategy, Web Design, Public Relations
 
-PROFESSIONAL ACTIVITIES & EXHIBITIONS
-Accredited Delegate & Participant | National Innovation and Commercialisation Expo 2026 (NICE 2026) — MOSTI & MRANTI | 2026
-• Attended Malaysia's premier technology commercialization expo convened by the Ministry of Science, Technology and Innovation (MOSTI) and MRANTI under "Mission to Market. Malaysia to the World."
-• Participated in venture capital and investment panels including "What Investors Really Look For" (Gobi Partners, Rakuten Capital Singapore, Bintang Capital Partners).
-• Networked with institutional investors, technology founders, and government innovation agencies to evaluate market readiness and commercialization pipelines.
-
-Sales & Brand Representative | Mashreq International for Books — Kuala Lumpur International Book Fair (KLIBF) 2026
-• Represented the company at KLIBF, promoting a diverse catalog of Arabic, Islamic, and educational publications.
-• Engaged visitors to introduce products, communicate promotions, and enhance brand awareness.
-
-Event Organizing Committee Member | UiTM–Umrah Plus International Travel Market Exhibition 2026 — InterContinental KL
-• Coordinated booth allocations, technical specs, and commercial floor logistics for 30+ international travel agencies.
-• Managed dignitary receiving lines and supported bilateral diplomatic round-tables between Malaysia and the Tourism Committee of the Republic of Uzbekistan (UZSAA).
-• Handled public relations and visitor inquiries, promoting Islamic tourism, Umrah Plus travel routes, and cultural exchange.
-
-EDUCATION & CERTIFICATIONS
-Bachelor of Economics (Hons.) | Albukhary International University | Graduated Apr 2026
-Relevant Coursework: Microeconomics, Macroeconomics, Development Economics, Econometrics, Islamic Economics & Finance, Principles of Marketing, Entrepreneurship & Innovation.
-• Platinum Award — Best Research Paper, AIU Seminar Day (2025)
-• Gold Award — Social Business Group Project
-
-References available upon request.`;
+EDUCATION
+Bachelor of Media and Communication (Honours) — Albukhary International University | Mar 2023 – Mar 2026
+Languages: Arabic & English (Professional Fluency)`;
 
   const handleCopy = () => {
     navigator.clipboard.writeText(plainTextCV);
@@ -95,333 +80,416 @@ References available upon request.`;
           maxHeight: '92vh',
           backgroundColor: '#ffffff',
           borderRadius: '16px',
-          border: '1px solid rgba(74, 124, 89, 0.25)',
-          boxShadow: '0 25px 60px -15px rgba(31, 54, 39, 0.35)',
+          border: '1px solid rgba(30, 77, 59, 0.3)',
+          boxShadow: '0 25px 60px -15px rgba(20, 18, 16, 0.45)',
           display: 'flex',
           flexDirection: 'column',
           overflow: 'hidden',
         }}
       >
-        {/* Modal Chrome Header */}
+        {/* Top Modal Action Bar */}
         <div
           className="no-print"
           style={{
-            padding: '16px 24px',
-            backgroundColor: '#264430',
-            color: '#faf6f0',
+            padding: '15px 24px',
+            backgroundColor: '#141210',
+            color: '#f6f2ea',
             display: 'flex',
+            flexWrap: 'wrap',
             alignItems: 'center',
             justifyContent: 'space-between',
-            borderBottom: '1px solid rgba(196, 166, 106, 0.45)',
+            gap: '12px',
+            borderBottom: '1px solid rgba(200, 138, 50, 0.45)',
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
             <div
               style={{
-                backgroundColor: 'rgba(196, 166, 106, 0.2)',
-                color: '#f8e0a8',
-                padding: '6px',
-                borderRadius: '6px',
+                width: '32px',
+                height: '32px',
+                borderRadius: '8px',
+                backgroundColor: 'rgba(200, 138, 50, 0.2)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: '#f3c677',
               }}
             >
-              <FileText size={18} />
+              <FileText size={16} />
             </div>
             <div>
-              <h3 style={{ fontSize: '15px', fontWeight: '600', color: '#ffffff' }}>
-                Official Resume • Alhassan Ibrahim Ali Hassan
-              </h3>
-              <p style={{ fontSize: '11px', color: '#d5dcd2' }}>
-                Bachelor of Economics (Hons.) • Applied Econometrics & Data Analysis
-              </p>
+              <div style={{ fontFamily: 'var(--font-serif)', fontWeight: 700, fontSize: '15px' }}>
+                Mosaab Mohammed Adam — Executive Resume
+              </div>
+              <div style={{ fontFamily: 'var(--font-mono)', fontSize: '10.5px', color: '#c7bfb2' }}>
+                ATS-Verified 1-Page Format • Print & PDF Ready
+              </div>
             </div>
           </div>
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '8px' }}>
             <button
               onClick={handleCopy}
-              className="btn-ghost-dark"
-              style={{ padding: '6px 12px', fontSize: '12px' }}
-              title="Copy plain text resume to clipboard"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '6px',
+                padding: '7px 13px',
+                borderRadius: '8px',
+                backgroundColor: copied ? '#1e4d3b' : 'rgba(255, 255, 255, 0.08)',
+                color: '#ffffff',
+                border: '1px solid rgba(255, 255, 255, 0.16)',
+                fontSize: '12px',
+                fontWeight: 600,
+                cursor: 'pointer',
+              }}
             >
-              {copied ? <Check size={14} color="#f8e0a8" /> : <Copy size={14} />}
-              <span>{copied ? 'Copied' : 'Copy Resume'}</span>
+              {copied ? <Check size={14} color="#f3c677" /> : <Copy size={14} />}
+              <span>{copied ? 'Copied Text!' : 'Copy Plain Text'}</span>
             </button>
 
             <button
               onClick={handlePrint}
-              className="btn-amber"
-              style={{ padding: '6px 14px', fontSize: '12px' }}
-              title="Print or Save as PDF"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '6px',
+                padding: '7px 13px',
+                borderRadius: '8px',
+                backgroundColor: 'rgba(255, 255, 255, 0.08)',
+                color: '#ffffff',
+                border: '1px solid rgba(255, 255, 255, 0.16)',
+                fontSize: '12px',
+                fontWeight: 600,
+                cursor: 'pointer',
+              }}
             >
               <Printer size={14} />
-              <span>Print / Save PDF</span>
+              <span>Print</span>
             </button>
+
+            <a
+              href="/Mosaab_Adam_Resume.pdf"
+              download="Mosaab_Mohammed_Adam_Resume.pdf"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '6px',
+                padding: '7px 14px',
+                borderRadius: '8px',
+                backgroundColor: '#c88a32',
+                color: '#141210',
+                fontSize: '12px',
+                fontWeight: 700,
+                textDecoration: 'none',
+              }}
+            >
+              <Download size={14} />
+              <span>Download PDF</span>
+            </a>
 
             <button
               onClick={onClose}
-              style={{
-                backgroundColor: 'rgba(250, 246, 240, 0.12)',
-                border: 'none',
-                color: '#fff',
-                width: '32px',
-                height: '32px',
-                borderRadius: '6px',
-                cursor: 'pointer',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}
               aria-label="Close Resume Modal"
+              style={{
+                background: 'rgba(255, 255, 255, 0.08)',
+                border: 'none',
+                borderRadius: '8px',
+                padding: '7px',
+                color: '#ffffff',
+                cursor: 'pointer',
+              }}
             >
               <X size={18} />
             </button>
           </div>
         </div>
 
-        {/* Scrollable CV Document */}
+        {/* Printable 1-Page Executive Resume Document */}
         <div
+          id="printable-resume"
           style={{
-            flex: 1,
+            padding: '40px 48px',
             overflowY: 'auto',
-            padding: '36px 44px',
+            color: '#1a1714',
             backgroundColor: '#ffffff',
-            color: '#2e3230',
+            fontFamily: 'var(--font-sans)',
+            lineHeight: 1.55,
           }}
-          className="cv-document"
         >
-          {/* Header */}
-          <div style={{ textAlign: 'center', borderBottom: '2px solid #264430', paddingBottom: '16px', marginBottom: '20px' }}>
+          {/* Resume Header */}
+          <div style={{ textAlign: 'center', marginBottom: '22px' }}>
             <h1
               style={{
-                fontFamily: 'var(--font-serif)',
+                fontFamily: 'var(--font-sans)',
                 fontSize: '28px',
-                fontWeight: '700',
-                color: '#264430',
-                letterSpacing: '0.04em',
+                fontWeight: 800,
+                letterSpacing: '0.03em',
+                color: '#141210',
                 marginBottom: '4px',
               }}
             >
-              ALHASSAN IBRAHIM ALI HASSAN
+              MOSAAB MOHAMMED ADAM
             </h1>
+            <div style={{ fontSize: '16px', fontWeight: 600, color: '#433d37', marginBottom: '6px' }}>
+              Digital Marketing Executive
+            </div>
+            <div style={{ fontSize: '13px', color: '#433d37' }}>
+              +60 11-5779 7454 &nbsp;|&nbsp;{' '}
+              <a href="mailto:mosaab.adam15@gmail.com" style={{ color: '#1e4d3b', fontWeight: 600 }}>
+                mosaab.adam15@gmail.com
+              </a>{' '}
+              &nbsp;|&nbsp;{' '}
+              <a
+                href="https://www.linkedin.com/in/mosaab-mohammed-0289b2275"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: '#0a66c2', fontWeight: 600 }}
+              >
+                LinkedIn
+              </a>{' '}
+              &nbsp;|&nbsp;{' '}
+              <a
+                href="https://drive.google.com/file/d/1j_jt-twpKlI4EB9TwqnRfUCj7CcjdJih/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: '#0a66c2', fontWeight: 600 }}
+              >
+                Portfolio Deck
+              </a>
+            </div>
+          </div>
+
+          {/* PROFILE */}
+          <div style={{ marginBottom: '20px' }}>
             <div
               style={{
-                fontFamily: 'var(--font-sans)',
-                fontSize: '14px',
-                fontWeight: '600',
-                color: '#705c30',
+                fontSize: '12.5px',
+                fontWeight: 800,
+                textTransform: 'uppercase',
+                letterSpacing: '0.06em',
+                borderBottom: '1.5px solid #141210',
+                paddingBottom: '4px',
                 marginBottom: '8px',
               }}
             >
-              Economics Graduate | Applied Economics & Data Analysis
+              PROFILE
             </div>
-            <div
-              style={{
-                fontFamily: 'var(--font-sans)',
-                fontSize: '12.5px',
-                color: '#4a4e4a',
-                display: 'flex',
-                flexWrap: 'wrap',
-                justifyContent: 'center',
-                gap: '14px',
-              }}
-            >
-              <span>Kuala Lumpur, Malaysia</span>
-              <span>•</span>
-              <a href="mailto:alhassan.ibrahim2070@gmail.com" style={{ color: '#264430', textDecoration: 'none' }}>
-                alhassan.ibrahim2070@gmail.com
-              </a>
-              <span>•</span>
-              <a href="tel:+60179226551" style={{ color: '#264430', textDecoration: 'none' }}>
-                +60 17 922 6551
-              </a>
-              <span>•</span>
-              <a
-                href="https://www.linkedin.com/in/alhassan-ibrahim-ali-hassan-a4b2ab323"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ color: '#0a66c2', textDecoration: 'none', fontWeight: '600' }}
-              >
-                LinkedIn Profile
-              </a>
-            </div>
-          </div>
-
-          {/* Section: Professional Summary */}
-          <div style={{ marginBottom: '20px' }}>
-            <h2 style={{ fontSize: '14px', fontWeight: '700', color: '#264430', borderBottom: '1px solid #c4c8bc', paddingBottom: '3px', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-              Professional Summary
-            </h2>
-            <p style={{ fontSize: '13px', lineHeight: 1.6, color: '#333' }}>
-              Economics graduate with hands-on experience in applied econometrics and data analysis (Excel, SPSS, Stata, World Bank datasets), combined with a strong track record in digital marketing, community outreach, and event coordination. Delivered a Platinum Award-winning research project using ARDL modeling, led a university-funded SME digital-skills training program with a RM5,000 budget, and managed communications for an NGO reaching hundreds of beneficiaries. Native Arabic speaker, fluent in English, with proven ability to engage diverse stakeholders and drive measurable outcomes.
+            <p style={{ fontSize: '13.5px', color: '#2b2620' }}>
+              Media and Communication graduate with hands-on experience in video editing, graphic design, and social media content production across corporate, nonprofit, and personal-brand settings. Grew a personal content brand’s audience reach by 110% and produced a documentary officially registered under the Malaysia Copyright Act 1987. Seeking entry-level opportunities in digital marketing, multimedia production, or graphic design.
             </p>
           </div>
 
-          {/* Section: Core Skills */}
+          {/* PROFESSIONAL EXPERIENCE */}
           <div style={{ marginBottom: '20px' }}>
-            <h2 style={{ fontSize: '14px', fontWeight: '700', color: '#264430', borderBottom: '1px solid #c4c8bc', paddingBottom: '3px', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-              Core Skills
-            </h2>
-            <div style={{ fontSize: '12.5px', lineHeight: 1.65, color: '#333' }}>
-              <div><strong>• Data & Analysis:</strong> Excel, SPSS, Stata, World Bank Data, ARDL Modeling, Econometrics</div>
-              <div><strong>• Digital Marketing:</strong> WordPress (Blog/SEO), Social Media Marketing, Canva, CapCut</div>
-              <div><strong>• Productivity & Design:</strong> Microsoft Office (Word, Excel, PowerPoint), Google Workspace (Docs, Sheets, Slides)</div>
-              <div><strong>• Professional:</strong> Community Outreach, Event Coordination, Stakeholder & Vendor Relations, Public Speaking</div>
-              <div><strong>• Languages:</strong> Arabic (Native), English (Fluent)</div>
+            <div
+              style={{
+                fontSize: '12.5px',
+                fontWeight: 800,
+                textTransform: 'uppercase',
+                letterSpacing: '0.06em',
+                borderBottom: '1.5px solid #141210',
+                paddingBottom: '4px',
+                marginBottom: '10px',
+              }}
+            >
+              PROFESSIONAL EXPERIENCE
             </div>
-          </div>
 
-          {/* Section: Professional Experience */}
-          <div style={{ marginBottom: '20px' }}>
-            <h2 style={{ fontSize: '14px', fontWeight: '700', color: '#264430', borderBottom: '1px solid #c4c8bc', paddingBottom: '3px', marginBottom: '10px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-              Professional Experience
-            </h2>
-
-            {/* Experience 1 */}
             <div style={{ marginBottom: '14px' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
-                <strong style={{ fontSize: '13.5px', color: '#264430' }}>Media & Outreach Coordinator | Nagashi Relief and Development Berhad (NGO)</strong>
-                <span style={{ fontSize: '12px', color: '#555', fontVariantNumeric: 'tabular-nums' }}>Mar 2025 – Apr 2026</span>
+              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '14px' }}>
+                <div>
+                  <strong>Graphic Designer & Content Writer</strong> — Rabita Center Australia (Remote)
+                </div>
+                <div style={{ fontStyle: 'italic', color: '#433d37' }}>Mar 2026 – Present</div>
               </div>
-              <ul style={{ paddingLeft: '18px', marginTop: '4px', fontSize: '12.5px', color: '#333', lineHeight: 1.55 }}>
-                <li>Managed Nagashi Media's digital outreach and content strategy, growing organizational visibility across social platforms.</li>
-                <li>Advised prospective students on the Albukhary International University (AIU) scholarship process and academic transition.</li>
-                <li>Facilitated English-language and capacity-building workshops for refugees, strengthening community engagement.</li>
-              </ul>
-            </div>
-
-            {/* Experience 2 */}
-            <div style={{ marginBottom: '14px' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
-                <strong style={{ fontSize: '13.5px', color: '#264430' }}>Digital Marketing Intern | TAKO</strong>
-                <span style={{ fontSize: '12px', color: '#555', fontVariantNumeric: 'tabular-nums' }}>Nov 2025 – Feb 2026</span>
-              </div>
-              <ul style={{ paddingLeft: '18px', marginTop: '4px', fontSize: '12.5px', color: '#333', lineHeight: 1.55 }}>
-                <li>Wrote and managed SEO-optimized blog content on WordPress, improving on-site engagement and readability.</li>
-                <li>Supported end-to-end digital marketing campaigns, from content planning to publication.</li>
-              </ul>
-            </div>
-
-            {/* Experience 3 */}
-            <div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
-                <strong style={{ fontSize: '13.5px', color: '#264430' }}>Scholarship & Outreach Volunteer | Ijma Foundation for Humanitarian Action</strong>
-                <span style={{ fontSize: '12px', color: '#555', fontVariantNumeric: 'tabular-nums' }}>Jul 2025 – Jan 2026</span>
-              </div>
-              <ul style={{ paddingLeft: '18px', marginTop: '4px', fontSize: '12.5px', color: '#333', lineHeight: 1.55 }}>
-                <li>Guided prospective applicants through the AIU scholarship application process from inquiry to submission.</li>
-                <li>Supported digital outreach campaigns to promote scholarship opportunities to prospective students.</li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Section: Key Projects */}
-          <div style={{ marginBottom: '20px' }}>
-            <h2 style={{ fontSize: '14px', fontWeight: '700', color: '#264430', borderBottom: '1px solid #c4c8bc', paddingBottom: '3px', marginBottom: '10px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-              Key Projects
-            </h2>
-
-            {/* Project 1 */}
-            <div style={{ marginBottom: '14px' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
-                <strong style={{ fontSize: '13.5px', color: '#264430' }}>
-                  Final Year Research Project — Investigating FDI's Role on Youth Unemployment in Thailand
-                </strong>
-                <span style={{ fontSize: '12px', color: '#555' }}>Seminar in Contemporary Economic Issues 2025</span>
-              </div>
-              <ul style={{ paddingLeft: '18px', marginTop: '4px', fontSize: '12.5px', color: '#333', lineHeight: 1.55 }}>
-                <li>Conducted independent research applying ARDL modeling and SPSS to analyze long- and short-run economic relationships.</li>
-                <li>Presented findings at AIU Seminar Day; received the <strong>Platinum Award</strong> for research quality and presentation.</li>
-              </ul>
-            </div>
-
-            {/* Project 2 */}
-            <div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
-                <strong style={{ fontSize: '13.5px', color: '#264430' }}>
-                  Digital Training Program for SMEs | Final Year Community Project — Alor Setar
-                </strong>
-                <span style={{ fontSize: '12px', color: '#555' }}>2025</span>
-              </div>
-              <ul style={{ paddingLeft: '18px', marginTop: '4px', fontSize: '12.5px', color: '#333', lineHeight: 1.55 }}>
-                <li>Led a digital-skills training program for local SMEs to strengthen online presence and business performance.</li>
-                <li>Conducted needs assessments through surveys and interviews with entrepreneurs to tailor training content.</li>
-                <li>Trained participants in Canva, social media marketing, and e-commerce fundamentals.</li>
-                <li>Managed a <strong>RM5,000</strong> university-funded project budget and collaborated with the Muda Agricultural Development Authority (MADA) on coordination and delivery.</li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Section: Professional Activities & Exhibitions */}
-          <div style={{ marginBottom: '20px' }}>
-            <h2 style={{ fontSize: '14px', fontWeight: '700', color: '#264430', borderBottom: '1px solid #c4c8bc', paddingBottom: '3px', marginBottom: '10px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-              Professional Activities & Exhibitions
-            </h2>
-
-            {/* NICE 2026 */}
-            <div style={{ marginBottom: '14px' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
-                <strong style={{ fontSize: '13.5px', color: '#264430' }}>
-                  Accredited Delegate & Participant | National Innovation and Commercialisation Expo (NICE 2026) — MOSTI & MRANTI
-                </strong>
-                <span style={{ fontSize: '12px', color: '#555' }}>2026</span>
-              </div>
-              <ul style={{ paddingLeft: '18px', marginTop: '4px', fontSize: '12.5px', color: '#333', lineHeight: 1.55 }}>
-                <li>Attended Malaysia's flagship commercialization showcase organized by MOSTI and MRANTI under "Mission to Market. Malaysia to the World."</li>
-                <li>Participated in keynote venture capital panels including "What Investors Really Look For" (Gobi Partners, Rakuten Capital, Bintang Capital).</li>
-                <li>Examined tech-transfer frameworks, intellectual property valuation, and startup scaling mechanisms.</li>
-              </ul>
-            </div>
-
-            <div style={{ marginBottom: '12px' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
-                <strong style={{ fontSize: '13.5px', color: '#264430' }}>
-                  Sales & Brand Representative | Mashreq International for Books — Kuala Lumpur International Book Fair (KLIBF)
-                </strong>
-                <span style={{ fontSize: '12px', color: '#555' }}>2026</span>
-              </div>
-              <ul style={{ paddingLeft: '18px', marginTop: '4px', fontSize: '12.5px', color: '#333', lineHeight: 1.55 }}>
-                <li>Represented the company at KLIBF, promoting a diverse catalog of Arabic, Islamic, and educational publications.</li>
-                <li>Engaged visitors to introduce products, communicate promotions, and enhance brand awareness.</li>
+              <ul style={{ paddingLeft: '20px', marginTop: '4px', fontSize: '13.5px', color: '#2b2620' }}>
+                <li>
+                  Designed digital visual assets and wrote blog and publication content to support brand outreach and audience engagement across platforms.
+                </li>
+                <li>
+                  Maintained consistent brand voice and visual identity across all published content.
+                </li>
               </ul>
             </div>
 
             <div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
-                <strong style={{ fontSize: '13.5px', color: '#264430' }}>
-                  Event Organizing Committee Member | UiTM–Umrah Plus International Travel Market Exhibition — InterContinental KL
-                </strong>
-                <span style={{ fontSize: '12px', color: '#555' }}>2026</span>
+              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '14px' }}>
+                <div>
+                  <strong>Digital Marketing Executive</strong> — KLEM Wellness (KL Eco City, Malaysia)
+                </div>
+                <div style={{ fontStyle: 'italic', color: '#433d37' }}>Nov 2025 – Present</div>
               </div>
-              <ul style={{ paddingLeft: '18px', marginTop: '4px', fontSize: '12.5px', color: '#333', lineHeight: 1.55 }}>
-                <li>Coordinated booth allocations, technical specs, and commercial floor logistics for 30+ international travel agencies.</li>
-                <li>Managed dignitary receiving lines and supported bilateral diplomatic round-tables between Malaysia and the Tourism Committee of the Republic of Uzbekistan (UZSAA).</li>
-                <li>Handled public relations and visitor inquiries, promoting Islamic tourism, Umrah Plus travel routes, and cultural exchange.</li>
+              <ul style={{ paddingLeft: '20px', marginTop: '4px', fontSize: '13.5px', color: '#2b2620' }}>
+                <li>
+                  Led the digital marketing strategy for KLEM Clinics, enhancing brand awareness and audience engagement.
+                </li>
+                <li>
+                  Developed and managed content calendars for social media platforms, ensuring consistent messaging and branding.
+                </li>
+                <li>
+                  Created and edited promotional visuals and short-form videos, aligning with the clinic’s voice and marketing goals.
+                </li>
+                <li>
+                  Collaborated with management on creative projects, overseeing the process from concept to final delivery.
+                </li>
               </ul>
             </div>
           </div>
 
-          {/* Section: Education & Certifications */}
-          <div style={{ marginBottom: '16px' }}>
-            <h2 style={{ fontSize: '14px', fontWeight: '700', color: '#264430', borderBottom: '1px solid #c4c8bc', paddingBottom: '3px', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-              Education & Certifications
-            </h2>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
-              <strong style={{ fontSize: '13.5px', color: '#264430' }}>
-                Bachelor of Economics (Hons.) | Albukhary International University
-              </strong>
-              <span style={{ fontSize: '12px', color: '#555' }}>Graduated Apr 2026</span>
+          {/* FILM & VIDEO PROJECTS */}
+          <div style={{ marginBottom: '20px' }}>
+            <div
+              style={{
+                fontSize: '12.5px',
+                fontWeight: 800,
+                textTransform: 'uppercase',
+                letterSpacing: '0.06em',
+                borderBottom: '1.5px solid #141210',
+                paddingBottom: '4px',
+                marginBottom: '8px',
+              }}
+            >
+              FILM & VIDEO PROJECTS
             </div>
-            <div style={{ fontSize: '12.5px', color: '#4a4e4a', marginTop: '4px' }}>
-              <strong>Relevant Coursework:</strong> Microeconomics, Macroeconomics, Development Economics, Econometrics, Islamic Economics & Finance, Principles of Marketing, Entrepreneurship & Innovation.
-            </div>
-            <ul style={{ paddingLeft: '18px', marginTop: '4px', fontSize: '12.5px', color: '#333', lineHeight: 1.55 }}>
-              <li><strong>Platinum Award</strong> — Best Research Paper, AIU Seminar Day (2025)</li>
-              <li><strong>Gold Award</strong> — Social Business Group Project</li>
+            <ul style={{ paddingLeft: '20px', fontSize: '13.5px', color: '#2b2620', display: 'flex', flexDirection: 'column', gap: '5px' }}>
+              <li>
+                <strong>Keris: Supremacy of Legacy (2023)</strong> — Assistant Cameraman & Scriptwriter, 24-min documentary; officially registered under the Malaysia Copyright Act 1987 (Notification No. CRFM2025P01130).{' '}
+                <a
+                  href="https://drive.google.com/file/d/1WzH__K8pnoDRLpCpNWZC1Tvvvr3L1Kh3/view?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="no-print"
+                  style={{ color: '#1e4d3b', fontWeight: 700, fontSize: '12px' }}
+                >
+                  [Watch Film]
+                </a>
+              </li>
+              <li>
+                <strong>The Wake-Up Call (2024)</strong> — Assistant Director, Camera Operator, Editor & Sound Designer, narrative short film.{' '}
+                <a
+                  href="https://drive.google.com/file/d/1ktc6RzY5P2w9QQtPVsFYROA-vSgbPH5U/view?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="no-print"
+                  style={{ color: '#1e4d3b', fontWeight: 700, fontSize: '12px' }}
+                >
+                  [Watch Film]
+                </a>
+              </li>
+              <li>
+                <strong>News Sphere (2023)</strong> — Cameraman, Editor & Sports Reporter, 15-minute campus news broadcast.{' '}
+                <a
+                  href="https://drive.google.com/file/d/1wn4NEXCzDeWcD6LjLqW8yuzLcFkhu7FK/view?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="no-print"
+                  style={{ color: '#1e4d3b', fontWeight: 700, fontSize: '12px' }}
+                >
+                  [Watch Broadcast]
+                </a>
+              </li>
+              <li>
+                <strong>Water Conservation Campaign (2025)</strong> — Cameraman, Scriptwriter & Editor, 10-minute sustainability film.{' '}
+                <a
+                  href="https://drive.google.com/file/d/1w3PE4gHqViZjIvSgkcbteW9WtqWnGowS/view?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="no-print"
+                  style={{ color: '#1e4d3b', fontWeight: 700, fontSize: '12px' }}
+                >
+                  [Watch Campaign]
+                </a>
+              </li>
+              <li>
+                <strong>Global Eyes (2023) & Sugar Savvy Malaysia PR Campaign (2025)</strong> — Assistant Director, Cameraman, Graphic Designer & Logistics Coordinator.
+              </li>
             </ul>
           </div>
 
-          <div style={{ fontSize: '12px', color: '#74796e', textAlign: 'center', fontStyle: 'italic', marginTop: '16px', paddingTop: '10px', borderTop: '1px solid #e4e0d8' }}>
-            References available upon request.
+          {/* PERSONAL BRAND & LEADERSHIP */}
+          <div style={{ marginBottom: '20px' }}>
+            <div
+              style={{
+                fontSize: '12.5px',
+                fontWeight: 800,
+                textTransform: 'uppercase',
+                letterSpacing: '0.06em',
+                borderBottom: '1.5px solid #141210',
+                paddingBottom: '4px',
+                marginBottom: '8px',
+              }}
+            >
+              PERSONAL BRAND & LEADERSHIP
+            </div>
+            <ul style={{ paddingLeft: '20px', fontSize: '13.5px', color: '#2b2620', display: 'flex', flexDirection: 'column', gap: '5px' }}>
+              <li>
+                <strong>Founder, Visual7vibes</strong> — photography and short-form video content brand across Instagram, TikTok, and Facebook; grew account reach by 110% (530 accounts reached, 1,822 post views) in one month.
+              </li>
+              <li>
+                <strong>Media Officer, Nagashi Club (2023–2025)</strong> — designed promotional materials and produced event content.
+              </li>
+              <li>
+                <strong>News Writer, Student News Platform / Updazone (2023–2024)</strong> — wrote bilingual (Arabic/English) weekly articles on Sudanese political and humanitarian developments.
+              </li>
+              <li>
+                <strong>Sports Affairs Officer, Sudanese Student Community (2022–2023) & Designer, Community Protection Network Kassala (2020)</strong> — organized sports events and designed awareness posters for the “Lifeline” safe migration initiative.
+              </li>
+            </ul>
+          </div>
+
+          {/* TECHNICAL SKILLS */}
+          <div style={{ marginBottom: '20px' }}>
+            <div
+              style={{
+                fontSize: '12.5px',
+                fontWeight: 800,
+                textTransform: 'uppercase',
+                letterSpacing: '0.06em',
+                borderBottom: '1.5px solid #141210',
+                paddingBottom: '4px',
+                marginBottom: '8px',
+              }}
+            >
+              TECHNICAL SKILLS
+            </div>
+            <div style={{ fontSize: '13.5px', color: '#2b2620', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+              <div>
+                <strong>Video Editing & Audio:</strong> Adobe Premiere Pro, After Effects, CapCut, DaVinci Resolve, Adobe Audition, VN
+              </div>
+              <div>
+                <strong>Design:</strong> Adobe Photoshop, Illustrator, Lightroom, Canva, Figma
+              </div>
+              <div>
+                <strong>Content & Marketing:</strong> Content Writing, Social Media Strategy, Web Design, Public Relations Campaigns
+              </div>
+            </div>
+          </div>
+
+          {/* EDUCATION */}
+          <div>
+            <div
+              style={{
+                fontSize: '12.5px',
+                fontWeight: 800,
+                textTransform: 'uppercase',
+                letterSpacing: '0.06em',
+                borderBottom: '1.5px solid #141210',
+                paddingBottom: '4px',
+                marginBottom: '8px',
+              }}
+            >
+              EDUCATION
+            </div>
+            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '14px' }}>
+              <div>
+                <strong>Bachelor of Media and Communication (Honours)</strong> — Albukhary International University
+              </div>
+              <div style={{ fontStyle: 'italic', color: '#433d37' }}>Mar 2023 – Mar 2026</div>
+            </div>
+            <div style={{ fontSize: '13.5px', color: '#2b2620', marginTop: '4px' }}>
+              <strong>Languages:</strong> Arabic & English (Professional Fluency)
+            </div>
           </div>
         </div>
       </div>

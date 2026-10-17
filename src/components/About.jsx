@@ -2,236 +2,282 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import {
   GraduationCap,
-  Award,
   BookOpen,
   Languages,
+  Award,
+  FileText,
+  Download,
+  CheckCircle2,
+  Camera,
 } from 'lucide-react';
 
-export default function About() {
+export default function About({ onOpenResume }) {
   const coursework = [
-    { title: 'Econometrics', desc: 'Regression diagnostics, time-series forecasting, ARDL bounds testing & cointegration.' },
-    { title: 'Microeconomics', desc: 'Market structures, consumer utility optimization, game theory, and pricing elasticity.' },
-    { title: 'Macroeconomics', desc: 'Monetary policy transmission, fiscal frameworks, inflation targeting, and labor equilibrium.' },
-    { title: 'Development Economics', desc: 'Structural transformation, poverty reduction metrics, institutional capital, and FDI absorption.' },
-    { title: 'Islamic Economics & Finance', desc: 'Ethical risk-sharing, Sukuk structures, Shariah governance, and social finance.' },
-    { title: 'Principles of Marketing', desc: 'Consumer segmentation, positioning strategies, digital conversion funnels, and brand equity.' },
-    { title: 'Entrepreneurship & Innovation', desc: 'Venture feasibility, business model canvas, grant allocation, and social enterprise design.' },
-  ];
-
-  const languages = [
-    { name: 'Arabic', status: 'Native Speaker', desc: 'Mother tongue; articulate verbal eloquence & formal business correspondence.', code: 'AR', fluency: '100%' },
-    { name: 'English', status: 'Fluent / Full Professional', desc: 'Primary language of academic research, econometrics defense, and public workshops.', code: 'EN', fluency: '95%' },
+    'Broadcast Features & Documentaries (EMC2133)',
+    'Management & Production of Aesthetic Presentation (EMC3213)',
+    'Television & Broadcast Journalism',
+    'Public Relations & Strategic Campaign Management',
+    'Digital Media Production & Visual Branding',
+    'Bilingual Investigative Reporting (English & Arabic)',
+    'Non-Linear Video Editing & Sound Design',
+    'Social Media Analytics & Content Strategy',
   ];
 
   return (
-    <section id="about" className="section-padding" style={{ backgroundColor: 'var(--canvas-bg)' }}>
+    <section id="about" className="section-padding" style={{ backgroundColor: '#ffffff' }}>
       <div className="container">
-        {/* Section Title */}
-        <div style={{ maxWidth: '780px', marginBottom: '52px' }}>
-          <div className="section-eyebrow">
-            <GraduationCap size={14} color="#c4a66a" />
-            <span>Academic Foundations & Linguistic Fluency</span>
-          </div>
-          <h2 className="section-title">
-            Education, Academic Rigor & <span className="serif-italic" style={{ color: '#4a7c59' }}>Strategic Vision</span>
-          </h2>
-          <p className="section-subtitle">
-            Grounded in rigorous macroeconomic theory, empirical econometrics, and cross-cultural communication to solve modern economic and organizational challenges.
-          </p>
-        </div>
-
-        {/* 2-Column Grid: Education Card & Philosophy */}
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
-            gap: '32px',
-            marginBottom: '36px',
-          }}
-          className="about-grid"
-        >
-          {/* Card 1: Degree & Institution */}
-          <div className="editorial-card" style={{ padding: '32px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '20px' }}>
-              <div
-                style={{
-                  backgroundColor: '#264430',
-                  color: '#c4a66a',
-                  width: '44px',
-                  height: '44px',
-                  borderRadius: '10px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  flexShrink: 0,
-                  border: '1px solid rgba(196, 166, 106, 0.45)',
-                }}
-              >
-                <GraduationCap size={24} />
+        <div className="grid-12" style={{ alignItems: 'stretch' }}>
+          {/* Left 7 Columns: Education & Academic Profile */}
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            style={{ gridColumn: 'span 7', display: 'flex', flexDirection: 'column', gap: '24px' }}
+            className="about-left"
+          >
+            <div>
+              <div className="section-eyebrow">
+                <GraduationCap size={14} color="#1e4d3b" />
+                <span>Academic Foundation & Storyteller Identity</span>
               </div>
-              <div>
-                <span className="badge-tag-warm" style={{ fontSize: '11px', marginBottom: '4px' }}>
-                  Conferred Degree
+              <h2 className="section-title">
+                Bachelor of Media &{' '}
+                <span className="serif-italic" style={{ color: '#1e4d3b' }}>
+                  Communication (Honours)
                 </span>
-                <h3 style={{ fontSize: '1.35rem', fontWeight: '600', color: '#264430' }}>
-                  Bachelor of Economics (Hons.)
-                </h3>
-                <p style={{ fontSize: '13px', color: '#74796e' }}>
-                  Albukhary International University (AIU) • Graduated Apr 2026
-                </p>
-              </div>
+              </h2>
+              <p className="section-subtitle">
+                Trained at <strong>Albukhary International University (AIU)</strong> in Alor Setar, Malaysia, blending rigorous media theory with end-to-end cinema, broadcast newsroom, and public relations execution.
+              </p>
             </div>
 
-            <p style={{ fontSize: '14px', color: '#4a4e4a', lineHeight: 1.65, marginBottom: '22px' }}>
-              Completed a comprehensive four-year curriculum centered on quantitative macroeconomic modeling, econometric analysis, and public policy evaluation. Awarded top institutional accolades for research presentation and social business innovation.
-            </p>
-
-            {/* Academic Accolades Box */}
+            {/* University Card */}
             <div
+              className="editorial-card"
               style={{
-                backgroundColor: '#f5f1ea',
-                borderRadius: '12px',
-                padding: '16px 20px',
-                border: '1px solid rgba(196, 166, 106, 0.35)',
+                padding: '28px',
+                backgroundColor: 'var(--canvas-bg)',
+                borderLeft: '4px solid #1e4d3b',
               }}
             >
               <div
                 style={{
-                  fontSize: '11.5px',
-                  fontWeight: '700',
-                  color: '#705c30',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.06em',
-                  marginBottom: '10px',
                   display: 'flex',
+                  flexWrap: 'wrap',
                   alignItems: 'center',
-                  gap: '6px',
+                  justifyContent: 'space-between',
+                  gap: '10px',
+                  marginBottom: '10px',
                 }}
               >
-                <Award size={14} /> Institutional Distinctions:
+                <span className="badge-sage">Mar 2023 – Mar 2026</span>
+                <span className="badge-honor">
+                  <Award size={12} color="#f3c677" />
+                  <span>Copyright Registered Co-Author (CRFM2025P01130)</span>
+                </span>
               </div>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: '#264430' }}>
-                  <span style={{ color: '#c4a66a', fontWeight: '700' }}>🥇 Platinum Award:</span>
-                  <span>Best Research Paper, AIU Seminar Day (2025)</span>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: '#264430' }}>
-                  <span style={{ color: '#705c30', fontWeight: '700' }}>🥈 Gold Award:</span>
-                  <span>Social Business Group Project</span>
-                </div>
+              <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '23px', marginBottom: '4px' }}>
+                Albukhary International University (AIU)
+              </h3>
+              <div style={{ fontSize: '15px', fontWeight: 700, color: '#1e4d3b', marginBottom: '14px' }}>
+                Bachelor of Media and Communication (Honours) • School of Education & Human Sciences
               </div>
-            </div>
-          </div>
 
-          {/* Card 2: Linguistic Competence */}
-          <div className="editorial-card" style={{ padding: '32px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '20px' }}>
+              <p style={{ fontSize: '14.5px', color: 'var(--text-secondary)', lineHeight: 1.65, marginBottom: '18px' }}>
+                Completed a comprehensive honours curriculum spanning documentary filmmaking, studio & field broadcast journalism, public relations campaign management, and corporate multimedia branding. Co-authored the 24-minute documentary{' '}
+                <em>“Keris: Supremacy of Legacy”</em>, officially registered under the Malaysia Copyright Act 1987.
+              </p>
+
               <div
                 style={{
-                  backgroundColor: 'rgba(74, 124, 89, 0.12)',
-                  color: '#4a7c59',
-                  width: '44px',
-                  height: '44px',
-                  borderRadius: '10px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  flexShrink: 0,
-                  border: '1px solid rgba(74, 124, 89, 0.25)',
+                  fontFamily: 'var(--font-mono)',
+                  fontSize: '11px',
+                  fontWeight: 700,
+                  color: 'var(--text-muted)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.08em',
+                  marginBottom: '10px',
                 }}
               >
-                <Languages size={24} />
+                CORE PRODUCTION & MEDIA MODULES:
               </div>
-              <div>
-                <span className="badge-sage" style={{ fontSize: '11px', marginBottom: '4px' }}>
-                  International Engagement
-                </span>
-                <h3 style={{ fontSize: '1.35rem', fontWeight: '600', color: '#264430' }}>
-                  Linguistic Versatility
-                </h3>
-                <p style={{ fontSize: '13px', color: '#74796e' }}>
-                  Multi-Stakeholder Cross-Cultural Communication
-                </p>
+              <div
+                style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(2, 1fr)',
+                  gap: '8px',
+                }}
+                className="coursework-grid"
+              >
+                {coursework.map((c) => (
+                  <div
+                    key={c}
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                      padding: '8px 11px',
+                      borderRadius: '8px',
+                      backgroundColor: '#ffffff',
+                      border: '1px solid rgba(26, 23, 20, 0.1)',
+                      fontSize: '12.5px',
+                      fontWeight: 600,
+                      color: 'var(--text-primary)',
+                    }}
+                  >
+                    <CheckCircle2 size={14} color="#1e4d3b" style={{ flexShrink: 0 }} />
+                    <span>{c}</span>
+                  </div>
+                ))}
               </div>
             </div>
+          </motion.div>
 
-            <p style={{ fontSize: '14px', color: '#4a4e4a', lineHeight: 1.65, marginBottom: '22px' }}>
-              Equipped to engage executive boards, international academic faculties, and grassroots community beneficiaries seamlessly across Arabic and English.
-            </p>
-
-            {/* Languages breakdown */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
-              {languages.map((l) => (
+          {/* Right 5 Columns: Storyteller Bio, Bilingual Fluency & Portrait Card */}
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            style={{ gridColumn: 'span 5', display: 'flex', flexDirection: 'column', gap: '20px' }}
+            className="about-right"
+          >
+            <div
+              className="editorial-card"
+              style={{
+                padding: '26px',
+                backgroundColor: 'var(--canvas-bg)',
+                flex: 1,
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+              }}
+            >
+              <div>
                 <div
-                  key={l.name}
                   style={{
-                    backgroundColor: '#ffffff',
-                    border: '1px solid rgba(74, 124, 89, 0.12)',
-                    borderRadius: '10px',
-                    padding: '14px 18px',
+                    display: 'grid',
+                    gridTemplateColumns: '110px 1fr',
+                    gap: '16px',
+                    alignItems: 'center',
+                    marginBottom: '18px',
                   }}
                 >
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <span style={{ fontWeight: '700', color: '#264430', fontSize: '14px' }}>{l.name}</span>
-                      <span className="badge-tag-warm" style={{ fontSize: '11px', padding: '1px 6px' }}>{l.status}</span>
-                    </div>
-                    <span className="tnum" style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', fontWeight: '600', color: '#4a7c59' }}>
-                      {l.fluency}
-                    </span>
+                  <div
+                    style={{
+                      width: '110px',
+                      height: '135px',
+                      borderRadius: '12px',
+                      overflow: 'hidden',
+                      border: '2px solid #1e4d3b',
+                    }}
+                  >
+                    <img
+                      src="/mosab/raw/img_004_obj1153_319x628.jpg"
+                      alt="Mosaab Mohammed Adam"
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        objectPosition: 'center top',
+                        display: 'block',
+                      }}
+                    />
                   </div>
-                  <p style={{ fontSize: '12.5px', color: '#4a4e4a', lineHeight: 1.5 }}>
-                    {l.desc}
-                  </p>
+                  <div>
+                    <div
+                      style={{
+                        fontFamily: 'var(--font-mono)',
+                        fontSize: '11px',
+                        color: '#d93829',
+                        fontWeight: 700,
+                        marginBottom: '4px',
+                      }}
+                    >
+                      ABOUT ME // STORYTELLER
+                    </div>
+                    <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '21px', marginBottom: '4px' }}>
+                      Mosaab Mohammed Adam
+                    </h3>
+                    <div style={{ fontSize: '13px', color: 'var(--text-secondary)', lineHeight: 1.45 }}>
+                      Digital Marketing Executive, Multimedia Producer & Media Honours Graduate based in Kuala Lumpur.
+                    </div>
+                  </div>
                 </div>
-              ))}
-            </div>
-          </div>
-        </div>
 
-        {/* Relevant Academic Coursework Matrix */}
-        <div className="editorial-card" style={{ padding: '32px' }}>
-          <h3 style={{ fontSize: '1.35rem', fontWeight: '600', color: '#264430', marginBottom: '6px' }}>
-            Relevant Undergraduate Coursework & Competencies
-          </h3>
-          <p style={{ fontSize: '13.5px', color: '#74796e', marginBottom: '22px' }}>
-            Core curriculum modules completed at Albukhary International University:
-          </p>
-
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-              gap: '16px',
-            }}
-          >
-            {coursework.map((c) => (
-              <div
-                key={c.title}
-                style={{
-                  backgroundColor: '#faf6f0',
-                  border: '1px solid rgba(74, 124, 89, 0.12)',
-                  borderRadius: '10px',
-                  padding: '16px',
-                }}
-              >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
-                  <BookOpen size={15} color="#c4a66a" />
-                  <h4 style={{ fontSize: '14px', fontWeight: '600', color: '#264430' }}>{c.title}</h4>
-                </div>
-                <p style={{ fontSize: '12.5px', color: '#4a4e4a', lineHeight: 1.5 }}>
-                  {c.desc}
+                <p style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: 1.65, marginBottom: '16px' }}>
+                  “I am passionate about using media to tell powerful and purposeful stories. With hands-on experience in documentaries, short films, news reporting, awareness campaigns, and digital content creation, I combine strong storytelling skills with technical expertise to produce engaging and impactful media.”
                 </p>
+
+                {/* Bilingual Fluency Card */}
+                <div
+                  style={{
+                    padding: '14px 16px',
+                    borderRadius: '12px',
+                    backgroundColor: '#ffffff',
+                    border: '1px solid rgba(26, 23, 20, 0.12)',
+                    marginBottom: '18px',
+                  }}
+                >
+                  <div
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                      fontFamily: 'var(--font-mono)',
+                      fontSize: '11px',
+                      fontWeight: 700,
+                      color: '#1e4d3b',
+                      marginBottom: '8px',
+                    }}
+                  >
+                    <Languages size={14} />
+                    <span>BILINGUAL PROFESSIONAL FLUENCY</span>
+                  </div>
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
+                    <div style={{ padding: '8px 10px', borderRadius: '8px', backgroundColor: 'var(--canvas-bg)' }}>
+                      <div style={{ fontWeight: 700, fontSize: '13.5px' }}>English</div>
+                      <div style={{ fontSize: '12px', color: 'var(--text-muted)' }}>
+                        Professional Fluency (Broadcast, Copywriting & PR)
+                      </div>
+                    </div>
+                    <div style={{ padding: '8px 10px', borderRadius: '8px', backgroundColor: 'var(--canvas-bg)' }}>
+                      <div style={{ fontWeight: 700, fontSize: '13.5px' }}>Arabic (العربية)</div>
+                      <div style={{ fontSize: '12px', color: 'var(--text-muted)' }}>
+                        Native / Professional Fluency (Journalism & Media)
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-            ))}
-          </div>
+
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+                <button onClick={onOpenResume} className="btn-primary" style={{ flex: 1 }}>
+                  <FileText size={15} color="#f3c677" />
+                  <span>Open Full Resume</span>
+                </button>
+                <a
+                  href="/Mosaab_Adam_Resume.pdf"
+                  download="Mosaab_Mohammed_Adam_Resume.pdf"
+                  className="btn-secondary"
+                >
+                  <Download size={15} color="#1e4d3b" />
+                  <span>PDF</span>
+                </a>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
 
       <style>{`
-        @media (max-width: 900px) {
-          .about-grid {
+        @media (max-width: 1024px) {
+          .about-left, .about-right {
+            grid-column: span 12 !important;
+          }
+        }
+        @media (max-width: 640px) {
+          .coursework-grid {
             grid-template-columns: 1fr !important;
           }
         }
